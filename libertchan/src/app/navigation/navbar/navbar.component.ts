@@ -12,13 +12,19 @@ export class NavbarComponent implements OnInit {
     private channelService: ChannelService
   ) { }
 
-  ngOnInit() {
 
+
+  ngOnInit() {
     // console.log("Allo");
 
       this.channelService.getChannelList().subscribe(
-        response => {
-          console.log((response));
+        response  => {
+          const channelList = response as Array<object>;
+          // console.log((channelList.length));
+          channelList.forEach(element => {
+            console.log(element.shortName);
+
+          });
         }
       );
   }
