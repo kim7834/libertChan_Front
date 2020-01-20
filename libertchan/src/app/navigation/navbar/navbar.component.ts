@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChannelService } from '../service/channel.service';
+import { Channel } from '../../models/channel';
 
 @Component({
   selector: 'app-navbar',
@@ -12,19 +13,17 @@ export class NavbarComponent implements OnInit {
     private channelService: ChannelService
   ) { }
 
+  channelList: Array<Channel>;
 
 
   ngOnInit() {
-    // console.log("Allo");
-
       this.channelService.getChannelList().subscribe(
         response  => {
-          const channelList = response as Array<object>;
-          // console.log((channelList.length));
-          channelList.forEach(element => {
-            console.log(element.shortName);
-
-          });
+          this.channelList = response as Array<Channel>;
+          // const channelList2 = response as Array<Channel>;
+          // channelList2.forEach(element => {
+          //   console.log(element.shortName);
+          // });
         }
       );
   }
