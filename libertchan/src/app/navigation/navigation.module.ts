@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NavigationRoutingModule } from './navigation-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     CommonModule,
-    NavigationRoutingModule
+    NavigationRoutingModule,
+    HttpClientModule
   ]
 })
 export class NavigationModule { }

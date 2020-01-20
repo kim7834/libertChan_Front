@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChannelService } from '../service/channel.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private channelService: ChannelService
+  ) { }
 
   ngOnInit() {
+
+    // console.log("Allo");
+
+      this.channelService.getChannelList().subscribe(
+        response => {
+          console.log((response));
+        }
+      );
   }
+
+
 
 }
