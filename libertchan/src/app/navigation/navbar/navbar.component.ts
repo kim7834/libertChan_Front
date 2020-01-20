@@ -20,10 +20,6 @@ export class NavbarComponent implements OnInit {
       this.channelService.getChannelList().subscribe(
         response  => {
           this.channelList = response as Array<Channel>;
-          // const channelList2 = response as Array<Channel>;
-          // channelList2.forEach(element => {
-          //   console.log(element.shortName);
-          // });
         }
       );
   }

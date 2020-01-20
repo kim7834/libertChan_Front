@@ -1,5 +1,4 @@
-<p>navbar works!</p>
-
-<div *ngFor="let channel of channelList">
-  {{ channel.shortName }}
-</div>
+<span *ngFor="let channel of channelList">
+  <!-- TODO: routerlink sur a -->
+  <a href="#" title="{{ channel.name }}">{{ channel.shortName }}</a> /
+<span>
