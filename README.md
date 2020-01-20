@@ -6,3 +6,7 @@
 <br>
 
 [Lien vers le back](https://github.com/borisBelloc/libertChan_back)
+
+
+1/ clone repo
+2/ `npm install`
