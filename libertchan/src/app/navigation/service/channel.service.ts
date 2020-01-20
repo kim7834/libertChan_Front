@@ -20,8 +20,8 @@ export class ChannelService {
 
 getChannelList() {
   return this.httpClient
-    // .get(this.baseUrl, this.httpOptions);
-    .get(this.baseUrl);
+    .get(this.baseUrl, this.httpOptions);
+    // .get(this.baseUrl);
 }
 
 
