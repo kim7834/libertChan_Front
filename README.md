@@ -10,3 +10,10 @@
 
 1/ clone repo
 2/ `npm install`
+
+
+### Technos :
+
+- Angular 8
+    - Packages installed (node_modules) : 
+        - [bootstrap](https://www.npmjs.com/package/bootstrap)
