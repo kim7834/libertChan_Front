@@ -6,16 +6,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 
-
 @NgModule({
   declarations: [NavbarComponent, HeaderComponent],
-  exports : [
-    NavbarComponent
-  ],
-  imports: [
-    CommonModule,
-    NavigationRoutingModule,
-    HttpClientModule
-  ]
+  exports: [NavbarComponent, HeaderComponent],
+  imports: [CommonModule, NavigationRoutingModule, HttpClientModule]
 })
-export class NavigationModule { }
+export class NavigationModule {}
