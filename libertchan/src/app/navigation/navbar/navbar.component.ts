@@ -8,22 +8,13 @@ import { Channel } from '../../models/channel';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(
-    private channelService: ChannelService
-  ) { }
+  constructor(private channelService: ChannelService) {}
 
   channelList: Array<Channel>;
 
-
   ngOnInit() {
-      this.channelService.getChannelList().subscribe(
-        response  => {
-          this.channelList = response as Array<Channel>;
-        }
-      );
+    this.channelService.getChannelList().subscribe(response => {
+      this.channelList = response as Array<Channel>;
+    });
   }
-
-
-
 }
