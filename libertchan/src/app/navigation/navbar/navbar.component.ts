@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChannelService } from '../service/channel.service';
-import { Channel } from '../../models/channel';
+import { Channel } from 'src/app/models/channel';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +11,10 @@ export class NavbarComponent implements OnInit {
   constructor(private channelService: ChannelService) {}
 
   channelList: Array<Channel>;
+  channelShortName: string;
 
   ngOnInit() {
-    this.channelService.getChannelList().subscribe(response => {
+    this.channelService.getChannels().subscribe(response => {
       this.channelList = response as Array<Channel>;
     });
   }
