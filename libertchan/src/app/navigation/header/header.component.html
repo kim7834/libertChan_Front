@@ -11,8 +11,18 @@
   </div>
   <div class="row">
     <div class="col-12 text-center">
-      <span>canal [modéré | non modéré]</span><span> : </span
-      ><span>shortDescription</span>
+      <span>canal </span>
+      <div
+        *ngIf="
+          currentChannel.isModerated;
+          then moderatedBlock;
+          else nonModeratedBlock
+        "
+      ></div>
+      <ng-template #moderatedBlock><span>modéré</span></ng-template>
+      <ng-template #nonModeratedBlock><span>non modéré</span></ng-template>
+      <span> : </span>
+      <span>{{ currentChannel.shortDescription }}</span>
     </div>
   </div>
 </div>
