@@ -19,5 +19,5 @@
         - [bootstrap](https://www.npmjs.com/package/bootstrap)
 
 
-#### branchs :
-- NavbarWithInput : -test)The Navbar component call the Header component with an input to pass the wanted channel name
+##### branchs :
+- NavbarWithInput : (test)The Navbar component call the Header component with an input to pass the wanted channel name
