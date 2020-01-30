@@ -18,4 +18,9 @@ export class NavbarComponent implements OnInit {
       this.channelList = response as Array<Channel>;
     });
   }
+
+  navbarChoice(choice: string) {
+    console.log(choice);
+    this.channelShortName = choice;
+  }
 }
