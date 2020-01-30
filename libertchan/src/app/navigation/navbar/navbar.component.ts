@@ -13,6 +13,8 @@ export class NavbarComponent implements OnInit {
   channelList: Array<Channel>;
   channelShortName: string;
 
+  currentChannel: Channel;
+
   ngOnInit() {
     this.channelService.getChannels().subscribe(response => {
       this.channelList = response as Array<Channel>;
@@ -22,5 +24,13 @@ export class NavbarComponent implements OnInit {
   navbarChoice(choice: string) {
     console.log(choice);
     this.channelShortName = choice;
+
+    this.channelService.getChannelByShortName(choice).subscribe(response => {
+      this.currentChannel = response as Channel;
+    });
+
+    console.log('LE CHANNEL OUVERT (From NAVBAR) ' +  this.currentChannel.name );
+
   }
+
 }

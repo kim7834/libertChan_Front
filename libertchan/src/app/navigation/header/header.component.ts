@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChannelService } from '../service/channel.service';
 import { Channel } from 'src/app/models/channel';
 import { Observable } from 'rxjs';
@@ -11,12 +11,18 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
   constructor(private channelService: ChannelService) {}
 
-  currentChannel: Channel;
+  // currentChannel: Channel;
   currentChannelObs: Observable<Channel>;
 
+  @Input() currentChannel: Channel;
+
+
+
   ngOnInit() {
-    this.channelService.getChannelByShortName('ac').subscribe(response => {
-      this.currentChannel = response as Channel;
-    });
+    // this.channelService.getChannelByShortName('ac').subscribe(response => {
+    //   this.currentChannel = response as Channel;
+    // });
   }
+
+
 }
