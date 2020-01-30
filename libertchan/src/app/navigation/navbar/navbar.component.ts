@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
       this.currentChannel = response as Channel;
     });
 
-    console.log('LE CHANNEL OUVERT (From NAVBAR) ' +  this.currentChannel.name );
+    // console.log('LE CHANNEL OUVERT (From NAVBAR) ' +  this.currentChannel.name );
 
   }
 
