@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ChannelService } from '../service/channel.service';
 import { Channel } from 'src/app/models/channel';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { SelectedChannelService } from '../selected-channel.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +10,12 @@ import { Channel } from 'src/app/models/channel';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private channelService: ChannelService) {}
+  constructor(
+    private channelService: ChannelService,
+    private selectedChannelService: SelectedChannelService
+  ) {}
 
   channelList: Array<Channel>;
-  channelShortName: string;
 
   ngOnInit() {
     this.channelService.getChannels().subscribe(response => {
@@ -21,6 +25,6 @@ export class NavbarComponent implements OnInit {
 
   navbarChoice(choice: string) {
     console.log(choice);
-    this.channelShortName = choice;
+    this.selectedChannelService.update(choice);
   }
 }
