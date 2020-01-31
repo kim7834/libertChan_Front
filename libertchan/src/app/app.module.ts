@@ -11,8 +11,8 @@ import { CatalogModule } from './catalog/catalog.module';
 import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/channels/ac', pathMatch: 'full' },
-  { path: 'channels/:id', component: CatalogDetailComponent }
+  { path: '', redirectTo: '/chan/ac', pathMatch: 'full' },
+  { path: 'chan/:shortName', component: CatalogDetailComponent }
 ];
 
 @NgModule({
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NavigationModule,
     CatalogModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

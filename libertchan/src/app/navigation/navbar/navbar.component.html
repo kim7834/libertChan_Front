@@ -1,12 +1,12 @@
 <span *ngFor="let channel of channelList">
   <!-- TODO: routerlink sur a -->
   <!-- <>/href="https://www.google.fr/search?q={{ channel.name }}" -->
-  <span
+  <a
     class="navbarLink"
     (click)="navbarChoice(channel.shortName)"
-    target="_blank"
+    href="./chan/{{ channel.shortName }}"
     title="{{ channel.name }}"
-    >{{ channel.shortName }}</span
+    >{{ channel.shortName }}</a
   >
 
   / <span> </span
