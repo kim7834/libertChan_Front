@@ -7,9 +7,10 @@ import { HeaderComponent } from '../navigation/header/header.component';
 import { NavbarComponent } from '../navigation/navbar/navbar.component';
 import { NavigationModule } from '../navigation/navigation.module';
 import { CatalogMosaicComponent } from './catalog-mosaic/catalog-mosaic.component';
+import { ChannelMosaicComponent } from './catalog-mosaic/channel-mosaic/channel-mosaic.component';
 
 @NgModule({
-  declarations: [CatalogDetailComponent, CatalogMosaicComponent],
+  declarations: [CatalogDetailComponent, CatalogMosaicComponent, ChannelMosaicComponent],
   imports: [CommonModule, CatalogRoutingModule, NavigationModule]
 })
 export class CatalogModule {}

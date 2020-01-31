@@ -9,10 +9,12 @@ import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { CatalogModule } from './catalog/catalog.module';
 import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.component';
+import { CatalogMosaicComponent } from './catalog/catalog-mosaic/catalog-mosaic.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/chan/ac', pathMatch: 'full' },
-  { path: 'chan/:shortName', component: CatalogDetailComponent }
+  { path: 'chan/:shortName', component: CatalogDetailComponent },
+  { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent }
 ];
 
 @NgModule({
