@@ -11,7 +11,6 @@ export class NavbarComponent implements OnInit {
   constructor(private channelService: ChannelService) {}
 
   channelList: Array<Channel>;
-  channelShortName: string;
 
   ngOnInit() {
     this.channelService.getChannels().subscribe(response => {
@@ -19,8 +18,4 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  navbarChoice(choice: string) {
-    //console.log(choice);
-    this.channelShortName = choice;
-  }
 }
