@@ -4,8 +4,8 @@
       <hr />
       <img src="../../../assets/images/logo/bird.png" alt="LibertChan Logo" />
       <!-- <img src="../../../assets/images/logo/logo.png" alt="LibertChan Logo" /> -->
-      <span>/{{ currentChannel.shortName }}/</span><span> : </span
-      ><span>{{ currentChannel.name }}</span>
+      <span>/{{ currentChannel?.shortName }}/</span><span> : </span
+      ><span>{{ currentChannel?.name }}</span>
       <hr />
     </div>
   </div>
@@ -14,7 +14,7 @@
       <span>canal </span>
       <div
         *ngIf="
-          currentChannel.isModerated;
+          currentChannel?.isModerated;
           then moderatedBlock;
           else nonModeratedBlock
         "
@@ -22,7 +22,7 @@
       <ng-template #moderatedBlock><span>modéré</span></ng-template>
       <ng-template #nonModeratedBlock><span>non modéré</span></ng-template>
       <span> : </span>
-      <span>{{ currentChannel.shortDescription }}</span>
+      <span>{{ currentChannel?.shortDescription }}</span>
     </div>
   </div>
 </div>
