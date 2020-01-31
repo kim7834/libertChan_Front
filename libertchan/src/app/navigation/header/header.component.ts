@@ -12,25 +12,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   constructor(
     private channelService: ChannelService,
-    private router: Router,
+    // Router allow to retrieve full url
+    // private router: Router,
     private route: ActivatedRoute
   ) {}
+
+  /**
+    Exemple of routing with generic name for url, obtain the shortname of channel from url then get the associated channel
+    Doc : https://stackoverflow.com/questions/42839074/extract-id-from-url-using-angular2
+     */
 
   currentChannel: Channel;
   private routeSub: Subscription;
 
   ngOnInit() {
-    console.log(this.router.url);
-    console.log(this.router.config);
+    // console.log(this.router.url);
+    // console.log(this.router.config);
 
-    console.log('-----------');
+    // console.log('-----------');
 
-    this.routeSub = this.route.params.subscribe(params => {
-      console.log(params); //log the entire params object
-      console.log(params.shortName); //log the value of id
-
-
-
+    this.route.params.subscribe(params => {
+      // console.log(params); //log the entire params object
+      // console.log(params.shortName); //log the value of id
       this.channelService.getChannelByShortName(params.shortName).subscribe(response => {
         this.currentChannel = response as Channel;
       });
