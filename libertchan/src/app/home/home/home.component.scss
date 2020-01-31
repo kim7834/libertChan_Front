@@ -1,0 +1,22 @@
+[class*="container"] {
+  border: 1px solid coral;
+}
+[class*='row '] {
+  border: 1px solid red;
+}
+[class*='col-'] {
+  border: 1px solid yellow;
+}
+
+
+
+#unrated {
+  background-color: #FBDADA;
+  border: 1px solid #F9C1C1;
+  border-radius: 2px;
+}
+
+#unrated svg,
+#unrated sup {
+  color: #BF3939;
+}
