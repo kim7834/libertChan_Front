@@ -8,9 +8,10 @@ import { NavbarComponent } from '../navigation/navbar/navbar.component';
 import { NavigationModule } from '../navigation/navigation.module';
 import { CatalogMosaicComponent } from './catalog-mosaic/catalog-mosaic.component';
 import { ChannelMosaicComponent } from './catalog-mosaic/channel-mosaic/channel-mosaic.component';
+import { VignetteComponent } from './catalog-mosaic/channelMosaic/vignette/vignette.component';
 
 @NgModule({
-  declarations: [CatalogDetailComponent, CatalogMosaicComponent, ChannelMosaicComponent],
+  declarations: [CatalogDetailComponent, CatalogMosaicComponent, ChannelMosaicComponent, VignetteComponent],
   imports: [CommonModule, CatalogRoutingModule, NavigationModule]
 })
 export class CatalogModule {}

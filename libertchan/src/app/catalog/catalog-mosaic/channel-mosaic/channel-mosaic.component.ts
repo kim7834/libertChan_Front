@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./channel-mosaic.component.scss']
 })
 export class ChannelMosaicComponent implements OnInit {
+  nbVignettes = 48;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

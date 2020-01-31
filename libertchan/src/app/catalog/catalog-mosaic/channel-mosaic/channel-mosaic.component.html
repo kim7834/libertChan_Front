@@ -1,1 +1,9 @@
 <p>channel-mosaic works!</p>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <app-vignette
+      class="col-3"
+      *ngFor="let i of ' '.repeat(nbVignettes).split('')"
+    ></app-vignette>
+  </div>
+</div>
