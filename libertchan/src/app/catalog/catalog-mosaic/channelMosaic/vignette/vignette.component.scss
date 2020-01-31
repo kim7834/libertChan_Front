@@ -1,9 +1,13 @@
 .vignette {
-  border: 1px solid #000000;
   min-height: 10vh;
 }
 
 .vignette img {
   max-height: 20vh;
   max-width: 10vw;
+}
+
+.vignette:hover {
+  background-color: lightblue;
+  cursor: pointer;
 }
