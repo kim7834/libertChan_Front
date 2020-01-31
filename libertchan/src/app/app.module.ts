@@ -4,17 +4,27 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
+import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navigation/navbar/navbar.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { CatalogModule } from './catalog/catalog.module';
+import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.component';
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/channels/ac', pathMatch: 'full' },
+  { path: 'channels/:id', component: CatalogDetailComponent }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NavigationModule
+    NavigationModule,
+    CatalogModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
