@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   }
 
   navbarChoice(choice: string) {
-    console.log(choice);
+    //console.log(choice);
     this.channelShortName = choice;
   }
 }
