@@ -1,4 +1,4 @@
-[class*="container"] {
+[class*='container'] {
   border: 1px solid coral;
 }
 [class*='row '] {
@@ -9,19 +9,28 @@
 }
 
 .channelContainer {
-  border:1px #707070 solid;
+  border: 1px #707070 solid;
   background-color: #ffffff;
-  height:500px;
+  height: 500px;
 }
 
-
 #unrated {
-  background-color: #FBDADA;
-  border: 1px solid #F9C1C1;
+  background-color: #fbdada;
+  border: 1px solid #f9c1c1;
   border-radius: 2px;
 }
 
 #unrated svg,
 #unrated sup {
-  color: #BF3939;
+  color: #bf3939;
+}
+
+// TODO: Voir identifiants pour les <li> du block blanc
+// TODO: mettre ce formatage ul, li seulement pour les ul, li lié a "block blanc"
+ul,
+li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
 }
