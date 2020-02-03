@@ -1,6 +1,7 @@
 <div class="container text-center">
-  <div class="row mt-2">
-    <div class="col-12 ">
+  <!-- TODO: valide le no-gutters -->
+  <div class="row mt-2 no-gutters">
+    <div class="col-12 mb-1">
       <img
         class="img-fluid w-50"
         src="../../../assets/images/logo/logo.png"
@@ -9,26 +10,32 @@
     </div>
   </div>
 
-  <div class="channelContainer offset-1 col-10">
+  <!-- TODO: small screan container-fluid ? -->
+  <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
+
+  <div class="channelContainer offset-md-1 col-12 col-md-10">
     <div class="row mt-5">
-      <div class="col-4">
+      <div class="col-5">
         <div class="pb-2"><u>Centres d'intérêts</u></div>
 
-        <div class="row">
-          <span class="col-6">salon 1</span>
-          <span class="col-6">salon 2</span>
-          <span class="col-6">salon 3</span>
-          <span class="col-6">salon 4</span>
-          <span class="col-6">salon 5</span>
-          <span class="col-6">salon 6</span>
+        <!-- TODO: angular *ngfor channel  -->
+        <div class="row twoCol">
+          <ul class="col-12">
+            <li class="col-12">News</li>
+            <li class="col-12">International</li>
+            <li class="col-12">Sports</li>
+            <li class="col-12">Technologie</li>
+            <li class="col-12">Developpement</li>
+            <li class="col-12">Graphisme</li>
+          </ul>
         </div>
       </div>
 
       <div class="col-4">
-        <span><u>Régional</u></span>
+        <div class="pb-2"><u>Régional</u></div>
       </div>
 
-      <div id="unrated" class="col-4">
+      <div id="unrated" class="col-3 col-md-4">
         <div class="row pb-4">
           <div class="col-12 d-flex justify-content-end">
             <svg
@@ -56,7 +63,7 @@
               Aléatoire
             </li>
           </ul>
-          </div>
+        </div>
         <!-- TODO: Css to define la hauteur des cases -->
         <div class="row">
           <div

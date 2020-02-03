@@ -34,3 +34,29 @@ li {
   margin: 0;
   padding: 0;
 }
+
+.twoCol ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+// TODO: small screen block blanc devien bleu ?
+// TODO small screen assenceur en x ?
+
+/* Make container full width on small screen */
+/* DOC : https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm */
+// @include media-breakpoint-down(md) {
+//   .container {
+//     width: 100%;
+//     max-width: none;
+//   }
+// }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: none;
+    // padding 0 ?
+    padding: 0;
+  }
+}
