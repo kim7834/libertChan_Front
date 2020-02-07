@@ -18,9 +18,8 @@
       <div class="col-5">
         <div class="pb-2"><u>Centres d'intérêts</u></div>
 
-        <!-- TODO: ajout col dans table channel "category : centreInteret / adultes / communautéSite" -->
-        <!-- TODO: faire 1 bougle ngFor If Categorie == xxx par category type -->
-        <div class="row twoCol">
+        <!-- TODO: Ajout lien vers channel -->
+        <div class="row twoCol mb-3">
           <ul class="col-12">
             <ng-container *ngFor="let channel of channelList">
               <ng-container *ngIf="channel.category === 'INTEREST'">
