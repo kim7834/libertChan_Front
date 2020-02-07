@@ -40,6 +40,26 @@ li {
   -webkit-columns: 2;
   -moz-columns: 2;
 }
+.fourCol ul {
+  columns: 4;
+  -webkit-columns: 4;
+  -moz-columns: 4;
+}
+
+.flag img {
+  transition: box-shadow .3s;
+  height:20px;
+}
+.flag img:hover {
+  // TODO: shadow color light ? shadow ++ bottom ?
+  box-shadow: 0 0 11px 3px rgba(33,33,33,.2);
+  // TODO: Border couleur fond ?
+  // border: 1px solid rgba(33, 33, 33, 0.664);
+  height:22px;
+  // box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.20em);
+}
+
 
 // TODO: small screen block blanc devien bleu ?
 // TODO small screen assenceur en x ?

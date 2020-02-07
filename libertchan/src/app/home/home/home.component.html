@@ -15,6 +15,7 @@
 
   <div class="channelContainer offset-md-1 col-12 col-md-10">
     <div class="row mt-5">
+      <!-- #1 -->
       <div class="col-5">
         <div class="pb-2"><u>Centres d'intérêts</u></div>
 
@@ -23,17 +24,28 @@
           <ul class="col-12">
             <ng-container *ngFor="let channel of channelList">
               <ng-container *ngIf="channel.category === 'INTEREST'">
-                <li class="col-12">{{channel.name}}</li>
+                <li class="col-12">{{ channel.name }}</li>
               </ng-container>
             </ng-container>
           </ul>
         </div>
       </div>
 
+      <!-- #2 -->
       <div class="col-4">
         <div class="pb-2"><u>Régional</u></div>
+
+        <!-- TODO: ajout image lié au channel -> sert pour Channel regionaux -->
+        <div class="row flag fourCol justify-content-center">
+          <ul>
+            <li>
+              <img src="../../../assets/images/Flags/Europe/1 fr.png" alt="" />
+            </li>
+          </ul>
+        </div>
       </div>
 
+      <!-- #3 -->
       <div id="unrated" class="col-3 col-md-4">
         <div class="row pb-4">
           <div class="col-12 d-flex justify-content-end">
@@ -74,6 +86,7 @@
         </div>
       </div>
 
+      <!-- #4 -->
       <div class="col-4">
         <span><u>Amélioration</u></span>
         <div class="row">
@@ -84,4 +97,6 @@
       </div>
     </div>
   </div>
+
+
 </div>
