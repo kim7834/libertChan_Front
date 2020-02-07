@@ -20,20 +20,13 @@
 
         <!-- TODO: ajout col dans table channel "category : centreInteret / adultes / communautéSite" -->
         <!-- TODO: faire 1 bougle ngFor If Categorie == xxx par category type -->
-<!-- AA
-<div *ngFor="let channel of channelList">
-  {{ channel.shortName }}
-</div>
-BB -->
-        <!-- TODO: angular *ngfor channel  -->
         <div class="row twoCol">
           <ul class="col-12">
-            <li class="col-12">News</li>
-            <li class="col-12">International</li>
-            <li class="col-12">Sports</li>
-            <li class="col-12">Technologie</li>
-            <li class="col-12">Developpement</li>
-            <li class="col-12">Graphisme</li>
+            <ng-container *ngFor="let channel of channelList">
+              <ng-container *ngIf="channel.category === 'INTEREST'">
+                <li class="col-12">{{channel.name}}</li>
+              </ng-container>
+            </ng-container>
           </ul>
         </div>
       </div>
