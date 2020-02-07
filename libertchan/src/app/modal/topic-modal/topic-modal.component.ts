@@ -11,7 +11,7 @@ export class TopicModalComponent implements OnInit {
 
   ngOnInit() {}
 
-  closeModal() {
-    this.activeModal.close('Modal closed');
-  }
+  // closeModal() {
+  //   this.activeModal.close('Modal closed');
+  // }
 }
