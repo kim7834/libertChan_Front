@@ -16,6 +16,7 @@ export class ChannelMosaicComponent implements OnInit {
 
   openTopicModal() {
     const modalRef = this.modalService.open(TopicModalComponent);
+    modalRef.componentInstance.id = 10;
 
     modalRef.result
       .then(result => {
