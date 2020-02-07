@@ -14,7 +14,7 @@ export class ChannelMosaicComponent implements OnInit {
 
   ngOnInit() {}
 
-  openFormModal() {
+  openTopicModal() {
     const modalRef = this.modalService.open(TopicModalComponent);
 
     modalRef.result

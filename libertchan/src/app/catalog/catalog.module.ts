@@ -18,6 +18,7 @@ import { TopicModalComponent } from '../modal/topic-modal/topic-modal.component'
     ChannelMosaicComponent,
     VignetteComponent
   ],
+  entryComponents: [TopicModalComponent],
   imports: [
     CommonModule,
     CatalogRoutingModule,
