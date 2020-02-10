@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
 import { CatalogModule } from './catalog/catalog.module';
+import { AuthApiToken } from './auth/service/auth.service';
+import { AuthApiService } from './services/auth-api.service';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +18,11 @@ import { CatalogModule } from './catalog/catalog.module';
     NavigationModule,
     HomeModule,
     CatalogModule,
+    AuthModule.forRoot(AuthApiService)
   ],
-  providers: [],
+  providers: [
+    // {provide: AuthApiToken, useClass: AuthApiService},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
