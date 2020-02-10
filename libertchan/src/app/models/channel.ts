@@ -7,6 +7,7 @@ export class Channel {
   isModerated: boolean;
   shortDescription: string;
   category: string;
+  channelLogo: string;
 
   constructor(
     name: string,
@@ -16,7 +17,8 @@ export class Channel {
     isPublic: boolean,
     isModerated: boolean,
     shortDescription: string,
-    category: string
+    category: string,
+    channelLogo: string
   ) {
     this.name = name;
     this.shortName = shortName;
@@ -26,5 +28,6 @@ export class Channel {
     this.isModerated = isModerated;
     this.shortDescription = shortDescription;
     this.category = category;
+    this.channelLogo = channelLogo;
   }
 }
