@@ -1,12 +1,13 @@
 # libertChan_Front
 
 
-[Lien vers le front](https://github.com/kim7834/libertChan_Front)
+<center>
 
-<br>
+Front | Back
+---| ---
+[:tophat:](https://github.com/kim7834/libertChan_Front) | [:bug:](https://github.com/borisBelloc/libertChan_back)
 
-[Lien vers le back](https://github.com/borisBelloc/libertChan_back)
-
+</center>
 
 1/ clone repo
 2/ `npm install`
