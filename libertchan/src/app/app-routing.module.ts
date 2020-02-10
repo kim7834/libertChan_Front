@@ -10,7 +10,7 @@ const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
 
 
-  { path: '', component: HomeComponent },
+  // { path: '', component: HomeComponent },
 
   // Route qui requier un login -> canActivate -> privatise une page
   {
