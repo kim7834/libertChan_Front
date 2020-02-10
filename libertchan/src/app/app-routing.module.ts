@@ -4,12 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.component';
 import { environment } from 'src/environments/environment';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
+
+
   { path: '', component: HomeComponent },
 
-  { path: 'chan/:shortName', component: CatalogDetailComponent }
+  // Route qui requier un login -> canActivate -> privatise une page
+  {
+    path: 'chan/:shortName',
+    component: CatalogDetailComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
