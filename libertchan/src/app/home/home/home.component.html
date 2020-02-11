@@ -10,6 +10,27 @@
     </div>
   </div>
 
+  <!-- <div class="container">
+  <div class="row flag">
+    <div class="col-12">
+    <ng-container *ngFor="let channel of channelList">
+      <ng-container *ngIf="channel.category === 'REGIONAL'">
+        <span class="col-3 px-0 ">
+          <a [routerLink]="['/chan', channel.shortName]">
+          <img
+            src="{{ channel.channelLogo }}"
+            alt="{{ channel.name }}"
+            title="{{ channel.name }}"
+          />
+          </a>
+        </span>
+      </ng-container>
+    </ng-container>
+  </div>
+  </div>
+  </div> -->
+
+
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
 
@@ -33,15 +54,17 @@
         </div>
       </div>
 
+
+
+
       <!-- #2 -->
       <div class="col-4">
         <div class="pb-2 lead"><u>Régional</u></div>
 
-        <div class="row flag fourCol justify-content-center">
-          <!-- <ul class="col-12"> -->
+        <div class="row flag justify-content-center ">
           <ng-container *ngFor="let channel of channelList">
             <ng-container *ngIf="channel.category === 'REGIONAL'">
-              <li class="col-3 py-1 d-flex align-items-center justify-content-center">
+              <span class="col-3 px-0 py-1 ">
                 <a [routerLink]="['/chan', channel.shortName]">
                 <img
                   src="{{ channel.channelLogo }}"
@@ -49,11 +72,9 @@
                   title="{{ channel.name }}"
                 />
                 </a>
-              </li>
-              <!-- <img src="../../../assets/images/Flags/Europe/1_fr.png" alt="" /> -->
+              </span>
             </ng-container>
           </ng-container>
-          <!-- </ul> -->
         </div>
       </div>
 

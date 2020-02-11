@@ -8,6 +8,7 @@
   border: 1px solid green;
 }
 
+
 // Links
 a {
   color: #000000;
@@ -45,16 +46,18 @@ li {
   -webkit-columns: 2;
   -moz-columns: 2;
 }
-.fourCol ul {
-  // columns: 4;
-  // -webkit-columns: 4;
-  // -moz-columns: 4;
-}
+
+
 
 .flag img {
   transition: box-shadow .3s;
   height:20px;
+  // CENTER THE FLAG
+  display: block;
+  margin: auto;
+
 }
+
 .flag img:hover {
   // TODO: shadow color light ? shadow ++ bottom ?
   // box-shadow: 0 0 11px 3px rgba(33,33,33,.2);
@@ -81,7 +84,6 @@ li {
   .container {
     width: 100%;
     max-width: none;
-    // padding 0 ?
     padding: 0;
   }
 }
