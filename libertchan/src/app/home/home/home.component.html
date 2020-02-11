@@ -10,6 +10,30 @@
     </div>
   </div>
 
+  <!-- ! TP AUTH -->
+
+<!-- <a class="btn btn-link" [routerLink]="['mosaic']">MOMO</a> -->
+
+<br><br><br>
+<hr>
+<h3><u>CONNECT : </u></h3>
+
+<ng-container *ngIf="authService.isAuthentificated$ | async else noAuth">
+  <div class="alert alert-success">Je suis auth</div>
+  <a class="btn btn-link" (click)="authService.logout().subscribe()">logout</a>
+</ng-container>
+<ng-template #noAuth>
+  <div>
+    <a class="btn btn btn-outline-dark" (click)="authService.login({token :'testToken'}).subscribe()">login</a>
+  </div>
+</ng-template>
+
+<br><br><br>
+<a class="btn btn btn-outline-danger" [routerLink]="['chan/ac']">Lien protected</a>
+<br><br><br>
+
+  <!-- ! // TP AUTH-->
+
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
 

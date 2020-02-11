@@ -1,15 +1,2 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
-
-<!-- <a class="btn btn-link" [routerLink]="['mosaic']">MOMO</a> -->
-
-<ng-container *ngIf="authService.isAuthentificated$ | async else noAuth">
-  <div class="alert alert-success">Je suis auth</div>
-  <a class="btn btn-link" (click)="authService.logout().subscribe()">logout</a>
-</ng-container>
-<ng-template #noAuth>
-  <div>
-    <a class="btn btn-link" (click)="authService.login({token :'testToken'}).subscribe()">login</a>
-  </div>
-</ng-template>
-

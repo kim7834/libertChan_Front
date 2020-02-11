@@ -4,9 +4,10 @@ import { AuthService } from './auth.service';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
+@Injectable()
 export class HttpInterceptorAuthService implements HttpInterceptor {
 
   constructor(private authService: AuthService) {

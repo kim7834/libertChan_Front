@@ -8,9 +8,7 @@ import { AuthService } from 'src/app/auth/service/auth.service';
   styleUrls: ['./catalog-detail.component.scss']
 })
 export class CatalogDetailComponent implements OnInit {
-  constructor(
-    public authService: AuthService,
-  ) {}
+  constructor() {}
 
   ngOnInit() {}
 }
