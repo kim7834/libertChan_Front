@@ -17,14 +17,16 @@
     <div class="row mt-5">
       <!-- #1 -->
       <div class="col-5">
-        <div class="pb-2"><u>Centres d'intérêts</u></div>
+        <div class="pb-2 lead"><u>Centres d'intérêts</u></div>
 
         <!-- TODO: Ajout lien <a> vers channel -->
         <div class="row twoCol mb-3">
           <ul class="col-12">
             <ng-container *ngFor="let channel of channelList">
               <ng-container *ngIf="channel.category === 'INTEREST'">
-                <li class="col-12">{{ channel.name }}</li>
+                <a [routerLink]="['/chan', channel.shortName]">
+                  <li class="col-12">{{ channel.name }}</li>
+                </a>
               </ng-container>
             </ng-container>
           </ul>
@@ -33,18 +35,24 @@
 
       <!-- #2 -->
       <div class="col-4">
-        <div class="pb-2"><u>Régional</u></div>
+        <div class="pb-2 lead"><u>Régional</u></div>
 
         <div class="row flag fourCol justify-content-center">
           <!-- <ul class="col-12"> -->
-            <ng-container *ngFor="let channel of channelList">
-              <ng-container *ngIf="channel.category === 'REGIONAL'">
-                <li class="col-3">
-                  <img src="{{ channel.channelLogo }}" alt="{{ channel.name }}" title="{{ channel.name }}" />
-                </li>
-                <!-- <img src="../../../assets/images/Flags/Europe/1_fr.png" alt="" /> -->
-              </ng-container>
+          <ng-container *ngFor="let channel of channelList">
+            <ng-container *ngIf="channel.category === 'REGIONAL'">
+              <li class="col-3 py-1 d-flex align-items-center justify-content-center">
+                <a [routerLink]="['/chan', channel.shortName]">
+                <img
+                  src="{{ channel.channelLogo }}"
+                  alt="{{ channel.name }}"
+                  title="{{ channel.name }}"
+                />
+                </a>
+              </li>
+              <!-- <img src="../../../assets/images/Flags/Europe/1_fr.png" alt="" /> -->
             </ng-container>
+          </ng-container>
           <!-- </ul> -->
         </div>
       </div>
@@ -92,7 +100,7 @@
 
       <!-- #4 -->
       <div class="col-4">
-        <span><u>Amélioration</u></span>
+        <div class="pb-2 lead"><u>Amélioration</u></div>
         <div class="row">
           <ul class="col-12">
             <li class="col-12">Suggestions concernant le site</li>

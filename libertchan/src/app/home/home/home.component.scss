@@ -8,6 +8,11 @@
   border: 1px solid green;
 }
 
+// Links
+a {
+  color: #000000;
+}
+
 .channelContainer {
   border: 1px #707070 solid;
   background-color: #ffffff;
@@ -53,11 +58,11 @@ li {
 .flag img:hover {
   // TODO: shadow color light ? shadow ++ bottom ?
   // box-shadow: 0 0 11px 3px rgba(33,33,33,.2);
+  // box-shadow: 0 0 11px 3px #ADD8E6;
   // TODO: Border couleur fond ?
   // border: 1px solid rgba(33, 33, 33, 0.664);
   height:22px;
-  // box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.20em);
+  // transform: translateY(-0.20em);
 }
 
 
