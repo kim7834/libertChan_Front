@@ -40,7 +40,7 @@
             <ng-container *ngFor="let channel of channelList">
               <ng-container *ngIf="channel.category === 'REGIONAL'">
                 <li class="col-3">
-                  <img src="{{ channel.channelLogo }}" alt="" />
+                  <img src="{{ channel.channelLogo }}" alt="{{ channel.name }}" title="{{ channel.name }}" />
                 </li>
                 <!-- <img src="../../../assets/images/Flags/Europe/1_fr.png" alt="" /> -->
               </ng-container>
