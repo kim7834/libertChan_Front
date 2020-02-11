@@ -28,6 +28,7 @@ Front | Back
 
 
 ##### branchs :
+- **AuthTp** (TP Lionnel) Protected Route with Auth 
 - **NavbarWithInput** : (test)The Navbar component call the Header component with an input to pass the wanted channel name
 - **observableRouting** : (test) Navbar change channel with observable
 - **genericRoutingB1** : (test) Generic routing (navbar) with infos retrieved from url
