@@ -18,6 +18,8 @@ Front | Back
 - Angular 8
     - Packages installed (node_modules) : 
         - [bootstrap](https://www.npmjs.com/package/bootstrap)
+        - [@ng-bootstrap/ng-bootstrap](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) (modal)
+
         
 A l'étude : Localstorage with : https://www.npmjs.com/package/@ngx-pwa/local-storage (used for Auth)
 
