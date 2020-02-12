@@ -2,7 +2,8 @@
   <!-- TODO: valide le no-gutters -->
   <div class="row mt-2 mb-4 no-gutters justify-content-center">
     <div class="col-12 mb-1">
-      <img id="LibertChanLogo"
+      <img
+        id="LibertChanLogo"
         class="img-fluid w-50"
         src="../../../assets/images/logo/logo.png"
         alt="LibertChan Logo"
@@ -10,12 +11,13 @@
     </div>
   </div>
 
-
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
 
-  <div class="channelContainer col-12 col-md-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8">
-
+  <!-- #A -->
+  <div
+    class="channelContainer mb-4 col-12 col-md-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8"
+  >
     <div class="row mt-5">
       <!-- #1 -->
       <div class="col-5">
@@ -58,9 +60,9 @@
       </div>
 
       <!-- #3 -->
-  <!--  style="border: 1px blue solid;" -->
+      <!--  style="border: 1px blue solid;" -->
       <div class="col-3 col-md-4 align-self-center">
-<!--  style="border: 1px yellow solid;" -->
+        <!--  style="border: 1px yellow solid;" -->
         <div id="unrated">
           <div class="row">
             <div class="col-12 mt-2 mb-3 pr-4 d-flex justify-content-end">
@@ -118,21 +120,30 @@
             <ng-container *ngFor="let channel of channelList">
               <ng-container *ngIf="channel.category === 'COMMUNITY'">
                 <!-- <span class="col-12 px-0 py-1 "> -->
-                  <a [routerLink]="['/chan', channel.shortName]">
-                    <li class="col-12">{{ channel.name }}</li>
-                  </a>
+                <a [routerLink]="['/chan', channel.shortName]">
+                  <li class="col-12">{{ channel.name }}</li>
+                </a>
                 <!-- </span> -->
               </ng-container>
             </ng-container>
           </ul>
-
         </div>
-
-
       </div>
-
-
-
     </div>
   </div>
+
+  <!-- #B -->
+  <div
+    class="channelContainer mb-4 col-12 col-md-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8"
+  >
+    <span class="d-flex justify-content-start lead">
+      Derniers messages
+    </span>
+
+
+<!-- TODO: <app-vignette -->
+
+
+
+  <!-- TODO <app-footer> -->
 </div>
