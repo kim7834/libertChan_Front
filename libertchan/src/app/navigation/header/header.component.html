@@ -3,16 +3,17 @@
     <div class="col-12 text-center">
       <hr />
       <div class="row justify-content-center">
-        <div class="col-2">
-          <a [routerLink]="['/']">
-          <img
-            src="../../../assets/images/logo/bird.png"
-            alt="LibertChan Logo"
-          />
-          </a>
+        <!-- TODO: supprime si ok; test w/ img dans la meme col que channel.name -->
+        <!-- <div class="col-2 col-md-1"> -->
           <!-- <img src="../../../assets/images/logo/logo.png" alt="LibertChan Logo" /> -->
-        </div>
+        <!-- </div> -->
         <div class="col-6">
+          <a [routerLink]="['/']">
+            <img
+              src="../../../assets/images/logo/bird.png"
+              alt="LibertChan Logo"
+            />
+            </a>
           <span>/{{ currentChannel?.shortName }}/</span><span> : </span
           ><span class="lead">{{ currentChannel?.name }}</span>
           <p class="blockquote">
