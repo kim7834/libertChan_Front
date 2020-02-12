@@ -1,13 +1,57 @@
-<span *ngFor="let channel of channelList">
-  <!-- TODO: routerlink sur a -->
-  <!-- <>/href="https://www.google.fr/search?q={{ channel.name }}" -->
+<!-- <span *ngFor="let channel of channelList">
   <a
     class="navbarLink"
-    href="./chan/{{ channel.shortName }}"
-    title="{{ channel.name }}">
+    [routerLink]="['/chan', channel.shortName]"
+    title="{{ channel.name }}"
+  >
     {{ channel.shortName }}
   </a>
 
-
-  / <span> </span
-></span>
+  <span>/</span>
+</span> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <ng-container *ngFor="let channel of channelList">
+        <ng-container *ngIf="channel.category === 'INTEREST'">
+        <span class="font-weight-light">|</span>
+          <a
+            [routerLink]="['/chan', channel.shortName]"
+            title="{{ channel.name }}"
+          >
+            {{ channel.shortName }}
+          </a>
+        </ng-container>
+      </ng-container>
+      <span class="font-weight-light">|</span>
+    </div>
+    <div class="col-4">
+      <ng-container *ngFor="let channel of channelList">
+        <ng-container *ngIf="channel.category === 'NSFW'">
+          <span class="font-weight-light">|</span>
+          <a
+            [routerLink]="['/chan', channel.shortName]"
+            title="{{ channel.name }}"
+          >
+            {{ channel.shortName }}
+          </a>
+        </ng-container>
+      </ng-container>
+      <span class="font-weight-light">|</span>
+    </div>
+    <div class="col-4">
+      <ng-container *ngFor="let channel of channelList">
+        <ng-container *ngIf="channel.category === 'REGIONAL'">
+          <span class="font-weight-light">|</span>
+          <a
+            [routerLink]="['/chan', channel.shortName]"
+            title="{{ channel.name }}"
+          >
+            {{ channel.shortName }}
+          </a>
+        </ng-container>
+      </ng-container>
+      <span class="font-weight-light">|</span>
+    </div>
+  </div>
+</div>
