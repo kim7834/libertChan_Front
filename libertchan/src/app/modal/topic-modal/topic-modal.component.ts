@@ -31,7 +31,7 @@ export class TopicModalComponent implements OnInit {
 
   private createForm() {
     this.myForm = this.formBuilde.group({
-      username: '',
+      title: '',
       content: ''
     });
   }

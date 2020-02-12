@@ -1,11 +1,11 @@
-export class Topic {
-  title: string;
-  text: string;
-  imageLink: string;
+import { Message } from './message';
 
-  constructor(title: string, text: string, imageLink: string) {
-    this.title = title;
-    this.text = text;
-    this.imageLink = imageLink;
+export class Topic {
+  subject: string;
+  messages: Message[];
+
+  constructor(subject: string, messages: Message[]) {
+    this.subject = subject;
+    this.messages = messages;
   }
 }

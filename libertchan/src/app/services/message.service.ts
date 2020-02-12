@@ -29,7 +29,4 @@ export class MessageService {
     );
   }
 
-  createTopic(topic: Topic) {
-    return this.httpClient.post(this.baseUrl);
-  }
 }
