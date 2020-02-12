@@ -37,7 +37,9 @@ export class ChannelMosaicComponent implements OnInit {
           .createTopic(
             new Topic(result.title, [new Message(result.content, '')])
           )
-          .subscribe();
+          .subscribe(topic => {
+            this.topics.push(topic);
+          });
       })
       .catch(error => {
         console.log(error);
