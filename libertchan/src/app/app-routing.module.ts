@@ -4,12 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.component';
 import { environment } from 'src/environments/environment';
+import { CatalogMosaicComponent } from './catalog/catalog-mosaic/catalog-mosaic.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeComponent },
-
-  { path: 'chan/:shortName', component: CatalogDetailComponent }
+  { path: 'chan/:shortName', component: CatalogDetailComponent },
+  { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent }
 ];
 
 @NgModule({
@@ -19,7 +20,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       enableTracing: !environment.production && environment.enableTracing,
       paramsInheritanceStrategy: 'always'
-})
+    })
   ],
   exports: [RouterModule]
 })

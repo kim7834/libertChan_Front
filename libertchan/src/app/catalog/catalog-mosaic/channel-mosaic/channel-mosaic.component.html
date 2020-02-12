@@ -1,8 +1,16 @@
+<div>
+  <button (click)="openTopicModal()">Open Modal</button>
+</div>
 <div class="container-fluid">
   <div class="row justify-content-center">
     <app-vignette
-      class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-md-5 mx-lg-5 my-2"
-      *ngFor="let i of ' '.repeat(nbVignettes).split('')"
-    ></app-vignette>
+      class=" col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-md-5 mx-lg-5 my-2"
+      *ngFor="let topic of topics"
+      [title]="topic.subject"
+      [imageLink]="topic.messages[0]?.image?.imageLocation"
+    >
+    </app-vignette>
   </div>
 </div>
+
+<!-- *ngFor="let i of ' '.repeat(nbVignettes).split('')" -->
