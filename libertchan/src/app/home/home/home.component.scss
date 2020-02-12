@@ -8,7 +8,14 @@
 //   border: 1px solid green;
 // }
 
-// Links
+#homies {
+  min-width: 678px;
+}
+
+#LibertChanLogo {
+  max-width: 300px;
+}
+
 a {
   color: #000000;
 }
@@ -17,7 +24,8 @@ a {
   border: 1px #707070 solid;
   background-color: #ffffff;
   height: 500px;
-  min-width: 678px;
+  // TODO: delete if no problem-> added to homies
+  // min-width: 678px;
 }
 
 #unrated {
