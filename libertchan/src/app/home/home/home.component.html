@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center ">
   <!-- TODO: valide le no-gutters -->
   <div class="row mt-2 mb-4 no-gutters">
     <div class="col-12 mb-1">
@@ -83,11 +83,20 @@
             </div>
           </div>
           <div class="row justify-content-center">
-            <ul>
+            <ng-container *ngFor="let channel of channelList">
+              <ng-container *ngIf="channel.category === 'NSFW'">
+                <span class="col-3 px-0 py-1">
+                  <a [routerLink]="['/chan', channel.shortName]">
+                    <li class="col-12">{{ channel.name }}</li>
+                  </a>
+                </span>
+              </ng-container>
+            </ng-container>
+            <!-- <ul>
               <li>
                 Aléatoire
               </li>
-            </ul>
+            </ul> -->
           </div>
           <div class="row">
             <div
@@ -100,7 +109,7 @@
       </div>
 
       <!-- #4 -->
-      <div class="col-4 mt-3">
+      <div class="col-5 mt-3">
         <div class="pb-2 lead"><u>Amélioration</u></div>
 
         <div class="row justify-content-center ">

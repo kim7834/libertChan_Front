@@ -8,7 +8,6 @@
 //   border: 1px solid green;
 // }
 
-
 // Links
 a {
   color: #000000;
@@ -18,13 +17,13 @@ a {
   border: 1px #707070 solid;
   background-color: #ffffff;
   height: 500px;
+  min-width: 678px;
 }
 
 #unrated {
   background-color: #fbdada;
   border: 1px solid #f9c1c1;
   border-radius: 2px;
-
 }
 
 #unrated svg,
@@ -48,15 +47,12 @@ li {
   -moz-columns: 2;
 }
 
-
-
 .flag img {
-  transition: box-shadow .3s;
-  height:20px;
+  transition: box-shadow 0.3s;
+  height: 20px;
   // CENTER THE FLAG
   display: block;
   margin: auto;
-
 }
 
 .flag img:hover {
@@ -67,9 +63,8 @@ li {
   // TODO: Border couleur fond ?
   // border: 1px solid rgba(33, 33, 33, 0.664);
   // height:22px;
-  transform: translateY(-0.20em);
+  transform: translateY(-0.2em);
 }
-
 
 // TODO: small screen block blanc devien bleu ?
 // TODO small screen assenceur en x ?
@@ -87,5 +82,14 @@ li {
     width: 100%;
     max-width: none;
     padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media screen and (min-width: 0) and (max-width: 991px) {
+  body {
+    overflow: auto;
   }
 }
