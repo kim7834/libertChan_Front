@@ -1,6 +1,6 @@
 <div class="container text-center">
   <!-- TODO: valide le no-gutters -->
-  <div class="row mt-2 no-gutters">
+  <div class="row mt-2 mb-4 no-gutters">
     <div class="col-12 mb-1">
       <img
         class="img-fluid w-50"
@@ -10,25 +10,6 @@
     </div>
   </div>
 
-  <!-- <div class="container">
-  <div class="row flag">
-    <div class="col-12">
-    <ng-container *ngFor="let channel of channelList">
-      <ng-container *ngIf="channel.category === 'REGIONAL'">
-        <span class="col-3 px-0 ">
-          <a [routerLink]="['/chan', channel.shortName]">
-          <img
-            src="{{ channel.channelLogo }}"
-            alt="{{ channel.name }}"
-            title="{{ channel.name }}"
-          />
-          </a>
-        </span>
-      </ng-container>
-    </ng-container>
-  </div>
-  </div>
-  </div> -->
 
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
@@ -57,10 +38,11 @@
       <div class="col-4">
         <div class="pb-2 lead"><u>Régional</u></div>
 
-        <div class="row flag justify-content-center ">
+        <!-- row flag :  justify-content-center -->
+        <div class="row flag ">
           <ng-container *ngFor="let channel of channelList">
             <ng-container *ngIf="channel.category === 'REGIONAL'">
-              <span class="col-3 px-0 py-1 ">
+              <span class="col-3 px-0 py-1">
                 <a [routerLink]="['/chan', channel.shortName]">
                   <img
                     src="{{ channel.channelLogo }}"
@@ -118,7 +100,7 @@
       </div>
 
       <!-- #4 -->
-      <div class="col-4">
+      <div class="col-4 mt-3">
         <div class="pb-2 lead"><u>Amélioration</u></div>
 
         <div class="row justify-content-center ">
