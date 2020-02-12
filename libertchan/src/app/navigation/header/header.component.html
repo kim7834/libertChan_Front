@@ -2,16 +2,32 @@
   <div class="row">
     <div class="col-12 text-center">
       <hr />
-      <img src="../../../assets/images/logo/bird.png" alt="LibertChan Logo" />
-      <!-- <img src="../../../assets/images/logo/logo.png" alt="LibertChan Logo" /> -->
-      <span>/{{ currentChannel?.shortName }}/</span><span> : </span
-      ><span>{{ currentChannel?.name }}</span>
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <a [routerLink]="['/']">
+          <img
+            src="../../../assets/images/logo/bird.png"
+            alt="LibertChan Logo"
+          />
+          </a>
+          <!-- <img src="../../../assets/images/logo/logo.png" alt="LibertChan Logo" /> -->
+        </div>
+        <div class="col-6">
+          <span>/{{ currentChannel?.shortName }}/</span><span> : </span
+          ><span class="lead">{{ currentChannel?.name }}</span>
+          <p class="blockquote">
+            <span> [ </span>
+            <span>{{ currentChannel?.shortDescription }}</span>
+            <span> ]</span>
+          </p>
+        </div>
+      </div>
       <hr />
     </div>
   </div>
   <div class="row">
-    <div class="col-12 text-center">
-      <span>canal </span>
+    <div class="col-12 text-center font-italic">
+      <span>Canal </span>
       <div
         *ngIf="
           currentChannel?.isModerated;
@@ -21,8 +37,6 @@
       ></div>
       <ng-template #moderatedBlock><span>modéré</span></ng-template>
       <ng-template #nonModeratedBlock><span>non modéré</span></ng-template>
-      <span> : </span>
-      <span>[ {{ currentChannel?.shortDescription }} ]</span>
     </div>
   </div>
 </div>
