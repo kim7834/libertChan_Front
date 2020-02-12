@@ -18,7 +18,7 @@ export class TopicModalComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilde: FormBuilder
+    private formBuilder: FormBuilder
   ) {
     this.createForm();
   }
@@ -30,9 +30,10 @@ export class TopicModalComponent implements OnInit {
   // }
 
   private createForm() {
-    this.myForm = this.formBuilde.group({
+    this.myForm = this.formBuilder.group({
       title: '',
-      content: ''
+      content: '',
+      imageLink: 'https://picsum.photos/200'
     });
   }
   private submitForm() {

@@ -4,6 +4,7 @@ import { TopicModalComponent } from 'src/app/modal/topic-modal/topic-modal.compo
 import { TopicService } from 'src/app/services/topic.service';
 import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
+import { Image } from 'src/app/models/image';
 
 @Component({
   selector: 'app-channel-mosaic',
@@ -35,10 +36,13 @@ export class ChannelMosaicComponent implements OnInit {
         console.log(result);
         this.topicService
           .createTopic(
-            new Topic(result.title, [new Message(result.content, '')])
+            new Topic(result.title, [
+              new Message(result.content, new Image(result.imageLink))
+            ])
           )
           .subscribe(topic => {
             this.topics.push(topic);
+            console.log(topic);
           });
       })
       .catch(error => {

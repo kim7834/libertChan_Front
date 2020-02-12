@@ -1,4 +1,5 @@
 import { Message } from './message';
+import { Image } from './image';
 
 export class Topic {
   subject: string;
