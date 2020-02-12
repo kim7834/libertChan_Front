@@ -1,0 +1,103 @@
+// [class*='container'] {
+//   border: 1px solid coral;
+// }
+// [class*='row '] {
+//   border: 1px solid red;
+// }
+// [class*='col-'] {
+//   border: 1px solid green;
+// }
+
+#homies {
+  min-width: 678px;
+}
+
+#LibertChanLogo {
+  max-width: 300px;
+}
+
+a {
+  color: #000000;
+}
+
+.channelContainer {
+  border: 1px #707070 solid;
+  background-color: #ffffff;
+  height: 500px;
+  // TODO: delete if no problem-> added to homies
+  // min-width: 678px;
+}
+
+#unrated {
+  background-color: #fbdada;
+  border: 1px solid #f9c1c1;
+  border-radius: 2px;
+}
+
+#unrated svg,
+#unrated sup {
+  color: #bf3939;
+}
+
+// TODO: Voir identifiants pour les <li> du block blanc
+// TODO: mettre ce formatage ul, li seulement pour les ul, li lié a "block blanc"
+ul,
+li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.twoCol ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.flag img {
+  transition: box-shadow 0.3s;
+  height: 20px;
+  // CENTER THE FLAG
+  display: block;
+  margin: auto;
+}
+
+.flag img:hover {
+  // TODO: shadow color light ? shadow ++ bottom ?
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  // box-shadow: 0 0 1px 2px rgba(33,33,33,.2);
+  // box-shadow: 0 0 1px 2px rgba(156, 211, 230, 0.76);
+  // TODO: Border couleur fond ?
+  // border: 1px solid rgba(33, 33, 33, 0.664);
+  // height:22px;
+  transform: translateY(-0.2em);
+}
+
+// TODO: small screen block blanc devien bleu ?
+// TODO small screen assenceur en x ?
+
+/* Make container full width on small screen */
+/* DOC : https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm */
+// @include media-breakpoint-down(md) {
+//   .container {
+//     width: 100%;
+//     max-width: none;
+//   }
+// }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media screen and (min-width: 0) and (max-width: 991px) {
+  body {
+    overflow: auto;
+  }
+}

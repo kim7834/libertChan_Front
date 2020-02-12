@@ -1,0 +1,138 @@
+<div id="homies" class="container text-center ">
+  <!-- TODO: valide le no-gutters -->
+  <div class="row mt-2 mb-4 no-gutters justify-content-center">
+    <div class="col-12 mb-1">
+      <img id="LibertChanLogo"
+        class="img-fluid w-50"
+        src="../../../assets/images/logo/logo.png"
+        alt="LibertChan Logo"
+      />
+    </div>
+  </div>
+
+
+  <!-- TODO: small screan container-fluid ? -->
+  <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
+
+  <div class="channelContainer col-12 col-md-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8">
+
+    <div class="row mt-5">
+      <!-- #1 -->
+      <div class="col-5">
+        <div class="pb-2 lead"><u>Centres d'intérêts</u></div>
+
+        <!-- TODO: Ajout lien <a> vers channel -->
+        <div class="row twoCol mb-3">
+          <ul class="col-12">
+            <ng-container *ngFor="let channel of channelList">
+              <ng-container *ngIf="channel.category === 'INTEREST'">
+                <a [routerLink]="['/chan', channel.shortName]">
+                  <li class="col-12">{{ channel.name }}</li>
+                </a>
+              </ng-container>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+
+      <!-- #2 -->
+      <div class="col-4 col-md-3">
+        <div class="pb-2 lead"><u>Régional</u></div>
+
+        <!-- row flag :  justify-content-center -->
+        <div class="row flag ">
+          <ng-container *ngFor="let channel of channelList">
+            <ng-container *ngIf="channel.category === 'REGIONAL'">
+              <span class="col-3 px-0 py-1">
+                <a [routerLink]="['/chan', channel.shortName]">
+                  <img
+                    src="{{ channel.channelLogo }}"
+                    alt="{{ channel.name }}"
+                    title="{{ channel.name }}"
+                  />
+                </a>
+              </span>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- #3 -->
+  <!--  style="border: 1px blue solid;" -->
+      <div class="col-3 col-md-4 align-self-center">
+<!--  style="border: 1px yellow solid;" -->
+        <div id="unrated">
+          <div class="row">
+            <div class="col-12 mt-2 mb-3 pr-4 d-flex justify-content-end">
+              <svg
+                height="10px"
+                witdh="10px"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="exclamation-triangle"
+                class="svg-inline--fa fa-exclamation-triangle fa-w-18"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <ng-container *ngFor="let channel of channelList">
+              <ng-container *ngIf="channel.category === 'NSFW'">
+                <span class="col-3 px-0 py-1">
+                  <a [routerLink]="['/chan', channel.shortName]">
+                    <li class="col-12">{{ channel.name }}</li>
+                  </a>
+                </span>
+              </ng-container>
+            </ng-container>
+            <!-- <ul>
+              <li>
+                Aléatoire
+              </li>
+            </ul> -->
+          </div>
+          <div class="row">
+            <div
+              class="col-12 mb-2 mt-5 d-flex align-items-end justify-content-center"
+            >
+              <sup>Contenus non modéré</sup>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #4 -->
+      <div class="col-5 mt-3">
+        <div class="pb-2 lead"><u>Amélioration</u></div>
+
+        <div class="row justify-content-center ">
+          <ul class="col-12">
+            <ng-container *ngFor="let channel of channelList">
+              <ng-container *ngIf="channel.category === 'COMMUNITY'">
+                <!-- <span class="col-12 px-0 py-1 "> -->
+                  <a [routerLink]="['/chan', channel.shortName]">
+                    <li class="col-12">{{ channel.name }}</li>
+                  </a>
+                <!-- </span> -->
+              </ng-container>
+            </ng-container>
+          </ul>
+
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
