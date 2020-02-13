@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [NavbarComponent, HeaderComponent],
+  declarations: [NavbarComponent, HeaderComponent, FooterComponent],
   exports: [NavbarComponent, HeaderComponent],
   imports: [CommonModule, NavigationRoutingModule, HttpClientModule]
 })
