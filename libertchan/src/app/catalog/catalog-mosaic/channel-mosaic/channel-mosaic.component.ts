@@ -5,6 +5,7 @@ import { TopicService } from 'src/app/services/topic.service';
 import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { Image } from 'src/app/models/image';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-channel-mosaic',
@@ -14,16 +15,21 @@ import { Image } from 'src/app/models/image';
 export class ChannelMosaicComponent implements OnInit {
   nbVignettes = 48;
   topics: Topic[];
+  currentChannel: string;
 
   constructor(
     private modalService: NgbModal,
-    private topicService: TopicService
+    private topicService: TopicService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.topicService.getTopics().subscribe(topics => {
       this.topics = topics;
-      console.log(topics);
+      //console.log(topics);
+    });
+    this.route.params.subscribe(p => {
+      this.currentChannel = p.shortName;
     });
   }
 
@@ -38,7 +44,8 @@ export class ChannelMosaicComponent implements OnInit {
           .createTopic(
             new Topic(result.title, [
               new Message(result.content, new Image(result.imageLink))
-            ])
+            ]),
+            this.currentChannel
           )
           .subscribe(topic => {
             this.topics.push(topic);

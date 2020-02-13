@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {
   HttpClient,
   HttpHeaders,
-  HttpErrorResponse
+  HttpErrorResponse,
+  HttpParams
 } from '@angular/common/http';
 import { Topic } from '../models/topic';
 import { catchError, retry } from 'rxjs/operators';
@@ -23,11 +24,13 @@ export class TopicService {
   }*/
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    params: {}
   };
 
-  createTopic(topic: Topic) {
+  createTopic(topic: Topic, channel: string) {
     console.log(topic);
+    this.httpOptions.params = new HttpParams().set('channel', channel);
     return this.httpClient.post<Topic>(this.baseUrl, topic, this.httpOptions);
   }
 
