@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class VignetteComponent implements OnInit {
   @Input() title: string;
   @Input() imageLink: string;
+  @Input() topicId: number;
+  @Input() channelName: string;
 
   constructor() {}
 

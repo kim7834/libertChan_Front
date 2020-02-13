@@ -1,12 +1,14 @@
 <div class="vignette pt-1">
-  <img
-    class="card-img-top mx-auto d-block rounded"
-    src="{{ imageLink }}"
-    alt="Card image cap"
-  />
-  <div class="card-body row">
-    <h5 class="card-title text-center col-9 mx-auto">
-      {{ this.title }}
-    </h5>
-  </div>
+  <a [routerLink]="['/chan', this.channelName, this.topicId]">
+    <img
+      class="card-img-top mx-auto d-block rounded"
+      src="{{ imageLink }}"
+      alt="Card image cap"
+    />
+    <div class="card-body row">
+      <h5 class="card-title text-center col-9 mx-auto">
+        {{ this.title }}
+      </h5>
+    </div>
+  </a>
 </div>

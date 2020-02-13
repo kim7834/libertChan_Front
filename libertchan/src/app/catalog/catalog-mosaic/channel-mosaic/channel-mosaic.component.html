@@ -8,6 +8,8 @@
       *ngFor="let topic of topics"
       [title]="topic.subject"
       [imageLink]="topic.messages[0]?.image?.imageLocation"
+      [topicId]="topic.id"
+      [channelName]="this.currentChannel"
     >
     </app-vignette>
   </div>
