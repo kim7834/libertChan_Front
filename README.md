@@ -14,7 +14,7 @@ Front | Back
 
 
 ### Technos :
-
+[Angular9?](https://www.npmjs.com/package/@angular/cli)
 - Angular 8
     - Packages installed (node_modules) : 
         - [bootstrap](https://www.npmjs.com/package/bootstrap)
