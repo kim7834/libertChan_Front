@@ -24,13 +24,15 @@ export class ChannelMosaicComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.topicService.getTopics().subscribe(topics => {
-      this.topics = topics;
-      //console.log(topics);
-    });
     this.route.params.subscribe(p => {
       this.currentChannel = p.shortName;
     });
+    this.topicService
+      .getTopicsByChannel(this.currentChannel)
+      .subscribe(topics => {
+        this.topics = topics;
+        //console.log(topics);
+      });
   }
 
   openTopicModal() {

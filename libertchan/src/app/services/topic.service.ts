@@ -37,4 +37,13 @@ export class TopicService {
   getTopics(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.baseUrl, this.httpOptions);
   }
+
+  getTopicsByChannel(channel: string): Observable<Topic[]> {
+    console.log(this.baseUrl + '/channel/' + channel);
+
+    return this.httpClient.get<Topic[]>(
+      this.baseUrl + '/channel/' + channel,
+      this.httpOptions
+    );
+  }
 }
