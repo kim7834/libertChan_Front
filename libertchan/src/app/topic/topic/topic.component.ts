@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Topic } from 'src/app/models/topic';
 import { TopicService } from 'src/app/services/topic.service';
+import { Message } from 'src/app/models/message';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-topic',
@@ -10,10 +12,12 @@ import { TopicService } from 'src/app/services/topic.service';
 })
 export class TopicComponent implements OnInit {
   topic: Topic;
+  messages: Message[];
 
   constructor(
     private route: ActivatedRoute,
-    private topicService: TopicService
+    private topicService: TopicService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
@@ -21,6 +25,11 @@ export class TopicComponent implements OnInit {
       this.topicService.getTopicById(p.id).subscribe(topic => {
         console.log(topic);
         this.topic = topic;
+        this.messageService
+          .getMessagesByTopicId(p.id)
+          .subscribe((messages: Message[]) => {
+            this.messages = messages;
+          });
       });
     });
   }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Topic } from '../models/topic';
+import { Message } from '../models/message';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  private baseUrl = 'http://localhost:8080/api/topics';
+  private baseUrl = 'http://localhost:8080/api/messages';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -29,4 +30,7 @@ export class MessageService {
     );
   }
 
+  getMessagesByTopicId(id: number) {
+    return this.httpClient.get(this.baseUrl + '/topic/' + id, this.httpOptions);
+  }
 }
