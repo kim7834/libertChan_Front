@@ -45,7 +45,7 @@ export class TopicComponent implements OnInit {
     modalRef.componentInstance.id = 10;
 
     modalRef.result.then(result => {
-      console.log(result);
+      //console.log(result);
       this.message = new Message(
         result.content,
         new Image(result.imageLocation)
