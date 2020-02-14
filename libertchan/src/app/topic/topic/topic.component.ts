@@ -45,13 +45,10 @@ export class TopicComponent implements OnInit {
     modalRef.componentInstance.id = 10;
 
     modalRef.result.then(result => {
-      //console.log(result);
-      this.message = new Message(
-        result.content,
-        new Image(result.imageLocation)
-      );
+      console.log(result);
+      this.message = new Message(result.content, new Image(result.imageLink));
       //this.message.discussionThread = this.topic;
-      //console.log(this.message);
+      console.log(this.message);
 
       this.messageService
         .createMessage(this.message, this.topic.id)
