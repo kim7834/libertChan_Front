@@ -26,7 +26,7 @@ export class MessageModalComponent implements OnInit {
     });
   }
 
-  private submitForm() {
+  public submitForm() {
     this.activeModal.close(this.myForm.value);
   }
 }

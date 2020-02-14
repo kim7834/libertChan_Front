@@ -36,7 +36,7 @@ export class TopicModalComponent implements OnInit {
       imageLink: 'https://picsum.photos/200'
     });
   }
-  private submitForm() {
+  public submitForm() {
     this.activeModal.close(this.myForm.value);
   }
 }

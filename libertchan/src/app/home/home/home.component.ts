@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     this.channelService.getChannels().subscribe(response => {
       this.channelList = response as Array<Channel>;
 
-      console.log('channelList +> ' , this.channelList);
+      // console.log('channelList +> ' , this.channelList);
 
     });
   }
