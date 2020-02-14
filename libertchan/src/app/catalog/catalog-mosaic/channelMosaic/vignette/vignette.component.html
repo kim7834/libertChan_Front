@@ -1,14 +1,14 @@
-<div class="vignette pt-1">
+<div class="vignette">
   <a [routerLink]="['/chan', this.channelName, this.topicId]">
+    <!-- class = img-thumbnail ? -->
     <img
-      class="card-img-top mx-auto d-block rounded"
+      class="img-fluid rounded card-img-top mx-auto d-block px-3 my-3"
       src="{{ imageLink }}"
-      alt="Card image cap"
+      alt="Miniature"
     />
     <div class="card-body row">
-      <h5 class="card-title text-center col-9 mx-auto">
+      <h5 class="card-title text-center mx-auto">
         {{ (this.title.length>30)? (this.title | slice:0:30)+'...':(this.title) }}
-
       </h5>
     </div>
   </a>
