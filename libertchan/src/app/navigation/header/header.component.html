@@ -16,28 +16,28 @@
             </a>
           <span>/{{ currentChannel?.shortName }}/</span><span> : </span
           ><span class="lead">{{ currentChannel?.name }}</span>
-          <p class="blockquote">
+          <p class="blockquote ">
             <span> [ </span>
             <span>{{ currentChannel?.shortDescription }}</span>
             <span> ]</span>
           </p>
         </div>
       </div>
+      <div class="row">
+        <sup class="col-12 text-center font-italic">
+          <span>Canal </span>
+          <div
+            *ngIf="
+              currentChannel?.isModerated;
+              then moderatedBlock;
+              else nonModeratedBlock
+            "
+          ></div>
+          <ng-template #moderatedBlock><span>modéré</span></ng-template>
+          <ng-template #nonModeratedBlock><span>non modéré</span></ng-template>
+        </sup>
+      </div>
       <hr />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 text-center font-italic">
-      <span>Canal </span>
-      <div
-        *ngIf="
-          currentChannel?.isModerated;
-          then moderatedBlock;
-          else nonModeratedBlock
-        "
-      ></div>
-      <ng-template #moderatedBlock><span>modéré</span></ng-template>
-      <ng-template #nonModeratedBlock><span>non modéré</span></ng-template>
     </div>
   </div>
 </div>
