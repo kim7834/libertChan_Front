@@ -55,7 +55,7 @@ export class ChannelMosaicComponent implements OnInit {
           });
       })
       .catch(error => {
-        console.log(error);
+        //console.log(error);
       });
   }
 }

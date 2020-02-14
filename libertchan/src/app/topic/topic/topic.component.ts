@@ -44,18 +44,22 @@ export class TopicComponent implements OnInit {
     const modalRef = this.modalService.open(MessageModalComponent);
     modalRef.componentInstance.id = 10;
 
-    modalRef.result.then(result => {
-      console.log(result);
-      this.message = new Message(result.content, new Image(result.imageLink));
-      //this.message.discussionThread = this.topic;
-      console.log(this.message);
+    modalRef.result
+      .then(result => {
+        console.log(result);
+        this.message = new Message(result.content, new Image(result.imageLink));
+        //this.message.discussionThread = this.topic;
+        console.log(this.message);
 
-      this.messageService
-        .createMessage(this.message, this.topic.id)
-        .subscribe((addedMessage: Message) => {
-          this.messages.push(addedMessage);
-        });
-    });
+        this.messageService
+          .createMessage(this.message, this.topic.id)
+          .subscribe((addedMessage: Message) => {
+            this.messages.push(addedMessage);
+          });
+      })
+      .catch(error => {
+        //console.log(error);
+      });
   }
 
   currentChannel(arg0: Topic, currentChannel: any) {
