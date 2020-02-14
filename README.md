@@ -15,10 +15,11 @@ Front | Back
 
 ### Technos :
 [Angular9?](https://www.npmjs.com/package/@angular/cli)
-- Angular 8
+- [Angular 9](https://www.npmjs.com/package/@angular/cli)
     - Packages installed (node_modules) : 
         - [bootstrap](https://www.npmjs.com/package/bootstrap)
         - [@ng-bootstrap/ng-bootstrap](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) (modal)
+        - `ng add @angular/localize` (asked by Angular 9)
 
         
 Etude #1 : Localstorage with : https://www.npmjs.com/package/@ngx-pwa/local-storage (used for Auth)
