@@ -35,6 +35,8 @@ export class MessageService {
   }
 
   createMessage(message: Message, id: number) {
+    // TODO: corps message not null!
+    // console.log("mm ", message.textContent.length);
     return this.httpClient.post(
       this.baseUrl + '/topic/' + id,
       message,

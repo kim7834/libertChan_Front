@@ -31,6 +31,7 @@ export class TopicService {
   createTopic(topic: Topic, channel: string) {
     console.log(topic);
     //this.httpOptions.params = new HttpParams().set('channel', channel);
+    // TODO: Title not null !
     return this.httpClient.post<Topic>(this.baseUrl, topic, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params: new HttpParams().set('channel', channel)
