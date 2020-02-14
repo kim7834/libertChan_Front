@@ -13,7 +13,9 @@ export class MessageModalComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+    this.createForm();
+  }
 
   ngOnInit() {}
 

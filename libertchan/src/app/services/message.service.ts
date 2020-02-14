@@ -33,4 +33,12 @@ export class MessageService {
   getMessagesByTopicId(id: number) {
     return this.httpClient.get(this.baseUrl + '/topic/' + id, this.httpOptions);
   }
+
+  createMessage(message: Message, id: number) {
+    return this.httpClient.post(
+      this.baseUrl + '/topic/' + id,
+      message,
+      this.httpOptions
+    );
+  }
 }

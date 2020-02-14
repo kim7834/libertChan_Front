@@ -41,7 +41,7 @@ export class ChannelMosaicComponent implements OnInit {
 
     modalRef.result
       .then(result => {
-        console.log(result);
+        //console.log(result);
         this.topicService
           .createTopic(
             new Topic(result.title, [
@@ -51,7 +51,7 @@ export class ChannelMosaicComponent implements OnInit {
           )
           .subscribe(topic => {
             this.topics.push(topic);
-            console.log(topic);
+            //console.log(topic);
           });
       })
       .catch(error => {
