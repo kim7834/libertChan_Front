@@ -1,4 +1,5 @@
 import { Image } from './image';
+import { Topic } from './topic';
 
 export class Message {
   textContent: string;

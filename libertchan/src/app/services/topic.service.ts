@@ -30,8 +30,11 @@ export class TopicService {
 
   createTopic(topic: Topic, channel: string) {
     console.log(topic);
-    this.httpOptions.params = new HttpParams().set('channel', channel);
-    return this.httpClient.post<Topic>(this.baseUrl, topic, this.httpOptions);
+    //this.httpOptions.params = new HttpParams().set('channel', channel);
+    return this.httpClient.post<Topic>(this.baseUrl, topic, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      params: new HttpParams().set('channel', channel)
+    });
   }
 
   getTopics(): Observable<Topic[]> {
@@ -43,6 +46,13 @@ export class TopicService {
 
     return this.httpClient.get<Topic[]>(
       this.baseUrl + '/channel/' + channel,
+      this.httpOptions
+    );
+  }
+
+  getTopicById(id: number) {
+    return this.httpClient.get<Topic>(
+      this.baseUrl + '/' + id,
       this.httpOptions
     );
   }

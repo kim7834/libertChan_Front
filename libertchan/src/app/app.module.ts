@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
 import { CatalogModule } from './catalog/catalog.module';
+import { TopicModule } from './topic/topic.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { CatalogModule } from './catalog/catalog.module';
     NavigationModule,
     HomeModule,
     CatalogModule,
+    TopicModule
   ],
   providers: [],
   bootstrap: [AppComponent]

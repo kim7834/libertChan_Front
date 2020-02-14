@@ -5,12 +5,14 @@ import { HomeComponent } from './home/home/home.component';
 import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.component';
 import { environment } from 'src/environments/environment';
 import { CatalogMosaicComponent } from './catalog/catalog-mosaic/catalog-mosaic.component';
+import { TopicComponent } from './topic/topic/topic.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'chan/:shortName', component: CatalogDetailComponent },
-  { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent }
+  { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent },
+  { path: 'chan/:shortName/:id', component: TopicComponent }
 ];
 
 @NgModule({

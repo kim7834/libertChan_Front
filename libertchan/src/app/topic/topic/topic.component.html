@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-5">{{ this.topic?.subject }}</div>
+    <!-- <div class="col-12 mb-5">
+      <img src="{{ (this.topic?.messages)[0]?.image?.imageLocation }}" alt="" />
+    </div>
+    <div class="col-12">{{ (this.topic?.messages)[0]?.textContent }}</div>
+  </div> -->
+  </div>
+  <div class="m-2">
+    <button (click)="openTopicModal()">+ nouveau message</button>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div *ngFor="let message of messages">
+          <app-message
+            [textContent]="message.textContent"
+            [imageLocation]="message.image?.imageLocation"
+          ></app-message>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
