@@ -2,30 +2,30 @@
   <span>[ </span>
   <span (click)="openTopicModal()">Créer un fil de discussion</span>
   <span> ]</span>
-  <!-- TODO: rename  -->[channelName] is in reality ChannelShortName -->
 </div>
 
-
+<!-- TODO: rename [ channelName] is in reality ChannelShortName -->
 <app-panel-demo
-  [channelName]="this.currentChannel">
+[channelName]="this.currentChannel">
 </app-panel-demo>
 
 
 <div class="container-fluid">
   <div class="row no-gutters">
     <app-vignette
-      class="boxi col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-2 d-flex justify-content-center"
-      *ngFor="let topic of topics"
-      [title]="topic.subject"
-      [imageLink]="topic.messages[0]?.image?.imageLocation"
-      [topicId]="topic.id"
-      [channelName]="this.currentChannel"
+    class="boxi col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-2 d-flex justify-content-center"
+    *ngFor="let topic of topics"
+    [title]="topic.subject"
+    [imageLink]="topic.messages[0]?.image?.imageLocation"
+    [topicId]="topic.id"
+    [channelName]="this.currentChannel"
     >
-    </app-vignette>
-  </div>
+  </app-vignette>
+</div>
 </div>
 
 <!-- *ngFor="let i of ' '.repeat(nbVignettes).split('')" -->
+
 
 
 
