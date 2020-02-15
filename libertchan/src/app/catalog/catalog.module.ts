@@ -16,7 +16,7 @@ import { TopicModalComponent } from '../modal/topic-modal/topic-modal.component'
     CatalogDetailComponent,
     CatalogMosaicComponent,
     ChannelMosaicComponent,
-    VignetteComponent
+    VignetteComponent,
   ],
   entryComponents: [TopicModalComponent],
   imports: [
@@ -24,7 +24,7 @@ import { TopicModalComponent } from '../modal/topic-modal/topic-modal.component'
     CatalogRoutingModule,
     NavigationModule,
     ModalModule,
-    NgbModule
+    NgbModule,
   ]
 })
 export class CatalogModule {}
