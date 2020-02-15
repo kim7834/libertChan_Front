@@ -25,7 +25,7 @@ Front | Back
 Etude #1 : Localstorage with : https://www.npmjs.com/package/@ngx-pwa/local-storage (used for Auth)
 
 
-Etude #2 :
+Etude #2 -> **aborted** : (CDK can for exemple make draggable stuff):
 - [@angular/cdk](https://www.npmjs.com/package/@angular/cdk)
 - TypeScript (latest) `npm install typescript@latest --save` ; typescript@3.7 requiered by CDK
 
