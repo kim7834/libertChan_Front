@@ -36,8 +36,14 @@ export class PanelDemoComponent implements OnInit {
     });
   }
 
+    // convenience getter for easy access to form fields
+    get f() {
+      return this.createTopicForm.controls;
+    }
 
   onSubmit(createTopicForm) {
+    console.log('subject ', this.f.subject.value);
+
     console.log('New mod -> ', createTopicForm.value);
     console.log('a ', this.channelName);
 
