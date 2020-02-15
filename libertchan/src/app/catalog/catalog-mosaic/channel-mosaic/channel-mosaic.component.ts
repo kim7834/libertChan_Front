@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TopicModalComponent } from 'src/app/modal/topic-modal/topic-modal.component';
 import { TopicService } from 'src/app/services/topic.service';
@@ -6,6 +6,7 @@ import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { Image } from 'src/app/models/image';
 import { ActivatedRoute } from '@angular/router';
+import { PanelDemoComponent } from 'src/app/modal/ng-modal-t/panel-demo.component';
 
 @Component({
   selector: 'app-channel-mosaic',
@@ -14,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChannelMosaicComponent implements OnInit {
   nbVignettes = 48;
-  topics: Topic[];
+  @ViewChild(PanelDemoComponent)topics: Topic[];
   currentChannel: string;
 
   constructor(
