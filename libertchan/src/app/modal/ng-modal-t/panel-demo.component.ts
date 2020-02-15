@@ -55,11 +55,6 @@ export class PanelDemoComponent implements OnInit {
     console.log('New mod -> ', createTopicForm.value);
     console.log('a ', this.channelName);
 
-    // this.topicService.createTopic(createTopicForm, )
-
-    // * reset form needed ?
-    // this.createTopicForm.reset();
-
     this.topicService
     .createTopic(
       new Topic(this.f.subject.value, [
@@ -69,24 +64,8 @@ export class PanelDemoComponent implements OnInit {
     ).subscribe(topic => {
         this.topicsList.push(topic);
     });
-    // console.log('topics ', this.topics);
-    // TODO : renvoyer la list de Topic au parent
-    // .subscribe(topic => {
-    //   this.topics.push(topic);
-    //   //console.log(topic);
-    // });
-
+    this.createTopicForm.reset();
   }
 
-    // TODO: Send form to DB using service ?
-    // this.myForm.value;
-    //  this.submitted = true;
-    // this.topicService.createTopic()
-    // }
-
-    // * Used by ng-modal
-  // public submitForm() {
-  //   this.activeModal.close(this.myForm.value);
-  // }
 }
 

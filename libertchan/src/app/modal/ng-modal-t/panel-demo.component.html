@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success" [disabled]="!createTopicForm.valid">
+          <button type="submit" (click)="modal1.hide()" class="btn btn-success" [disabled]="!createTopicForm.valid">
             Submit
           </button>
         </div>
