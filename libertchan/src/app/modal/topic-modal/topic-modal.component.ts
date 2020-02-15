@@ -38,5 +38,6 @@ export class TopicModalComponent implements OnInit {
   }
   public submitForm() {
     this.activeModal.close(this.myForm.value);
+
   }
 }

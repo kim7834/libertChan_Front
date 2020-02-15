@@ -2,7 +2,15 @@
   <span>[ </span>
   <span (click)="openTopicModal()">Créer un fil de discussion</span>
   <span> ]</span>
+  <!-- TODO: rename  -->[channelName] is in reality ChannelShortName -->
 </div>
+
+
+<app-panel-demo
+  [channelName]="this.currentChannel">
+</app-panel-demo>
+
+
 <div class="container-fluid">
   <div class="row no-gutters">
     <app-vignette
@@ -20,5 +28,4 @@
 <!-- *ngFor="let i of ' '.repeat(nbVignettes).split('')" -->
 
 
-<app-panel-demo></app-panel-demo>
 
