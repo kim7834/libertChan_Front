@@ -15,10 +15,13 @@ import { Image } from 'src/app/models/image';
 export class PanelDemoComponent implements OnInit {
   @Input() id: number;
   createTopicForm: FormGroup;
-  // TODO: do i need a bool for somewhere ?
-  // submitted = false;
   @Input() channelName: string;
   @Input() topicsList: Topic[];
+
+  dateNow: Date = new Date();
+
+  // TODO: do i need a bool for somewhere ?
+  // submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -57,12 +60,14 @@ export class PanelDemoComponent implements OnInit {
 
     this.topicService
     .createTopic(
-      new Topic(this.f.subject.value, [
-        new Message(this.f.textContent.value, new Image(this.f.imageLocation.value))
-      ]),
+      new Topic(
+        this.dateNow,
+        this.f.subject.value, [
+        new Message(this.f.textContent.value, new Image(this.f.imageLocation.value)),
+        ]),
       this.channelName
     ).subscribe(topic => {
-        this.topicsList.push(topic);
+        this.topicsList.splice(0, 0, topic);
     });
     this.createTopicForm.reset();
   }

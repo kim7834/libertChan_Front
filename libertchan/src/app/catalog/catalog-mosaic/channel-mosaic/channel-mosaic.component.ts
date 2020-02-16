@@ -21,6 +21,8 @@ export class ChannelMosaicComponent implements OnInit {
   // @ViewChild(PanelDemoComponent)topics: Topic[];
   topics: Topic[];
   currentChannel: string;
+  dateNow: Date = new Date();
+
 
   constructor(
     private modalService: NgbModal,
@@ -49,7 +51,7 @@ export class ChannelMosaicComponent implements OnInit {
         //console.log(result);
         this.topicService
           .createTopic(
-            new Topic(result.title, [
+            new Topic(this.dateNow, result.title, [
               new Message(result.content, new Image(result.imageLink))
             ]),
             this.currentChannel
