@@ -1,19 +1,14 @@
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse,
-  HttpParams
-} from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Topic } from '../models/topic';
-import { catchError, retry } from 'rxjs/operators';
-import { throwError, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopicService {
   private baseUrl = 'http://localhost:8080/api/discussionthreads';
+  // private baseUrl = 'http://192.168.1.22:8080/api/discussionthreads';
   constructor(private httpClient: HttpClient) {}
 
   /*  get httpOptions(): { headers: HttpHeaders } {

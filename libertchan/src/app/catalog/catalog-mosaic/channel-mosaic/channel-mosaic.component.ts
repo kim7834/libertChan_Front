@@ -16,7 +16,8 @@ import { PanelDemoComponent } from 'src/app/modal/ng-modal-t/panel-demo.componen
 export class ChannelMosaicComponent implements OnInit {
   nbVignettes = 48;
   // TODO: trier catalogue par les plus récents
-  // TODO: FIXME: Error when using viewChild:; try other methods : https://www.tektutorialshub.com/angular/angular-pass-data-to-parent-component/
+  // TODO: FIXME: Error when using viewChild:; try other methods :
+  // https://www.tektutorialshub.com/angular/angular-pass-data-to-parent-component/
   // FIXME: possible solution : https://blog.angular-university.io/angular-debugging/
   // @ViewChild(PanelDemoComponent)topics: Topic[];
   topics: Topic[];

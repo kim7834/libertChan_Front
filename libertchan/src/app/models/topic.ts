@@ -1,5 +1,4 @@
 import { Message } from './message';
-import { Image } from './image';
 
 export class Topic {
   id: number;
@@ -7,9 +6,7 @@ export class Topic {
   subject: string;
   messages: Message[];
 
-  constructor(date: Date, subject: string, messages: Message[]) {
-  // constructor(subject: string, messages: Message[]) {
-    this.date = date;
+  constructor(subject: string, messages: Message[]) {
     this.subject = subject;
     this.messages = messages;
   }

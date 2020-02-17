@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+// import * as nameOfJson from '../../../../urlconfig.json';
+
+// var jsonUrl = require('../../../../urlconfig.json');
+
+// import data from '../../../../urlconfig.json';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ChannelService {
   private baseUrl = 'http://localhost:8080/api/channels';
+  // private baseUrl = 'http://192.168.1.22:8080/api/channels';
 
   constructor(private httpClient: HttpClient) {}
 

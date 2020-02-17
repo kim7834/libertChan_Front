@@ -18,8 +18,6 @@ export class PanelDemoComponent implements OnInit {
   @Input() channelName: string;
   @Input() topicsList: Topic[];
 
-  dateNow: Date = new Date();
-
   // TODO: do i need a bool for somewhere ?
   // submitted = false;
 
@@ -61,7 +59,6 @@ export class PanelDemoComponent implements OnInit {
     this.topicService
     .createTopic(
       new Topic(
-        this.dateNow,
         this.f.subject.value, [
         new Message(this.f.textContent.value, new Image(this.f.imageLocation.value)),
         ]),
