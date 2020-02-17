@@ -8,7 +8,7 @@ import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-panel-demo',
-  templateUrl: './panel-demo.component.html',
+  templateUrl: './panelModal.component.html',
   styleUrls: ['./ng-modal.scss']
 })
 export class PanelDemoComponent implements OnInit {

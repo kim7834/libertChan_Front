@@ -8,7 +8,7 @@ import { MessageModalComponent } from './message-modal/message-modal.component';
 
 // TODO: Requis pour ng-modal -> decalration + export
 import { ModalModule as ngModalT } from 'ng-modal-lib';
-import { PanelDemoComponent } from './ng-modal/panel-demo.component';
+import { PanelDemoComponent } from './ng-modal/panelModal.component';
 
 
 @NgModule({

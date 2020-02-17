@@ -6,7 +6,7 @@ import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { Image } from 'src/app/models/image';
 import { ActivatedRoute } from '@angular/router';
-import { PanelDemoComponent } from 'src/app/modal/ng-modal/panel-demo.component';
+import { PanelDemoComponent } from 'src/app/modal/ng-modal/panelModal.component';
 
 @Component({
   selector: 'app-channel-mosaic',
