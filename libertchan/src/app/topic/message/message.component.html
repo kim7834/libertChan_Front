@@ -2,5 +2,7 @@
   <div *ngIf="this.imageLocation" class="col-3">
     <img src="{{ this.imageLocation }}" alt="" />
   </div>
-  <div class="col">{{ this?.textContent }}</div>
+  <div class="col">
+    <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
+  </div>
 </div>
