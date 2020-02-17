@@ -8,10 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MessageComponent implements OnInit {
   @Input() textContent: string;
   @Input() imageLocation: string;
+  @Input() date: any;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   getTextContent() {
     this.textContent = this.textContent.replace('<lien>', '<a href="');

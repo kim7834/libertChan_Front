@@ -2,6 +2,7 @@ import { Image } from './image';
 import { Topic } from './topic';
 
 export class Message {
+  date: Date;
   textContent: string;
   image: Image;
 

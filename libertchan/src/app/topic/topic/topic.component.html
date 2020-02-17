@@ -12,6 +12,7 @@
       <div class="col">
         <div *ngFor="let message of messages">
           <app-message
+            [date]="message.date"
             [textContent]="message.textContent"
             [imageLocation]="message.image?.imageLocation"
           ></app-message>

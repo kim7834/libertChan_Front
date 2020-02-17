@@ -1,8 +1,15 @@
-<div class="row mt-5">
-  <div *ngIf="this.imageLocation" class="col-3">
-    <img src="{{ this.imageLocation }}" alt="" />
+<div class="container-fluid mt-5">
+  <div class="row" style="border: 1px solid yellow;">
+    <!-- {{ this.date }} -->
+    {{ this.date | date:'medium' }}
   </div>
-  <div class="col">
-    <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
+
+  <div class="row" style="border: 1px solid red;">
+    <div *ngIf="this.imageLocation" class="col-3">
+      <img src="{{ this.imageLocation }}" alt="" />
+    </div>
+    <div class="col">
+      <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
+    </div>
   </div>
 </div>

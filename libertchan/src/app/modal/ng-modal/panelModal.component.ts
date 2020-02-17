@@ -50,11 +50,6 @@ export class PanelModalComponent implements OnInit {
 
 
   onSubmit(createTopicForm) {
-    console.log('subject ', this.f.subject.value);
-
-    console.log('New mod -> ', createTopicForm.value);
-    console.log('a ', this.channelName);
-
     this.topicService
     .createTopic(
       new Topic(
