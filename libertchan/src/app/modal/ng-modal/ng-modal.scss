@@ -1,7 +1,24 @@
+.createBtnSpan {
+  cursor: pointer;
+  color: #3498db;
+  font-weight:500;
+}
+
+.launchModal {
+  font-size: larger;
+  font-weight:500;
+  cursor: pointer;
+}
+
+.launchModal:hover {
+  text-decoration: underline;
+}
+
+
 
 // FIXME: this css need to be on style.css
 
-// .panel-demo1 .ui-modal {
+// .panel-modal1 .ui-modal {
 //   width: 37.5rem;
 //   /* for resize limits use min-width, min-height, max-width, max-height in css */
 // }
@@ -149,7 +166,7 @@
 .dt-orange {background-color: #ff9800;} /* Orange */
 
 /* PanelDemoComponent */
-.panel-demo1 .ui-modal-header { background-color: red !important; }
+.panel-modal1 .ui-modal-header { background-color: red !important; }
 .panel-demo2 .ui-modal-header { background-color: #4CAF50 !important; }
 .panel-demo3 .ui-modal-header { background-color: #ff9800 !important; }
 

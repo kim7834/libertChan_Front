@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChannelService } from '../service/channel.service';
+import { ChannelService } from '../../services/channel.service';
 import { Channel } from 'src/app/models/channel';
 
 @Component({

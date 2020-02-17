@@ -1,0 +1,121 @@
+<div class="launchModal mb-5 text-center">
+  <span>[ </span>
+  <!-- button class="dt-button" -->
+<span (click)="modalCreateTopic.show()">Créer un fil de discussion</span>
+<!-- TODO: remove btn if not used -->
+<!-- <button class="dt-button" (click)="modal2.show()">Open panel 2</button>&nbsp;-->
+<!-- <button class="dt-button" (click)="modal3.show()">Open panel 2</button>&nbsp;  -->
+<span> ]</span>
+</div>
+
+
+<app-modal
+  #modalCreateTopic
+  class="panel-modal1"
+  [maximizable]="true"
+  [backdrop]="false"
+>
+  <ng-container class="app-modal-header"
+    >Créer un nouveau fil de discussion</ng-container
+  >
+
+  <ng-container class="app-modal-body">
+    <form [formGroup]="createTopicForm" (ngSubmit)="onSubmit(createTopicForm)">
+      <div class="modal-boy">
+        <div class="container">
+          <div class="form-group">
+            <label for="subject">Titre</label>
+            <input type="text" class="form-control" formControlName="subject" />
+          </div>
+          <div class="form-group">
+            <label for="textContent">Contenu</label>
+            <textarea
+              rows="5"
+              class="form-control"
+              formControlName="textContent"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imageLocation">Lien de l'image</label>
+            <input
+              type="imageLink"
+              class="form-control"
+              formControlName="imageLocation"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- CAPTCHA ICI ? -->
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-container class="app-modal-footer">
+    <div class="row justify-content-end">
+    <form [formGroup]="createTopicForm" (ngSubmit)="onSubmit(createTopicForm)">
+      <!-- <button class="dt-button dt-red">Delete</button>&nbsp; -->
+      <!-- <button class="dt-button dt-green">Save</button> -->
+      <!-- <button class="dt-button dt-blue" style="float: right;" (click)="modalCreateTopic.hide()">Close</button> -->
+      <!-- type="submit" -->
+
+      <!-- <span>[ </span> -->
+      <span class="createBtnSpan pr-3"
+      (click)="modalCreateTopic.hide(); onSubmit(createTopicForm)"
+      >
+      Créer le fil de discussion
+    </span>
+    <!-- <span class="pr-3"> ]</span> -->
+    </form>
+  </div>
+  </ng-container>
+</app-modal>
+
+<!-- TODO: delete modal 2/3 if not used -->
+<!-- #2 -->
+<!-- <app-modal #modal2 class="panel-demo2" [maximizable]="true" [backdrop]="false">
+  <ng-container class="app-modal-header">Panel 2</ng-container>
+  <ng-container class="app-modal-body">
+    <h3>MODAL DIALOG</h3>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry’s standard dummy text ever since the
+      1500s.
+    </p>
+  </ng-container>
+  <ng-container class="app-modal-footer">
+    <button class="dt-button dt-red">Delete</button>&nbsp;
+    <button class="dt-button dt-green">Save</button>
+    <button
+      class="dt-button dt-blue"
+      style="float: right;"
+      (click)="modal2.hide()"
+    >
+      Close
+    </button>
+  </ng-container>
+</app-modal> -->
+
+<!-- #3 -->
+<!-- <app-modal #modal3 class="panel-demo3" [maximizable]="true" [backdrop]="false">
+  <ng-container class="app-modal-header">Panel 3</ng-container>
+  <ng-container class="app-modal-body">
+    <h3>MODAL DIALOG</h3>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry’s standard dummy text ever since the
+      1500s.
+    </p>
+  </ng-container>
+  <ng-container class="app-modal-footer">
+    <button class="dt-button dt-red">Delete</button>&nbsp;
+    <button class="dt-button dt-green">Save</button>
+    <button
+      class="dt-button dt-blue"
+      style="float: right;"
+      (click)="modal3.hide()"
+    >
+      Close
+    </button>
+  </ng-container>
+</app-modal> -->
