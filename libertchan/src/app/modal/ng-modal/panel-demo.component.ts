@@ -1,16 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { TopicService } from 'src/app/services/topic.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-
-import { Topic } from 'src/app/models/topic';
-import { Message } from 'src/app/models/message';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Image } from 'src/app/models/image';
+import { Message } from 'src/app/models/message';
+import { Topic } from 'src/app/models/topic';
+import { TopicService } from 'src/app/services/topic.service';
+
 
 @Component({
   selector: 'app-panel-demo',
   templateUrl: './panel-demo.component.html',
-  styleUrls: ['./ng-modal-t.scss']
+  styleUrls: ['./ng-modal.scss']
 })
 export class PanelDemoComponent implements OnInit {
   @Input() id: number;

@@ -6,7 +6,7 @@ import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { Image } from 'src/app/models/image';
 import { ActivatedRoute } from '@angular/router';
-import { PanelDemoComponent } from 'src/app/modal/ng-modal-t/panel-demo.component';
+import { PanelDemoComponent } from 'src/app/modal/ng-modal/panel-demo.component';
 
 @Component({
   selector: 'app-channel-mosaic',
@@ -52,7 +52,7 @@ export class ChannelMosaicComponent implements OnInit {
         //console.log(result);
         this.topicService
           .createTopic(
-            new Topic(this.dateNow, result.title, [
+            new Topic(result.title, [
               new Message(result.content, new Image(result.imageLink))
             ]),
             this.currentChannel
