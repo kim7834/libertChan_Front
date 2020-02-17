@@ -2,6 +2,16 @@
   cursor: pointer;
 }
 
+.launchModal {
+  font-size: larger;
+  font-weight:500;
+  cursor: pointer;
+}
+
+.launchModal:hover {
+  text-decoration: underline;
+}
+
 
 
 // FIXME: this css need to be on style.css

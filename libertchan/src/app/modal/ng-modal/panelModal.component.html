@@ -1,7 +1,13 @@
-<button class="dt-button" (click)="modalCreateTopic.show()">Open panel 1</button
->&nbsp;
-<button class="dt-button" (click)="modal2.show()">Open panel 2</button>&nbsp;
-<button class="dt-button" (click)="modal3.show()">Open panel 2</button>&nbsp;
+<div class="launchModal mb-5 text-center">
+  <span>[ </span>
+  <!-- button class="dt-button" -->
+<span (click)="modalCreateTopic.show()">Créer un fil de discussion</span>
+<!-- TODO: remove btn if not used -->
+<!-- <button class="dt-button" (click)="modal2.show()">Open panel 2</button>&nbsp;-->
+<!-- <button class="dt-button" (click)="modal3.show()">Open panel 2</button>&nbsp;  -->
+<span> ]</span>
+</div>
+
 
 <app-modal
   #modalCreateTopic
@@ -24,7 +30,7 @@
           <div class="form-group">
             <label for="textContent">Contenu</label>
             <textarea
-              rows="10"
+              rows="5"
               class="form-control"
               formControlName="textContent"
             ></textarea>
@@ -64,7 +70,9 @@
   </ng-container>
 </app-modal>
 
-<app-modal #modal2 class="panel-demo2" [maximizable]="true" [backdrop]="false">
+<!-- TODO: delete modal 2/3 if not used -->
+<!-- #2 -->
+<!-- <app-modal #modal2 class="panel-demo2" [maximizable]="true" [backdrop]="false">
   <ng-container class="app-modal-header">Panel 2</ng-container>
   <ng-container class="app-modal-body">
     <h3>MODAL DIALOG</h3>
@@ -85,8 +93,10 @@
       Close
     </button>
   </ng-container>
-</app-modal>
-<app-modal #modal3 class="panel-demo3" [maximizable]="true" [backdrop]="false">
+</app-modal> -->
+
+<!-- #3 -->
+<!-- <app-modal #modal3 class="panel-demo3" [maximizable]="true" [backdrop]="false">
   <ng-container class="app-modal-header">Panel 3</ng-container>
   <ng-container class="app-modal-body">
     <h3>MODAL DIALOG</h3>
@@ -107,4 +117,4 @@
       Close
     </button>
   </ng-container>
-</app-modal>
+</app-modal> -->
