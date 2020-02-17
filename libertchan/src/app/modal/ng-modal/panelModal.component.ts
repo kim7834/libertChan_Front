@@ -7,7 +7,7 @@ import { TopicService } from 'src/app/services/topic.service';
 
 
 @Component({
-  selector: 'app-panel-demo',
+  selector: 'app-panel-modal',
   templateUrl: './panelModal.component.html',
   styleUrls: ['./ng-modal.scss']
 })
