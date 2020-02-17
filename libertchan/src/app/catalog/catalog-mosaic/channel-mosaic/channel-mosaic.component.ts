@@ -6,7 +6,6 @@ import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { Image } from 'src/app/models/image';
 import { ActivatedRoute } from '@angular/router';
-import { PanelDemoComponent } from 'src/app/modal/ng-modal/panelModal.component';
 
 @Component({
   selector: 'app-channel-mosaic',
@@ -19,11 +18,10 @@ export class ChannelMosaicComponent implements OnInit {
   // TODO: FIXME: Error when using viewChild:; try other methods :
   // https://www.tektutorialshub.com/angular/angular-pass-data-to-parent-component/
   // FIXME: possible solution : https://blog.angular-university.io/angular-debugging/
-  // @ViewChild(PanelDemoComponent)topics: Topic[];
+  // @ViewChild(PanelModalComponent)topics: Topic[];
   topics: Topic[];
   currentChannel: string;
   dateNow: Date = new Date();
-
 
   constructor(
     private modalService: NgbModal,

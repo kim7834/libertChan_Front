@@ -11,7 +11,7 @@ import { TopicService } from 'src/app/services/topic.service';
   templateUrl: './panelModal.component.html',
   styleUrls: ['./ng-modal.scss']
 })
-export class PanelDemoComponent implements OnInit {
+export class PanelModalComponent implements OnInit {
   @Input() id: number;
   createTopicForm: FormGroup;
   @Input() channelName: string;
