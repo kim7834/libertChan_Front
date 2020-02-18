@@ -4,8 +4,8 @@
   </div>
 
   <div class="row" style="border: 1px solid red;">
-    <div *ngIf="this.imageLocation" class="col-3 px-0">
-      <img src="{{ this.imageLocation }}" alt="" />
+    <div *ngIf="this.imageLocation" class="px-0">
+      <img src="{{ this.imageLocation }}" alt="Image utilisateur" />
     </div>
     <div class="col">
       <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
