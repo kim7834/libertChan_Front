@@ -18,19 +18,6 @@ export class MessageComponent implements OnInit {
 
   constructor() {}
 
-  // over($event) {
-  //   const parent = $event.fromElement;
-  //   let imgSrc = $event.srcElement.src;
-  //   const duplicatedImage = document.createElement('div');
-  //   duplicatedImage.className = 'duplicatedImgExpand';
-  //   duplicatedImage.innerHTML = '<img src=' + imgSrc + '>';
-
-  //   parent.appendChild(duplicatedImage);
-  // }
-
-  // removeIt(){
-  // }
-
 
   ngOnInit() {
   }
