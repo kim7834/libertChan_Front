@@ -1,35 +1,32 @@
 <div class="container-fluid">
   <div class="row">
     <span>{{ this.formatedDate }}</span
-<<<<<<< HEAD
-    ><span> - </span><span class="author">{{ this.author }}</span>
-=======
-    ><span> - </span><span class="author">{{ this.message.author }}</span
-    ><span> - </span><span class="id">{{ this.message.id }}</span>
->>>>>>> 7ccc7325ebcaf6cd445dd6a10eb4a224ac97e419
+    ><span> - </span><span class="author">{{ this.message.author }}</span
+    ><span> - </span><span class="id">{{ this.message.id }}</span>
   </div>
   <div class="row">
-<<<<<<< HEAD
     <!-- <div *ngIf="this.imageLocation" class="px-0" (mouseover)='over($event)' (mouseout)='removeIt()'> -->
     <div
-      *ngIf="this.imageLocation"
+      *ngIf="this.message.image.imageLocation"
       class="px-0"
       (mouseover)="showImg = true"
       (mouseout)="showImg = false"
-      >
-      <img src="{{ this.imageLocation }}" alt="Image utilisateur" />
-=======
-    <div *ngIf="this.message.image.imageLocation" class="px-0">
+    >
       <img
-        src="{{ this.message.image?.imageLocation }}"
+        src="{{ this.message.image.imageLocation }}"
         alt="Image utilisateur"
       />
->>>>>>> 7ccc7325ebcaf6cd445dd6a10eb4a224ac97e419
     </div>
 
     <div *ngIf="showImg">
-      <div *ngIf="this.imageLocation" class="px-0 duplicatedImgExpand">
-        <img src="{{ this.imageLocation }}" alt="Image utilisateur" />
+      <div
+        *ngIf="this.message.image.imageLocation"
+        class="px-0 duplicatedImgExpand"
+      >
+        <img
+          src="{{ this.message.image.imageLocation }}"
+          alt="Image utilisateur"
+        />
       </div>
     </div>
 
