@@ -18,12 +18,7 @@
   <div class="row">
     <div class="col-12">
       <div *ngFor="let message of messages">
-        <app-message
-          [date]="message.date"
-          [textContent]="message.textContent"
-          [imageLocation]="message.image?.imageLocation"
-          [author]="message.author"
-        ></app-message>
+        <app-message [message]="message"></app-message>
       </div>
     </div>
   </div>
