@@ -18,7 +18,7 @@ export class ChannelMosaicComponent implements OnInit {
   // TODO: FIXME: Error when using viewChild:; try other methods :
   // https://www.tektutorialshub.com/angular/angular-pass-data-to-parent-component/
   // FIXME: possible solution : https://blog.angular-university.io/angular-debugging/
-  // @ViewChild(PanelModalComponent)topics: Topic[];
+  // @ViewChild(PanelModalCreateThreadComponent)topics: Topic[];
   topics: Topic[];
   currentChannel: string;
   dateNow: Date = new Date();

@@ -8,12 +8,12 @@ import { MessageModalComponent } from './message-modal/message-modal.component';
 
 // TODO: Requis pour ng-modal -> decalration + export
 import { ModalModule as ngModalT } from 'ng-modal-lib';
-import { PanelModalComponent } from './ng-modal/panelModal.component';
+import { PanelModalCreateThreadComponent } from './ng-modal/panelModalCreateThread.component';
 
 
 @NgModule({
-  declarations: [TopicModalComponent, MessageModalComponent, PanelModalComponent],
-  exports: [CommonModule, TopicModalComponent, PanelModalComponent],
+  declarations: [TopicModalComponent, MessageModalComponent, PanelModalCreateThreadComponent],
+  exports: [CommonModule, TopicModalComponent, PanelModalCreateThreadComponent],
   imports: [CommonModule, ModalRoutingModule, FormsModule, ReactiveFormsModule, ngModalT]
 })
 export class ModalModule {}
