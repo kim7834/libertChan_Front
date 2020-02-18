@@ -6,8 +6,7 @@ export class Message {
   textContent: string;
   image: Image;
   author: string;
-  postNumber: number;
-
+  id: number;
 
   constructor(author: string, textContent: string, image: Image) {
     this.author = author;
