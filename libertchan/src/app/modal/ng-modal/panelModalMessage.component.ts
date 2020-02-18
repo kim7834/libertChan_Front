@@ -56,9 +56,8 @@ export class PanelModalMessageComponent implements OnInit {
         this.topicId
       )
       .subscribe((m: Message) => {
-        this.messageList.splice(0, 0, m);
+        this.messageList.push(m);
       });
-
     this.messageForm.reset();
   }
 }
