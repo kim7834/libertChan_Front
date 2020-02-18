@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <div class="row" style="border: 1px solid yellow;">
+  <div class="row">
     <span>{{ this.formatedDate }}</span><span> - </span><span class="author">{{ this.author }}</span>
   </div>
 
-  <div class="row" style="border: 1px solid red;">
+  <div class="row">
     <div *ngIf="this.imageLocation" class="px-0">
       <img src="{{ this.imageLocation }}" alt="Image utilisateur" />
     </div>
