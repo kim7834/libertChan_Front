@@ -1,0 +1,20 @@
+<app-panel-modal-create-thread
+  [channelName]="this.currentChannel"
+  [topicsList]="this.topics"
+>
+</app-panel-modal-create-thread>
+
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <app-topic-detail
+          *ngFor="let topic of topics"
+          [topic]="topic"
+          [currentChannel]="currentChannel"
+          class="col-12"
+        ></app-topic-detail>
+      </div>
+    </div>
+  </div>
+</div>

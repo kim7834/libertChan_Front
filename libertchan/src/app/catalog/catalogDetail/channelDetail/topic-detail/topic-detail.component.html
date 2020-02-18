@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9 col-md-9">
+      <a
+        [routerLink]="['/chan', this.currentChannel, this.topic.id]"
+        class="topicLink"
+      >
+        <div class="topicContainer">
+          <p>
+            titre : <strong> {{ this.topic.subject }} </strong> | date :
+            {{ this.topic.date }} | id :
+            {{ this.topic.id }}
+          </p>
+          <div>
+            <p *ngFor="let message of topic.messages">
+              <img
+                *ngIf="message.image?.imageLocation"
+                src="{{ message.image?.imageLocation }}"
+                alt="image de l'utilisateur"
+                class="mr-2"
+              /><span
+                *ngFor="
+                  let text of transformTextContent(this.message.textContent)
+                "
+              >
+                <p [innerHTML]="text"></p>
+              </span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-3 col-md-3">
+      <ng-container *ngFor="let message of topic.messages">
+        <ng-container *ngIf="message.image.imageLocation">
+          <img
+            src="{{ message.image?.imageLocation }}"
+            alt="image de l'utilisateur minifiée"
+            class="smallImage m-1"
+          />
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<hr />
