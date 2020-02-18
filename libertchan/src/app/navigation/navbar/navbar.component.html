@@ -1,10 +1,9 @@
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-4">
       <ng-container *ngFor="let channel of channelList">
         <ng-container *ngIf="channel.category === 'INTEREST'">
-        <span class="font-weight-light">|</span>
+          <span class="font-weight-light">|</span>
           <a
             [routerLink]="['/chan', channel.shortName]"
             title="{{ channel.name }}"

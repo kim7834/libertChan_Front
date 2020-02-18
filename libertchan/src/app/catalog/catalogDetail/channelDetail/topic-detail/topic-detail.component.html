@@ -18,7 +18,13 @@
                 src="{{ message.image?.imageLocation }}"
                 alt="image de l'utilisateur"
                 class="mr-2"
-              />{{ this.message.textContent }}
+              /><span
+                *ngFor="
+                  let text of transformTextContent(this.message.textContent)
+                "
+              >
+                <p [innerHTML]="text"></p>
+              </span>
             </p>
           </div>
         </div>

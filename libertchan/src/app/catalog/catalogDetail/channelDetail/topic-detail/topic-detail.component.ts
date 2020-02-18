@@ -12,4 +12,12 @@ export class TopicDetailComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  transformTextContent(textContent) {
+    textContent = textContent.replace('<lien>', '<a href="');
+    textContent = textContent.replace('</lien>', '" target="_blank">lien</a>');
+
+    //console.log(this.textContent.split('\n'));
+    return textContent.split('\n');
+  }
 }
