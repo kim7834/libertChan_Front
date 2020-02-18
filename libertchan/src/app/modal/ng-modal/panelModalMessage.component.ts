@@ -7,11 +7,11 @@ import { TopicService } from 'src/app/services/topic.service';
 
 
 @Component({
-  selector: 'app-panel-modal-create-thread',
-  templateUrl: './panelModalCreateThread.component.html',
+  selector: 'app-panel-modal-message',
+  templateUrl: './panelModalMessage.component.html',
   styleUrls: ['./ng-modal.scss']
 })
-export class PanelModalCreateThreadComponent implements OnInit {
+export class PanelModalMessageComponent implements OnInit {
   // FIXME: what is id ?
   // @Input() id: number;
   createTopicForm: FormGroup;

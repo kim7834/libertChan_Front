@@ -5,6 +5,14 @@
     <button (click)="openTopicModal()">+ nouveau message</button>
   </div>
 
+
+  <app-panel-modal-message
+    [channelName]="this.currentChannel"
+    [topicsList]="this.topics"
+  >
+</app-panel-modal-message>
+
+
   <div class="row ">
     <div class="col-12 lead text-center title">
       {{ this.topic?.subject }}

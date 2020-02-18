@@ -1,11 +1,13 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TopicModalComponent } from 'src/app/modal/topic-modal/topic-modal.component';
-import { TopicService } from 'src/app/services/topic.service';
+
+import { Image } from 'src/app/models/image';
 import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
-import { Image } from 'src/app/models/image';
-import { ActivatedRoute } from '@angular/router';
+import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-channel-mosaic',

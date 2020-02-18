@@ -5,8 +5,11 @@ import { MessageComponent } from './message/message.component';
 import { NavigationModule } from '../navigation/navigation.module';
 import { MessageModalComponent } from '../modal/message-modal/message-modal.component';
 
+import { PanelModalMessageComponent } from '../modal/ng-modal/panelModalMessage.component';
+
+
 @NgModule({
-  declarations: [TopicComponent, MessageComponent],
+  declarations: [TopicComponent, MessageComponent, PanelModalMessageComponent],
   imports: [CommonModule, NavigationModule],
   entryComponents: [MessageModalComponent]
 })
