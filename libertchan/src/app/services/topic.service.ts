@@ -7,8 +7,8 @@ import { Topic } from '../models/topic';
   providedIn: 'root'
 })
 export class TopicService {
-  private baseUrl = 'http://localhost:8080/api/discussionthreads';
-  // private baseUrl = 'http://192.168.1.89:8080/api/discussionthreads';
+  // private baseUrl = 'http://localhost:8080/api/discussionthreads';
+  private baseUrl = 'http://192.168.1.89:8080/api/discussionthreads';
   // private baseUrl = 'http://192.168.1.22:8080/api/discussionthreads';
   constructor(private httpClient: HttpClient) {}
 

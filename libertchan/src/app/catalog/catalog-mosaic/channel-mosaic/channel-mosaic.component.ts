@@ -40,7 +40,7 @@ export class ChannelMosaicComponent implements OnInit {
         //console.log(topics);
       });
   }
-
+  /*
   openTopicModal() {
     const modalRef = this.modalService.open(TopicModalComponent);
     modalRef.componentInstance.id = 10;
@@ -64,4 +64,5 @@ export class ChannelMosaicComponent implements OnInit {
         //console.log(error);
       });
   }
+  */
 }

@@ -1,0 +1,15 @@
+<app-panel-modal [channelName]="this.currentChannel" [topicsList]="this.topics">
+</app-panel-modal>
+
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <app-topic-detail
+          *ngFor="let topic of topics"
+          [topic]="topic"
+        ></app-topic-detail>
+      </div>
+    </div>
+  </div>
+</div>

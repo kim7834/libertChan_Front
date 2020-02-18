@@ -1,0 +1,14 @@
+<div>
+  <p>
+    titre : <strong> {{ this.topic.subject }} </strong> | date :
+    {{ this.topic.date }} | id :
+    {{ this.topic.id }}
+  </p>
+  <div>
+    <p *ngFor="let message of topic.messages">
+      <img src="{{ message.image?.imageLocation }}" alt="" />{{
+        this.message.textContent
+      }}
+    </p>
+  </div>
+</div>

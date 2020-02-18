@@ -10,6 +10,8 @@ import { ChannelMosaicComponent } from './catalog-mosaic/channel-mosaic/channel-
 import { VignetteComponent } from './catalog-mosaic/channelMosaic/vignette/vignette.component';
 import { ModalModule } from '../modal/modal.module';
 import { TopicModalComponent } from '../modal/topic-modal/topic-modal.component';
+import { ChannelDetailComponent } from './catalogDetail/channel-detail/channel-detail.component';
+import { TopicDetailComponent } from './catalogDetail/channelDetail/topic-detail/topic-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { TopicModalComponent } from '../modal/topic-modal/topic-modal.component'
     CatalogMosaicComponent,
     ChannelMosaicComponent,
     VignetteComponent,
+    ChannelDetailComponent,
+    TopicDetailComponent,
   ],
   entryComponents: [TopicModalComponent],
   imports: [
