@@ -2,9 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Image } from 'src/app/models/image';
 import { Message } from 'src/app/models/message';
-import { Topic } from 'src/app/models/topic';
-import { TopicService } from 'src/app/services/topic.service';
-
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-panel-modal-message',
@@ -15,15 +13,15 @@ export class PanelModalMessageComponent implements OnInit {
   // FIXME: what is id ?
   // @Input() id: number;
   messageForm: FormGroup;
-  @Input() channelName: string;
-  @Input() topicsList: Topic[];
+  @Input() topicId: number;
+  @Input() messageList: Message[];
 
   // TODO: do i need a bool for somewhere ?
   // submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private topicService: TopicService,
+    private messageService: MessageService
   ) {
     this.createForm();
   }
@@ -42,27 +40,25 @@ export class PanelModalMessageComponent implements OnInit {
     });
   }
 
-    // convenience getter for easy access to form fields
-    get f() {
-      return this.messageForm.controls;
-    }
-
-
-
-
-  onSubmit(messageForm) {
-    this.topicService
-    .createTopic(
-      new Topic(
-        this.f.subject.value, [
-        new Message(this.f.author.value, this.f.textContent.value, new Image(this.f.imageLocation.value)),
-        ]),
-      this.channelName
-    ).subscribe(topic => {
-        this.topicsList.splice(0, 0, topic);
-    });
-    this.messageForm.reset();
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.messageForm.controls;
   }
 
-}
+  onSubmit(messageForm) {
+    this.messageService
+      .createMessage(
+        new Message(
+          this.f.author.value,
+          this.f.textContent.value,
+          new Image(this.f.imageLocation.value)
+        ),
+        this.topicId
+      )
+      .subscribe((m: Message) => {
+        this.messageList.splice(0, 0, m);
+      });
 
+    this.messageForm.reset();
+  }
+}

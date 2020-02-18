@@ -1,15 +1,14 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
 <div class="container-fluid">
-
-
   <!-- [channelName]="this.currentChannel"
   [topicsList]="this.topics" -->
 
   <app-panel-modal-message
+    [messageList]="this.messages"
+    [topicId]="this.topic?.id"
   >
-</app-panel-modal-message>
-
+  </app-panel-modal-message>
 
   <div class="row ">
     <div class="col-12 lead font-weight-bold title mb-2 ">
