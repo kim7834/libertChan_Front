@@ -11,8 +11,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ChannelService {
-  private baseUrl = 'http://localhost:8080/api/channels';
-  // private baseUrl = 'http://192.168.1.89:8080/api/channels';
+  // private baseUrl = 'http://localhost:8080/api/channels';
+  private baseUrl = 'http://192.168.1.89:8080/api/channels';
   // private baseUrl = 'http://192.168.1.22:8080/api/channels';
 
   constructor(private httpClient: HttpClient) {}
