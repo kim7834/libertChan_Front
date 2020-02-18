@@ -14,7 +14,7 @@ import { TopicService } from 'src/app/services/topic.service';
 export class PanelModalMessageComponent implements OnInit {
   // FIXME: what is id ?
   // @Input() id: number;
-  createTopicForm: FormGroup;
+  messageForm: FormGroup;
   @Input() channelName: string;
   @Input() topicsList: Topic[];
 
@@ -35,9 +35,8 @@ export class PanelModalMessageComponent implements OnInit {
   // }
 
   private createForm() {
-    this.createTopicForm = this.formBuilder.group({
+    this.messageForm = this.formBuilder.group({
       author: '',
-      subject: '',
       textContent: '',
       imageLocation: 'https://picsum.photos/200'
     });
@@ -45,13 +44,13 @@ export class PanelModalMessageComponent implements OnInit {
 
     // convenience getter for easy access to form fields
     get f() {
-      return this.createTopicForm.controls;
+      return this.messageForm.controls;
     }
 
 
 
 
-  onSubmit(createTopicForm) {
+  onSubmit(messageForm) {
     this.topicService
     .createTopic(
       new Topic(
@@ -62,7 +61,7 @@ export class PanelModalMessageComponent implements OnInit {
     ).subscribe(topic => {
         this.topicsList.splice(0, 0, topic);
     });
-    this.createTopicForm.reset();
+    this.messageForm.reset();
   }
 
 }

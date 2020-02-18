@@ -1,20 +1,18 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
 <div class="container-fluid">
-  <div class="m-2">
-    <button (click)="openTopicModal()">+ nouveau message</button>
-  </div>
 
+
+  <!-- [channelName]="this.currentChannel"
+  [topicsList]="this.topics" -->
 
   <app-panel-modal-message
-    [channelName]="this.currentChannel"
-    [topicsList]="this.topics"
   >
 </app-panel-modal-message>
 
 
   <div class="row ">
-    <div class="col-12 lead text-center title">
+    <div class="col-12 lead font-weight-bold title mb-2 ">
       {{ this.topic?.subject }}
     </div>
   </div>

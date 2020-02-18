@@ -16,11 +16,6 @@ import { TopicService } from 'src/app/services/topic.service';
 })
 export class ChannelMosaicComponent implements OnInit {
   nbVignettes = 48;
-  // TODO: trier catalogue par les plus récents
-  // TODO: FIXME: Error when using viewChild:; try other methods :
-  // https://www.tektutorialshub.com/angular/angular-pass-data-to-parent-component/
-  // FIXME: possible solution : https://blog.angular-university.io/angular-debugging/
-  // @ViewChild(PanelModalCreateThreadComponent)topics: Topic[];
   topics: Topic[];
   currentChannel: string;
   dateNow: Date = new Date();

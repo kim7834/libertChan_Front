@@ -20,7 +20,7 @@
   >
 
   <ng-container class="app-modal-body">
-    <form [formGroup]="createTopicForm" (ngSubmit)="onSubmit(createTopicForm)">
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm)">
       <div class="modal-boy">
         <div class="container">
           <div class="form-group">
@@ -57,7 +57,7 @@
 
   <ng-container class="app-modal-footer">
     <div class="row justify-content-end">
-    <form [formGroup]="createTopicForm" (ngSubmit)="onSubmit(createTopicForm)">
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm)">
       <!-- <button class="dt-button dt-red">Delete</button>&nbsp; -->
       <!-- <button class="dt-button dt-green">Save</button> -->
       <!-- <button class="dt-button dt-blue" style="float: right;" (click)="modalMessage.hide()">Close</button> -->
@@ -65,7 +65,7 @@
 
       <!-- <span>[ </span> -->
       <span class="createBtnSpan pr-3"
-      (click)="modalMessage.hide(); onSubmit(createTopicForm)"
+      (click)="modalMessage.hide(); onSubmit(messageForm)"
       >
       Poster le message
     </span>
