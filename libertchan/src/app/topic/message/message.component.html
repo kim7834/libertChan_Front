@@ -1,13 +1,27 @@
 <div class="container-fluid">
   <div class="row">
-    <span>{{ this.formatedDate }}</span><span> - </span><span class="author">{{ this.author }}</span>
+    <span>{{ this.formatedDate }}</span
+    ><span> - </span><span class="author">{{ this.author }}</span>
   </div>
-
   <div class="row">
-    <div *ngIf="this.imageLocation" class="px-0">
+    <!-- <div *ngIf="this.imageLocation" class="px-0" (mouseover)='over($event)' (mouseout)='removeIt()'> -->
+    <div
+      *ngIf="this.imageLocation"
+      class="px-0"
+      (mouseover)="showImg = true"
+      (mouseout)="showImg = false"
+      >
       <img src="{{ this.imageLocation }}" alt="Image utilisateur" />
     </div>
-    <div class="col">
+
+    <div *ngIf="showImg">
+      <div *ngIf="this.imageLocation" class="px-0 duplicatedImgExpand">
+        <img src="{{ this.imageLocation }}" alt="Image utilisateur" />
+      </div>
+    </div>
+
+    <span *ngIf="!showImg"></span>
+    <div class="col-12">
       <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
     </div>
   </div>
