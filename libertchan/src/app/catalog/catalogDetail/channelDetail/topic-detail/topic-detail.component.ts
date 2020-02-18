@@ -8,6 +8,7 @@ import { Topic } from 'src/app/models/topic';
 })
 export class TopicDetailComponent implements OnInit {
   @Input() topic: Topic;
+  @Input() currentChannel: string;
   constructor() {}
 
   ngOnInit(): void {}

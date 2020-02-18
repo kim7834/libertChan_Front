@@ -3,7 +3,21 @@ img {
   max-height: 10vh;
 }
 
-div {
+.topicContainer {
   max-height: 20vh;
   overflow-y: auto;
+}
+
+.topicContainer:hover {
+  background-color: rgb(136, 188, 204);
+}
+
+.topicLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.smallImage {
+  max-width: 10vw;
+  max-height: 5vh;
 }
