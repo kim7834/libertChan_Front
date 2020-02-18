@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-message',
@@ -8,9 +10,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MessageComponent implements OnInit {
   @Input() textContent: string;
   @Input() imageLocation: string;
-  @Input() date: any;
+  @Input() date: Date;
+  formatedDate = moment(this.date).locale('fr').format('LLLL');
 
   constructor() {}
+
 
   ngOnInit() {
   }
