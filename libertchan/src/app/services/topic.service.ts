@@ -37,7 +37,7 @@ export class TopicService {
   }
 
   getTopicsByChannel(channel: string): Observable<Topic[]> {
-    console.log(this.baseUrl + '/channel/' + channel);
+    // console.log(this.baseUrl + '/channel/' + channel);
 
     return this.httpClient.get<Topic[]>(
       this.baseUrl + '/channel/' + channel,

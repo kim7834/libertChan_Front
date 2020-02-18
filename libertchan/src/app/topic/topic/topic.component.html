@@ -1,22 +1,24 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-12 mb-5">{{ this.topic?.subject }}</div>
-  </div>
   <div class="m-2">
     <button (click)="openTopicModal()">+ nouveau message</button>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <div *ngFor="let message of messages">
-          <app-message
-            [date]="message.date"
-            [textContent]="message.textContent"
-            [imageLocation]="message.image?.imageLocation"
-          ></app-message>
-        </div>
+
+  <div class="row ">
+    <div class="col-12 lead text-center title">
+      {{ this.topic?.subject }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div *ngFor="let message of messages">
+        <app-message
+          [date]="message.date"
+          [textContent]="message.textContent"
+          [imageLocation]="message.image?.imageLocation"
+          [author]="message.author"
+        ></app-message>
       </div>
     </div>
   </div>

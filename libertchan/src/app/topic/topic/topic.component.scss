@@ -7,3 +7,17 @@
 // [class*='col-'] {
 //   border: 1px solid green;
 // }
+
+.title {
+  font-size: 2em;
+}
+
+.launchModal {
+  font-size: larger;
+  font-weight:500;
+  cursor: pointer;
+}
+
+.launchModal:hover {
+  text-decoration: underline;
+}

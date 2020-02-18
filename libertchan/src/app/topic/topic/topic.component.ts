@@ -47,7 +47,7 @@ export class TopicComponent implements OnInit {
     modalRef.result
       .then(result => {
         console.log(result);
-        this.message = new Message(result.content, new Image(result.imageLink));
+        this.message = new Message(result.author, result.content, new Image(result.imageLink));
         //this.message.discussionThread = this.topic;
         console.log(this.message);
 

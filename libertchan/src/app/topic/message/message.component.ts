@@ -8,10 +8,11 @@ import * as moment from 'moment';
   styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
-  @Input() textContent: string;
-  @Input() imageLocation: string;
   @Input() date: Date;
   formatedDate = moment(this.date).locale('fr').format('LLLL');
+  @Input() author: string;
+  @Input() imageLocation: string;
+  @Input() textContent: string;
 
   constructor() {}
 

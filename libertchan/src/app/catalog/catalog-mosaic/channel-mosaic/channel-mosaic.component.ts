@@ -51,7 +51,7 @@ export class ChannelMosaicComponent implements OnInit {
         this.topicService
           .createTopic(
             new Topic(result.title, [
-              new Message(result.content, new Image(result.imageLink))
+              new Message(result.author, result.content, new Image(result.imageLink))
             ]),
             this.currentChannel
           )

@@ -12,7 +12,8 @@ import { TopicService } from 'src/app/services/topic.service';
   styleUrls: ['./ng-modal.scss']
 })
 export class PanelModalComponent implements OnInit {
-  @Input() id: number;
+  // FIXME: what is id ?
+  // @Input() id: number;
   createTopicForm: FormGroup;
   @Input() channelName: string;
   @Input() topicsList: Topic[];
@@ -35,6 +36,7 @@ export class PanelModalComponent implements OnInit {
 
   private createForm() {
     this.createTopicForm = this.formBuilder.group({
+      author: '',
       subject: '',
       textContent: '',
       imageLocation: 'https://picsum.photos/200'
@@ -54,7 +56,7 @@ export class PanelModalComponent implements OnInit {
     .createTopic(
       new Topic(
         this.f.subject.value, [
-        new Message(this.f.textContent.value, new Image(this.f.imageLocation.value)),
+        new Message(this.f.author.value, this.f.textContent.value, new Image(this.f.imageLocation.value)),
         ]),
       this.channelName
     ).subscribe(topic => {

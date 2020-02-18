@@ -10,6 +10,7 @@ export class VignetteComponent implements OnInit {
   @Input() imageLink: string;
   @Input() topicId: number;
   @Input() channelName: string;
+  @Input() author: string;
 
   constructor() {}
 
