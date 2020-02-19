@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { MessageService } from 'src/app/services/message.service';
@@ -23,7 +22,6 @@ export class TopicComponent implements OnInit {
     private route: ActivatedRoute,
     private topicService: TopicService,
     private messageService: MessageService,
-    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
