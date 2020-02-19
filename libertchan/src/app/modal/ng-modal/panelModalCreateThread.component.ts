@@ -4,6 +4,7 @@ import { Image } from 'src/app/models/image';
 import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { TopicService } from 'src/app/services/topic.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-panel-modal-create-thread',
@@ -16,13 +17,17 @@ export class PanelModalCreateThreadComponent implements OnInit {
   createTopicForm: FormGroup;
   @Input() channelName: string;
   @Input() topicsList: Topic[];
+  apiEndPoint = 'http://192.168.1.89:8080/api/uploadFile';
+  myImage: File;
+  imageLink: string;
 
   // TODO: do i need a bool for somewhere ?
   // submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private topicService: TopicService
+    private topicService: TopicService,
+    private http: HttpClient
   ) {
     this.createForm();
   }
@@ -39,12 +44,15 @@ export class PanelModalCreateThreadComponent implements OnInit {
       subject: '',
       textContent: '',
       imageLocation:
-        'http://192.168.1.89:8080/api/downloadFile/WIN_20200218_16_28_42_Pro.jpg'
+        'http://192.168.1.89:8080/api/downloadFile/WIN_20200218_16_28_42_Pro.jpg',
+      monImage: ''
     });
   }
 
   // convenience getter for easy access to form fields
   get f() {
+    //console.log(this.createTopicForm.controls);
+
     return this.createTopicForm.controls;
   }
 
@@ -63,8 +71,27 @@ export class PanelModalCreateThreadComponent implements OnInit {
       .subscribe(topic => {
         this.topicsList.splice(0, 0, topic);
       });
-    console.log(this.f);
 
     this.createTopicForm.reset();
+  }
+
+  fileChange(event) {
+    if (event.target.files.length > 0) {
+      this.myImage = event.target.files[0];
+    }
+  }
+
+  fileUpload() {
+    //console.log('test');
+    let formData: FormData = new FormData();
+    formData.append('file', this.myImage, this.myImage.name);
+    let headers = new HttpHeaders();
+    this.http.post(`${this.apiEndPoint}`, formData, { headers }).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.imageLink = data.fileDownloadUri;
+      },
+      error => console.log(error)
+    );
   }
 }
