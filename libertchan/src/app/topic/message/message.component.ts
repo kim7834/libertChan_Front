@@ -29,16 +29,16 @@ export class MessageComponent implements OnInit {
   ngOnInit() {}
 
   getTextContent() {
-    this.message.textContent = this.message.textContent.replace(
+    this.message.textContent = this.message.textContent?.replace(
       '<lien>',
       '<a href="'
     );
-    this.message.textContent = this.message.textContent.replace(
+    this.message.textContent = this.message.textContent?.replace(
       '</lien>',
       '" target="_blank">lien</a>'
     );
 
     //console.log(this.textContent.split('\n'));
-    return this.message.textContent.split('\n');
+    return this.message?.textContent?.split('\n');
   }
 }
