@@ -1,17 +1,37 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="messageContainer container-fluid my-2">
+  <div class="row mx-1">
     <span>{{ this.formatedDate }}</span
-    ><span> - </span><span class="author">{{ this.message.author }}</span
-    ><span> - </span><span class="id">{{ this.message.id }}</span>
+    ><span> - </span><span class="author">{{ this.message.author }}</span
+    ><span> </span><span class="id">#{{ this.message.id }}</span>
   </div>
-
   <div class="row">
-    <div *ngIf="this.message.image.imageLocation" class="px-0">
-      <img
-        src="{{ this.message.image?.imageLocation }}"
+    <div
+      *ngIf="this.message.image.imageLocation"
+      class="px-0 pb-2"
+      (mouseover)="showImg = true"
+      (mouseout)="showImg = false"
+    >
+      <img class="mx-1"
+        src="{{ this.message.image.imageLocation }}"
         alt="Image utilisateur"
       />
     </div>
+
+    <div *ngIf="showImg">
+      <div
+        *ngIf="this.message.image.imageLocation"
+        class="px-0 duplicatedImgExpand"
+      >
+        <img
+          src="{{ this.message.image.imageLocation }}"
+          alt="Image utilisateur"
+        />
+      </div>
+    </div>
+
+    <!-- <div *ngIf="!this.message.image.imageLocation" class="offset-2 pr-3"></div> -->
+
+    <span *ngIf="!showImg"></span>
     <div class="col">
       <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
     </div>

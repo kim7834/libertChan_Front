@@ -17,6 +17,8 @@ export class MessageComponent implements OnInit {
   //@Input() imageLocation: string;
   // @Input() textContent: string;
 
+  showImg = false;
+
   constructor() {}
 
   ngOnInit() {}
