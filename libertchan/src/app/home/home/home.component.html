@@ -10,6 +10,20 @@
       />
     </div>
   </div>
+  <br><br><br>
+
+<hr>
+<h3><u>CONNECT : </u></h3>
+
+<ng-container>
+  <div class="alert alert-success">Je suis auth</div>
+  <a class="btn btn-link" (click)="authService.logout().subscribe()">logout</a>
+</ng-container>
+
+
+<br><br><br>
+<a class="btn btn btn-outline-danger" [routerLink]="['chan/ac']">Lien protected</a>
+<br><br><br>
 
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->

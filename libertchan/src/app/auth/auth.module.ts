@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Type, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthApi } from './service/auth-api';
+import { AuthApiToken } from './service/auth.service';
 
 
 
@@ -9,4 +11,11 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class AuthModule { }
+export class AuthModule {
+  static forRoot(Service: Type<AuthApi>): ModuleWithProviders {
+    return {
+      ngModule: AuthModule,
+      providers: [{ provide: AuthApiToken, useClass: Service }]
+    };
+  }
+}

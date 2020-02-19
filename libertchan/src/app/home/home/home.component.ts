@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChannelService } from '../../services/channel.service';
 import { Channel } from 'src/app/models/channel';
+import { AuthService } from 'src/app/auth/service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,10 @@ import { Channel } from 'src/app/models/channel';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private channelService: ChannelService) { }
+  constructor(
+    private channelService: ChannelService,
+    public authService: AuthService
+    ) { }
 
   channelList: Array<Channel>;
 

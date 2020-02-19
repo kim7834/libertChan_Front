@@ -1,16 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpInterceptorAuth.ServiceService } from './http-interceptor-auth.service.service';
+import { HttpInterceptorAuthService } from './http-interceptor-auth.service';
 
-describe('HttpInterceptorAuth.ServiceService', () => {
-  let service: HttpInterceptorAuth.ServiceService;
+describe('HttpInterceptorAuthService', () => {
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HttpInterceptorAuth.ServiceService);
-  });
+
+  beforeEach(() =>
+    TestBed.configureTestingModule({}));
+
 
   it('should be created', () => {
+    // tslint:disable-next-line: deprecation
+    const service: HttpInterceptorAuthService = TestBed.get(HttpInterceptorAuthService);
     expect(service).toBeTruthy();
   });
 });

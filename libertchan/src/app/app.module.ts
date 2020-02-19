@@ -8,6 +8,11 @@ import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
 import { CatalogModule } from './catalog/catalog.module';
 import { TopicModule } from './topic/topic.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthApiService } from './auth/service/auth-api.service';
+import { HttpInterceptorAuthService } from './auth/service/http-interceptor-auth.service.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -18,9 +23,10 @@ import { TopicModule } from './topic/topic.module';
     NavigationModule,
     HomeModule,
     CatalogModule,
-    TopicModule
+    TopicModule,
+    AuthModule.forRoot(AuthApiService)
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
