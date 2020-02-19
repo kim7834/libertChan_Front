@@ -36,4 +36,5 @@ export class MessageComponent implements OnInit {
     //console.log(this.textContent.split('\n'));
     return this.message.textContent.split('\n');
   }
+
 }
