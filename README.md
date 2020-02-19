@@ -24,6 +24,8 @@ Front | Back
 
         
 Etude #1 : Localstorage with : https://www.npmjs.com/package/@ngx-pwa/local-storage (used for Auth)
+Source : https://github.com/cyrilletuzi/angular-async-local-storage
+`ng add @ngx-pwa/local-storage`
 
 
 Etude #2 -> **aborted** : (CDK can for exemple make draggable stuff):
