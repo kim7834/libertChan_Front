@@ -21,6 +21,11 @@ export class MessageComponent implements OnInit {
 
   constructor() {}
 
+  // TODO: citation brouillon
+  quote() {
+    console.log('Message cité : ', this.message.id);
+  }
+
   ngOnInit() {}
 
   getTextContent() {

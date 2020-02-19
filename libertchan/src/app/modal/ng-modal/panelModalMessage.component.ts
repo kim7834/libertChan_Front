@@ -20,6 +20,9 @@ export class PanelModalMessageComponent implements OnInit {
   myImage: File;
   imageLink: string;
 
+  // TODO: citation brouillon
+  // @Input() quotedMessageId?: number;
+
   // TODO: do i need a bool for somewhere ?
   // submitted = false;
 
@@ -49,6 +52,11 @@ export class PanelModalMessageComponent implements OnInit {
   get f() {
     return this.messageForm.controls;
   }
+
+  // * TODO: Brouillon citation Remove if not used addQuote()
+  // addQuote() {
+  //   this.f.textContent.setValue(this.quotedMessageId);
+  // }
 
   onSubmit(messageForm) {
     this.messageService
