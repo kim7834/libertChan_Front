@@ -1,8 +1,28 @@
 <div class="messageContainer container-fluid my-2">
   <div class="row mx-1">
     <span>{{ this.formatedDate }}</span
-    ><span> - </span><span class="author">{{ this.message.author }}</span
-    ><span> </span><span class="id">#{{ this.message.id }}</span>
+    ><span>&nbsp; - &nbsp;</span><span class="author">{{ this.message.author }}</span
+    ><span> </span><span class="id">&nbsp; #{{ this.message.id }}</span>
+    <span class="quote ml-2"
+      ><sup>
+        <svg
+          height="10"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="quote-right"
+          class="svg-inline--fa fa-quote-right fa-w-16"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="#000000"
+            d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+          ></path>
+        </svg>
+      </sup>
+    </span>
   </div>
   <div class="row">
     <div
@@ -11,7 +31,8 @@
       (mouseover)="showImg = true"
       (mouseout)="showImg = false"
     >
-      <img class="mx-1"
+      <img
+        class="mx-1"
         src="{{ this.message.image.imageLocation }}"
         alt="Image utilisateur"
       />

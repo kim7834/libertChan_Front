@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Topic } from 'src/app/models/topic';
-import { TopicService } from 'src/app/services/topic.service';
-import { Message } from 'src/app/models/message';
-import { MessageService } from 'src/app/services/message.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { MessageModalComponent } from 'src/app/modal/message-modal/message-modal.component';
-import { Image } from 'src/app/models/image';
+import { Message } from 'src/app/models/message';
+import { Topic } from 'src/app/models/topic';
+import { MessageService } from 'src/app/services/message.service';
+import { TopicService } from 'src/app/services/topic.service';
 
 
 
