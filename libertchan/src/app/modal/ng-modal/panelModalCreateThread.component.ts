@@ -38,7 +38,8 @@ export class PanelModalCreateThreadComponent implements OnInit {
       author: '',
       subject: '',
       textContent: '',
-      imageLocation: 'https://picsum.photos/200'
+      imageLocation:
+        'http://192.168.1.89:8080/api/downloadFile/WIN_20200218_16_28_42_Pro.jpg'
     });
   }
 
