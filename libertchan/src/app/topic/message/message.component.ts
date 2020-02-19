@@ -21,6 +21,11 @@ export class MessageComponent implements OnInit {
 
   constructor() {}
 
+  // TODO: citation brouillon
+  quote() {
+    console.log('Message cité : ', this.message.id);
+  }
+
   ngOnInit() {}
 
   getTextContent() {
@@ -36,5 +41,4 @@ export class MessageComponent implements OnInit {
     //console.log(this.textContent.split('\n'));
     return this.message.textContent.split('\n');
   }
-
 }
