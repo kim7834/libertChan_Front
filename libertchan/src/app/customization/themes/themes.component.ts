@@ -7,7 +7,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 interface Option {
   name: string;
-  prop: string;
+  // prop: string;
+}
+interface UserPreferences {
+  theme: string;
 }
 
 @Component({
@@ -50,7 +53,7 @@ export class ThemesComponent implements OnInit {
   // }
 
   getPreference() {
-    this.storage.get('userPreferences').subscribe(preference => {
+    this.storage.get('userPreferences').subscribe((preference: UserPreferences) => {
       // Save default preference on first visit
       console.log('preference AVANT', preference);
       if (preference === undefined) {
@@ -58,11 +61,8 @@ export class ThemesComponent implements OnInit {
         this.changeTheme();
       }
       this.themeSelected = preference.theme;
-      console.log('preference APRES ', preference.theme);
-      // for (let entry of preference) {
-      //   console.log('entry ', entry);
-      // }
-      // this.themeSelected = preference as string;
+      // console.log('preference APRES ', preference.theme);
+
     });
   }
 
