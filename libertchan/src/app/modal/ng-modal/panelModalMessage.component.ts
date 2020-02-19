@@ -16,6 +16,9 @@ export class PanelModalMessageComponent implements OnInit {
   @Input() topicId: number;
   @Input() messageList: Message[];
 
+  // TODO: citation brouillon
+  // @Input() quotedMessageId?: number;
+
   // TODO: do i need a bool for somewhere ?
   // submitted = false;
 
@@ -26,11 +29,13 @@ export class PanelModalMessageComponent implements OnInit {
     this.createForm();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   // closeModal() {
   //   this.activeModal.close('Modal closed');
   // }
+
 
   private createForm() {
     this.messageForm = this.formBuilder.group({
@@ -40,10 +45,16 @@ export class PanelModalMessageComponent implements OnInit {
     });
   }
 
+
   // convenience getter for easy access to form fields
   get f() {
     return this.messageForm.controls;
   }
+
+  // * TODO: Brouillon citation Remove if not used addQuote()
+  // addQuote() {
+  //   this.f.textContent.setValue(this.quotedMessageId);
+  // }
 
   onSubmit(messageForm) {
     this.messageService
@@ -60,4 +71,9 @@ export class PanelModalMessageComponent implements OnInit {
       });
     this.messageForm.reset();
   }
+
+
+
+
+
 }
