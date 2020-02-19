@@ -16,8 +16,8 @@ export class ThemesComponent implements OnInit {
 
 
 
-  themeSelected = 'Défault';
-  theme:string;
+  // themeSelected: string;
+  themeSelected: string;
 
   // TODO: dans un service
   userPreferences = { themeSelected: this.themeSelected };
@@ -26,6 +26,8 @@ export class ThemesComponent implements OnInit {
     { name: 'Défault', value: 0 },
     { name: 'HotPink', value: 1 }
   ];
+
+
 
   changeTheme() {
     this.userPreferences.themeSelected = this.themeSelected;
@@ -44,6 +46,7 @@ export class ThemesComponent implements OnInit {
     this.storage.get('userPreferences').subscribe(preference => {
       // Save default preference on first visit
       if (preference === undefined) {
+        this.themeSelected = 'Défault';
         this.savePreference();
       }
     });
