@@ -5,10 +5,13 @@
     <option value="dog">HotPink</option>
 </select> -->
 
-<select [(ngModel)]="themeSelected" name="theme" (change)='savePreference()'>
-  <option *ngFor="let o of options">
-    {{o.name}}
+<select [(ngModel)]="themeSelected" name="theme" (change)='changeTheme()'>
+  <option *ngFor="let option of options" [ngValue] = "option.name"
+  selected="themeSelected === option.name"
+  >
+  {{option.name}}
   </option>
 </select>
 
-<!-- <p>Selected option: {{ themeSelected }}</p> -->
+<div (click)='getPreference()'>bbbb</div>
+<!-- <p>Selected: {{ themeSelected }}</p> -->
