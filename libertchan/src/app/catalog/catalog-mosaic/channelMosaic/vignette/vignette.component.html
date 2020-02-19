@@ -10,7 +10,7 @@
       <!-- class = text-truncate ? -->
       <h5 class="col-12 p-0 card-title text-center mx-auto ">
         <!-- {{ this.title }} -->
-        {{ (this.title.length>30)? (this.title | slice:0:30)+'...':(this.title) }}
+        {{ (this.title?.length>30)? (this.title | slice:0:30)+'...':(this.title) }}
       </h5>
     </div>
   </a>
