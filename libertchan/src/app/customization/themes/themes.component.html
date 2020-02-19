@@ -1,1 +1,14 @@
-<p>themes works!</p>
+<!-- <label for="theme-select">Thème</label>
+
+<select name="themes" id="theme-select">
+    <option value="">Défault</option>
+    <option value="dog">HotPink</option>
+</select> -->
+
+<select [(ngModel)]="themeSelected" name="theme" (change)='savePreference()'>
+  <option *ngFor="let o of options">
+    {{o.name}}
+  </option>
+</select>
+
+<!-- <p>Selected option: {{ themesOption }}</p> -->
