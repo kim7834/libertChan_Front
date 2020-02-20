@@ -40,7 +40,7 @@ export class ThemesComponent implements OnInit {
   options = [{ name: 'Défault' }, { name: 'HotPink' }];
 
   changeTheme(themeSelected) {
-    console.log('themeSelected ', themeSelected );
+    console.log('themeSelected ', themeSelected);
 
     this.userPreferences.theme = themeSelected;
 
@@ -77,9 +77,17 @@ export class ThemesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getPreference();
-    console.log('--- ',  this.themeSelected);
+    // this.getPreference();
+    // console.log('--- ',  this.themeSelected);
 
+    this.localstorageService.preference.subscribe(preference => {
+      console.log('pref ', preference);
+      // TODO if undefined
+      if (preference === undefined) {
+        this.themeSelected = 'Défault';
+      }
+      // TODO: save la variable en localstorage
+    });
   }
 
   themeHotPink(theme: string): void {
@@ -107,15 +115,13 @@ export class ThemesComponent implements OnInit {
     // catalogDetailHoverElement.classList.add('themeHotPink');
   }
 
-  // the() {
-  //   // this.themeService.setTheme('HotPink');
-  //   this.themeService.getPreference();
-  //   console.log(this.themeService.getPreference());
-  // }
+  the() {
+    // this.localstorageService.getPreference();
+    // console.log(this.localstorageService.getPreference());
+    this.themeService.fanto();
+  }
 
   // goti() {
   //   this.themeService.getTheme();
   // }
-
-
 }

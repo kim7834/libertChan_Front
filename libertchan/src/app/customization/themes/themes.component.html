@@ -5,25 +5,31 @@
     <option value="dog">HotPink</option>
 </select> -->
 
-<div  (click)='themeHotPink("themeHotPink")'>
+<div (click)="themeHotPink('themeHotPink')">
   BBBBBBBB
 </div>
-<!-- <div  (click)='the()'>
-  SETTER SERVICE
+
+<div (click)="the()">
+  THE()
 </div>
-<div  (click)='goti()'>
+
+<!--<div  (click)='goti()'>
   GETTER SERVICE
 </div> -->
 
-<select [(ngModel)]="themeSelected" name="theme" (change)="changeTheme(themeSelected)">
-    <option
-      *ngFor="let option of options"
-      [ngValue]="option.name"
-      selected="themeSelected === option.name"
-    >
-      {{ option.name }}
-    </option>
-  </select>
+<select
+  [(ngModel)]="themeSelected"
+  name="theme"
+  (change)="changeTheme(themeSelected)"
+>
+  <option
+    *ngFor="let option of options"
+    [ngValue]="option.name"
+    selected="themeSelected === option.name"
+  >
+    {{ option.name }}
+  </option>
+</select>
 
 <!-- <div (click)='getPreference()'>bbbb</div> -->
 <!-- <p>Selected: {{ themeSelected }}</p> -->

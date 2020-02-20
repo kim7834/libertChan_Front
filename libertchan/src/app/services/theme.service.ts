@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { BehaviorSubject } from 'rxjs';
+import { LocalstorageService } from './localstorage.service';
 
 interface UserPreferences {
   theme: string;
 }
+
+/**
+ * Tentative d'utilisation d'un behaviorSubject afin de transmettre le theme a tout les composant
+ * -> pas trouvé pour définir la valeur par défaut par localstorage
+ */
 
 
 @Injectable({
@@ -14,8 +20,9 @@ export class ThemeService {
   // theme: any;
 
   // theme: 'HotPink';
-// HotPink
-// Défault
+
+  // HotPink
+  // Défault
 
 
 // !
@@ -28,7 +35,9 @@ setTheme(theme: string) {
 }
 // !
 
-
+  fanto() {
+    console.log('fanto ', this.localstorageService.getPreference());
+  }
 
 
   // setTheme(theme) {
@@ -43,6 +52,7 @@ setTheme(theme: string) {
 
   constructor(
     private storage: StorageMap,
+    private localstorageService: LocalstorageService
   ) { }
 
 

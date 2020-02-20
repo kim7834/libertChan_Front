@@ -24,18 +24,16 @@ export class LocalstorageService {
     console.log('Service -> Saved ', data.theme);
   }
 
-  getPreference() {
-    this.storage
-      .get('userPreferences')
-      .subscribe((preference: UserPreferences) => {
-        // Save default preference on first visit
-        console.log('SERVICE preference AVANT', preference);
-        if (preference === undefined) {
-          this.themeSelected = 'Défault';
-        }
-        return preference;
-      });
+  /**
+   * TODO: pourquoi return undefined ?
+   */
+  get preference() {
+    return this.storage
+    .get('userPreferences');
+
   }
+
+
   /**
    * Ne fonctionne pas -< return 'undefined'
    */
