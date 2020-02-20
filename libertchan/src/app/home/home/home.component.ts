@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
     this.messageService.getLastMessages(5).subscribe(response => {
       this.lastMessages = response as Message[];
-      console.log(response);
+      //console.log(response);
     });
   }
 }
