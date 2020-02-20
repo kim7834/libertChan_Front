@@ -4,6 +4,9 @@ import { StorageMap } from '@ngx-pwa/local-storage';
 import { ThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Renderer2 } from '@angular/core';
+
+
 
 interface Option {
   name: string;
@@ -19,7 +22,11 @@ interface UserPreferences {
   styleUrls: ['./themes.component.scss']
 })
 export class ThemesComponent implements OnInit {
-  constructor(private storage: StorageMap, private fb: FormBuilder) {}
+  constructor(
+    private storage: StorageMap,
+    private fb: FormBuilder,
+    private renderer: Renderer2
+    ) {}
 
   // themeSelected: string;
   themeSelected: any;
@@ -82,5 +89,23 @@ export class ThemesComponent implements OnInit {
     // toSelect.get('themeSelected').setValue(toSelect);
     // this.themeSelected.setValue('HotPink');
 
+
+  }
+
+
+  themeHotPink(): void {
+    const bodyElement = this.renderer.selectRootElement('body', true);
+    bodyElement.classList.add('themeHotPink');
+    const navElement = this.renderer.selectRootElement('.navBarApp', true);
+    navElement.classList.add('themeHotPink');
+    const modalHeaderElement = this.renderer.selectRootElement('.ui-modal-header', true);
+    modalHeaderElement.classList.add('themeHotPink');
+    const modalCreateBtnElement = this.renderer.selectRootElement('.createBtnSpan', true);
+    modalCreateBtnElement.classList.add('themeHotPink');
+    const headerImgElement = this.renderer.selectRootElement('.headerImg', true);
+    headerImgElement.classList.add('themeHotPink');
+    // const catalogDetailHoverElement = this.renderer.selectRootElement('.appTopicDetail', true);
+    // catalogDetailHoverElement.classList.remove('defaultTheme');
+    // catalogDetailHoverElement.classList.add('themeHotPink');
   }
 }

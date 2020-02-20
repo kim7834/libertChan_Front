@@ -21,3 +21,30 @@ body {
   background-color: lightblue;
 }
 
+/** *************
+**  THEMES
+************* */
+// Navbar, Modal header, Modal Btn
+$color-hotpink: hotpink!important;
+$color-hotpinkLight: rgb(240, 216, 228)!important;
+// $color-green: #00FF00;
+// $color-blue: #0000FF;
+body.themeHotPink {
+  color: $color-hotpink;
+}
+
+
+.createBtnSpan.themeHotPink,
+.themeHotPink a {
+  color: $color-hotpink;
+}
+
+.ui-modal-header.themeHotPink {
+  background-color: $color-hotpink;
+}
+
+.headerImg.themeHotPink {
+
+}
+
+

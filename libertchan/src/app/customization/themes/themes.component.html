@@ -5,8 +5,11 @@
     <option value="dog">HotPink</option>
 </select> -->
 
+<div  (click)='themeHotPink()'>
+  BBBBBBBB
+</div>
 
-  <select [(ngModel)]="themeSelected" name="theme" (change)="changeTheme()">
+<select [(ngModel)]="themeSelected" name="theme" (change)="changeTheme()">
     <option
       *ngFor="let option of options"
       [ngValue]="option.name"
