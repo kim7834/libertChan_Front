@@ -87,7 +87,7 @@ export class PanelModalCreateThreadComponent implements OnInit {
     let headers = new HttpHeaders();
     this.http.post(`${this.apiEndPoint}`, formData, { headers }).subscribe(
       (data: any) => {
-        console.log(data);
+        //console.log(data);
         this.imageLink = data.fileDownloadUri;
       },
       error => console.log(error)
