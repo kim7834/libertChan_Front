@@ -1,8 +1,10 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, AfterContentInit, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { ChannelService } from '../../services/channel.service';
 import { Channel } from 'src/app/models/channel';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -10,15 +12,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+
+
   constructor(
     private channelService: ChannelService,
     private route: ActivatedRoute,
     private renderer: Renderer2,
+    private themeService: ThemeService
   ) {}
 
   currentChannel: Channel;
   imgSource: string;
   // imgSource = '../../../assets/images/logo/bird.png';
+
+
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -30,14 +38,28 @@ export class HeaderComponent implements OnInit {
     });
 
     // TODO: Theme
-    const imgElement = this.renderer.selectRootElement('.headerImg', true);
-    if ( imgElement.classList.contains('headerImg') ) {
+    // const imgElement = this.renderer.selectRootElement('.headerImg', true);
+    // if ( imgElement.classList.contains('headerImg') ) {
+    //   this.imgSource = '../../../assets/images/logo/bird.png';
+    // }
+    // if ( imgElement.classList.contains('themeHotPink') ) {
+    //   this.imgSource = '../../../assets/images/logo/bird_hotpink.png';
+    // }
+
+    console.log('INI HEADER STATE : ', this.themeService.getTheme());
+    // console.log('INI HEADER STATE : ', this.themeService.theme);
+
+
+    if (this.themeService.getTheme() === 'Défault') {
       this.imgSource = '../../../assets/images/logo/bird.png';
-    }
-    if ( imgElement.classList.contains('themeHotPink') ) {
+    } else if (this.themeService.getTheme() === 'HotPink') {
       this.imgSource = '../../../assets/images/logo/bird_hotpink.png';
     }
+
   }
+
+  // console.log('SERVICE AT HEADER : ', this.themeService.getTheme());
+
 
 
 }

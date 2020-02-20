@@ -1,23 +1,51 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { BehaviorSubject } from 'rxjs';
+
+interface UserPreferences {
+  theme: string;
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+  // theme: any;
 
-  constructor() { }
+  // theme: 'HotPink';
+// HotPink
+// Défault
 
 
-  private someClassSource = new Subject<string>();
+// !
+// TODO: change valeur par défaut -> from LocalStorage
+private theme = new BehaviorSubject('Défault');
+currentTheme = this.theme.asObservable();
 
-  someClass$ = this.someClassSource.asObservable();
+setTheme(theme: string) {
+  this.theme.next(theme);
+}
+// !
 
-  changeClass(laClass) {
-    this.someClassSource.next(laClass);
-  }
-  // changeClass(class) {
-  //   this.someClassSource.next(class);
+
+
+
+  // setTheme(theme) {
+  //   this.theme = theme;
+  //   // console.log('DANS SERVICE SET : ', theme);
   // }
+
+  getTheme() {
+    // console.log('DANS SERVICE GETTER : ', this.theme);
+    return this.theme.value;
+  }
+
+  constructor(
+    private storage: StorageMap,
+  ) { }
+
+
+
 
 }
