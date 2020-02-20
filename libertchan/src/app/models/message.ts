@@ -7,6 +7,8 @@ export class Message {
   image: Image;
   author: string;
   id: number;
+  // tslint:disable-next-line: variable-name
+  discussionThread: Topic;
 
   constructor(author: string, textContent: string, image: Image) {
     this.author = author;

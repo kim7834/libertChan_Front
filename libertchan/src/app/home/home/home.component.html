@@ -141,13 +141,19 @@
     </span>
 
     <div class="row">
-      <div *ngFor="let message of lastMessages" class="col-3">
-        <img
-          class="imgMessage"
-          src="{{ message.image?.imageLocation }}"
-          alt=""
-        />
-        {{ message.textContent }}
+      <div *ngFor="let message of lastMessages" class="col-3" m-1>
+        <a
+          href="http://192.168.1.14:4200/chan/{{
+            message.discussionThread.channel.shortName
+          }}/{{ message.discussionThread.id }}"
+        >
+          <img
+            class="imgMessage"
+            src="{{ message.image?.imageLocation }}"
+            alt=""
+          />
+          {{ message.textContent }}
+        </a>
       </div>
     </div>
 
