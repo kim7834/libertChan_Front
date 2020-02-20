@@ -11,15 +11,21 @@
     </div>
   </div>
   <br><br><br>
-
+<b>
+attention : pensez à refaire un <pre>npm install</pre> sur cette branche
+</b>
 <hr>
 <h3><u>CONNECT : </u></h3>
 
-<ng-container>
+<ng-container *ngIf="authService.isAuthentificated$ ">
   <div class="alert alert-success">Je suis auth</div>
   <a class="btn btn-link" (click)="authService.logout().subscribe()">logout</a>
 </ng-container>
+<ng-template #noAuth>
+  <div>
 
+  </div>
+</ng-template>
 
 <br><br><br>
 <a class="btn btn btn-outline-danger" [routerLink]="['chan/ac']">Lien protected</a>
