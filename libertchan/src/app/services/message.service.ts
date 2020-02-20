@@ -5,7 +5,6 @@ import { Message } from '../models/message';
 
 import { environment } from '../../environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -45,6 +44,13 @@ export class MessageService {
     return this.httpClient.post(
       this.baseUrl + '/topic/' + id,
       message,
+      this.httpOptions
+    );
+  }
+
+  getLastMessages(nbMessages: number) {
+    return this.httpClient.get(
+      this.baseUrl + '/last/' + nbMessages,
       this.httpOptions
     );
   }

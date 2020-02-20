@@ -140,10 +140,19 @@
       Derniers messages
     </span>
 
+    <div class="row">
+      <div *ngFor="let message of lastMessages" class="col-3">
+        <img
+          class="imgMessage"
+          src="{{ message.image?.imageLocation }}"
+          alt=""
+        />
+        {{ message.textContent }}
+      </div>
+    </div>
 
-<!-- TODO: <app-vignette -->
+    <!-- TODO: <app-vignette -->
 
-
-
-  <!-- TODO <app-footer> -->
+    <!-- TODO <app-footer> -->
+  </div>
 </div>
