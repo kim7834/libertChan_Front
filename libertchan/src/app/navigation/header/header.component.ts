@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   // imgSource = '../../../assets/images/logo/bird.png';
 
   ngOnInit() {
-
     this.route.params.subscribe(params => {
       this.channelService
         .getChannelByShortName(params.shortName)
@@ -29,19 +28,15 @@ export class HeaderComponent implements OnInit {
           this.currentChannel = response as Channel;
         });
     });
+
+    // TODO: Theme
     const imgElement = this.renderer.selectRootElement('.headerImg', true);
-    // bodyElement.classList.add('themeHotPink');
-    console.log('imgElement ', imgElement);
-
-    console.log('VERIF : ', imgElement.classList.contains('headerImg'));
-
     if ( imgElement.classList.contains('headerImg') ) {
       this.imgSource = '../../../assets/images/logo/bird.png';
     }
     if ( imgElement.classList.contains('themeHotPink') ) {
       this.imgSource = '../../../assets/images/logo/bird_hotpink.png';
     }
-
   }
 
 

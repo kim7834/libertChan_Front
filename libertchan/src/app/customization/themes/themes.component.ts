@@ -71,39 +71,28 @@ export class ThemesComponent implements OnInit {
       // console.log('preference APRES ', preference.theme);
 
     });
+    // this.themeHotPink(this.themeSelected);
   }
 
   ngOnInit() {
-    // this.themeSelected = 'Défault';
-
-    // this.themeSelected = this.getPreference();
     this.getPreference();
-    // this.themeSelected = this.getPreference();
-    // console.log('init ' , this.themeSelected );
 
-    // this.options = this.fb.group({
-    //   options: [null, Validators.required]
-    // });
-
-    // const toSelect = this.options.find(c => c.name === 'HotPink');
-    // toSelect.get('themeSelected').setValue(toSelect);
-    // this.themeSelected.setValue('HotPink');
 
 
   }
 
 
-  themeHotPink(): void {
+  themeHotPink(theme:string): void {
     const bodyElement = this.renderer.selectRootElement('body', true);
-    bodyElement.classList.add('themeHotPink');
+    bodyElement.classList.add(theme);
     const navElement = this.renderer.selectRootElement('.navBarApp', true);
-    navElement.classList.add('themeHotPink');
+    navElement.classList.add(theme);
     const modalHeaderElement = this.renderer.selectRootElement('.ui-modal-header', true);
-    modalHeaderElement.classList.add('themeHotPink');
+    modalHeaderElement.classList.add(theme);
     const modalCreateBtnElement = this.renderer.selectRootElement('.createBtnSpan', true);
-    modalCreateBtnElement.classList.add('themeHotPink');
+    modalCreateBtnElement.classList.add(theme);
     const headerImgElement = this.renderer.selectRootElement('.headerImg', true);
-    headerImgElement.classList.add('themeHotPink');
+    headerImgElement.classList.add(theme);
     // const catalogDetailHoverElement = this.renderer.selectRootElement('.appTopicDetail', true);
     // catalogDetailHoverElement.classList.remove('defaultTheme');
     // catalogDetailHoverElement.classList.add('themeHotPink');
