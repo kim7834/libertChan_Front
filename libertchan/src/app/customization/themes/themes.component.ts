@@ -87,6 +87,7 @@ export class ThemesComponent implements OnInit {
         this.themeSelected = 'Défault';
       }
       // TODO: save la variable en localstorage
+      this.localstorageService.savePreference(this.themeSelected);
     });
   }
 
