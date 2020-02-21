@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
-
-interface UserPreferences {
-  theme: string;
-}
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { UserPreferences } from '../models/user-preferences';
 
 @Injectable({
   providedIn: 'root'
@@ -17,16 +16,21 @@ export class LocalstorageService {
     theme: this.themeSelected
   };
 
-  savePreference(data) {
-    this.storage
-      .set('userPreferences', data)
-      .subscribe(() => {});
-    console.log('Service -> Saved ', data?.theme);
+  savePreference(data: UserPreferences): Observable<void> {
+    console.log(data);
+    return this.storage.set('userPreferences', data);
   }
 
-  get preference() {
+  get preference(): Observable<UserPreferences> {
     return this.storage
-    .get('userPreferences');
+    .get('userPreferences').pipe(
+      map((pref: UserPreferences) => {
+        if(pref) {
+          return new UserPreferences(pref);
+        }
+        return null;
+      })
+    );
   }
 
 

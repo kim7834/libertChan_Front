@@ -60,41 +60,25 @@ body.HotPink {
 // -----------------------------
 
 :root {
-  --color-default-text: #000000;
-  --color-default-url: #007bff;
-  --img-default-logo:url("/assets/images/logo/bird.png");
+  .default {
+    --color-default-text: #000000;
+    --color-default-url: #007bff;
+    --img-default-logo:url("/assets/images/logo/bird.png");
+    --color-default-light: rgb(240, 216, 228);
+  }
 
-  --color-hotpinkLight: rgb(240, 216, 228);
+  .hotpink {
+    --color-default-text: hotpink;
+    --color-default-url: rgb(240, 216, 228);
+    --img-default-logo: url('/assets/images/logo/bird_Hotpink.png');
+    --color-default-light: rgb(240, 216, 228);
+  }
 
 }
 
-body.default {
 
-  a {
-    color: var(--color-hotpink);
-  }
-
-  div.headerImg {
-    // background-image: var(--color-default-logo)
-  }
+a {
+  color: var(--color-default-url);
 }
-body.hotpink {
-  --color-hotpink: hotpink;
-  --color-hotpinkLight: rgb(240, 216, 228);
-  --color-hotpink-logo: url('/assets/images/logo/bird_Hotpink.png');
 
-  a {
-    color: var(--color-hotpink);
-  }
 
-  .headerImg {
-    background: var(--color-hotpink-logo) no-repeat;
-    // height: 500px;
-
-    // display: block;
-    // -moz-box-sizing: border-box;
-    // box-sizing: border-box;
-    // width: 180px; /* Width of new image */
-    // height: 236px; /* Height of new image */
-  }
-}

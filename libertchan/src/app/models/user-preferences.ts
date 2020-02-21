@@ -1,7 +1,10 @@
 export class UserPreferences {
-    theme: string;
+    name = '';
+    label = '';
 
-    constructor() {
-      this.theme = '';
+    constructor(data?: UserPreferences) {
+      if (data) {
+        Object.assign(this, data);
+      }
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StorageMap } from '@ngx-pwa/local-storage';
 
@@ -6,6 +6,9 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 import { UserPreferences } from 'src/app/models/user-preferences';
+import { Observable, of } from 'rxjs';
+import { map, tap, switchMap } from 'rxjs/operators';
+import { untilDestroyed } from 'ngx-take-until-destroy';
 
 
 @Component({
@@ -13,7 +16,7 @@ import { UserPreferences } from 'src/app/models/user-preferences';
   templateUrl: './themes.component.html',
   styleUrls: ['./themes.component.scss']
 })
-export class ThemesComponent implements OnInit {
+export class ThemesComponent implements OnInit, OnDestroy {
   constructor(
     private storage: StorageMap,
     private fb: FormBuilder,
@@ -22,48 +25,51 @@ export class ThemesComponent implements OnInit {
     private localstorageService: LocalstorageService
   ) {}
 
-  userPreferences = new UserPreferences();
+  userPreferences$: Observable<UserPreferences>;
+  userPreferences: UserPreferences;
 
   themes = [
-    { name: 'Défault' },
-    { name: 'HotPink' }
+    new UserPreferences({ name: 'default', label: 'Défault' }),
+    new UserPreferences({ name: 'hotpink', label: 'HotPink' })
   ];
 
-  changeTheme(themeSelected) {
-    console.log('themeSelected ', themeSelected);
-    console.log('this.userPreferences.theme ', this.userPreferences.theme);
+  changeTheme() {
 
-    this.userPreferences.theme = themeSelected;
+    this.localstorageService.savePreference(this.userPreferences)
+    .pipe(untilDestroyed(this))
+    .subscribe();
 
-    this.localstorageService.savePreference(this.userPreferences);
-
-    this.themeHotPink(themeSelected);
+    this.themeHotPink(this.userPreferences);
 
   }
 
 
   ngOnInit() {
-    this.localstorageService.preference.subscribe((preference: UserPreferences) => {
-      console.log('Loading pref ', preference);
-      if (preference === undefined) {
-        preference = { theme: 'Défault' };
-        this.localstorageService.savePreference(preference);
-      }
-      this.userPreferences = preference;
-    });
+
+    this.userPreferences$ = this.localstorageService.preference.pipe(
+      switchMap((preference) => {
+        if (!preference) {
+          preference = this.themes[0];
+          return this.localstorageService.savePreference(preference).pipe(
+            map(() => preference)
+          );
+        }
+        return of(preference);
+      }),
+      tap(pref => {
+        this.userPreferences = this.themes.find(t => t.name === pref.name);
+      }),
+      tap(() => this.themeHotPink(this.userPreferences)),
+    );
   }
 
-  themeHotPink(theme: string): void {
+  ngOnDestroy(): void{
+  }
+
+  themeHotPink(pref: UserPreferences): void {
     const bodyElement = this.renderer.selectRootElement('body', true);
-    bodyElement.classList.add(theme);
-    const navElement = this.renderer.selectRootElement('.navBarApp', true);
-    navElement.classList.add(theme);
-    const modalHeaderElement = this.renderer.selectRootElement('.ui-modal-header', true);
-    modalHeaderElement.classList.add(theme);
-    const modalCreateBtnElement = this.renderer.selectRootElement('.createBtnSpan', true);
-    modalCreateBtnElement.classList.add(theme);
-    const headerImgElement = this.renderer.selectRootElement('.headerImg', true);
-    headerImgElement.classList.add(theme);
+    bodyElement.className = '';
+    bodyElement.classList.add(pref.name);
     // const catalogDetailHoverElement = this.renderer.selectRootElement('.appTopicDetail', true);
     // catalogDetailHoverElement.classList.remove('defaultTheme');
     // catalogDetailHoverElement.classList.add('themeHotPink');

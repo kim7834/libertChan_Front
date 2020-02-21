@@ -1,19 +1,19 @@
 
-
+<ng-container *ngIf="userPreferences$ | async" >
 
 <select
-  [(ngModel)]="userPreferences.theme"
+  [(ngModel)]="userPreferences"
   name="theme"
-  (change)="changeTheme(userPreferences.theme)"
+  (ngModelChange)="changeTheme()"
 >
   <option
     *ngFor="let theme of themes"
-    [ngValue]="theme.name"
-    selected="userPreferences.theme === theme.name"
+    [ngValue]="theme"
   >
-    {{ theme.name }}
+    {{ theme.label }}
   </option>
 </select>
 
 <!-- <div (click)='getPreference()'>bbbb</div> -->
 <!-- <p>Selected: {{ themeSelected }}</p> -->
+</ng-container>
