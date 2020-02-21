@@ -13,10 +13,6 @@
 //   border: 1px solid yellow;
 // }
 
-body {
-  background-color: lightblue;
-}
-
 /** *************
 **  THEMES
 ************* */
@@ -38,10 +34,79 @@ body {
 //   background-color: $color-hotpink;
 // }
 
+/* ------------ THEMES ----------------- */
 
-// -----------------------------
+:root {
+  .default {
+    --color-text: #000000;
+    --color-list: #000000;
+    --color-span: #000000;
+    --color-url: #007bff;
+    --img-bird:url('/assets/images/logo/bird.png');
+    --img-logo:url('/assets/images/logo/logo.png');
+    --background-color: lightblue;
+    // --color-default-light: rgb(240, 216, 228);
+  }
+
+  .hotpink {
+    --color-text: hotpink;
+    --color-list: #e08ab5;
+    --color-span: hotpink;
+    --color-lead: #f8459e;
+    --color-url: hotpink;
+    --img-bird: url('/assets/images/logo/bird_hotpink.png');
+    --img-logo:url('/assets/images/logo/logo_Hotpink.png');
+    --background-color: lightblue;
+    // --color-default-light: rgb(240, 216, 228);
+  }
+
+  .sombre {
+    --color-text: #ffffff;
+    --color-list: #b8afaf;
+    --color-url: #c5b8b8;
+    --img-bird: url('/assets/images/logo/bird_creme.png');
+    --img-logo:url('/assets/images/logo/logo_creme.png');
+    --background-color: rgb(63, 59, 59);
+    // --color-default-light: rgb(240, 216, 228);
+
+  }
+
+
+}
+
+
+/* Custom element */
+a {
+  color: var(--color-url);
+  cursor: pointer;
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--color-text);
+}
+.lead {
+  color: var(--color-lead);
+}
+span {
+  color: var(--color-span);
+}
+
+#LibertChanLogo {
+  background-image: var(--img-logo);
+  background-repeat: no-repeat;
+  height: 252px;
+  width: 435px;
+  background-size: cover;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Bird logo
 .headerImg {
-  background-image: var(--img-default-logo);
+  background-image: var(--img-bird);
   background-repeat: no-repeat;
   height: 80px;
   width: 90px;
@@ -49,32 +114,8 @@ body {
   display: inline-block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  // width: 180px; /* Width of new image */
-  // height: 236px; /* Height of new image */
 }
 
-// -----------------------------
-
-:root {
-  .default {
-    --color-default-text: #000000;
-    --color-default-url: #007bff;
-    --img-default-logo:url('/assets/images/logo/bird.png');
-    --color-default-light: rgb(240, 216, 228);
-  }
-
-  .hotpink {
-    --color-default-text: hotpink;
-    --color-default-url: rgb(240, 216, 228);
-    --img-default-logo: url('/assets/images/logo/bird_hotpink.png');
-    --color-default-light: rgb(240, 216, 228);
-  }
-
+li {
+  color: var(--color-list);
 }
-
-
-a {
-  color: var(--color-default-url);
-}
-
-

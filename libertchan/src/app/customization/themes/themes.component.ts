@@ -28,7 +28,8 @@ export class ThemesComponent implements OnInit, OnDestroy {
 
   themes = [
     new UserPreferences({ name: 'default', label: 'Défault' }),
-    new UserPreferences({ name: 'hotpink', label: 'HotPink' })
+    new UserPreferences({ name: 'hotpink', label: 'HotPink' }),
+    new UserPreferences({ name: 'sombre', label: 'Sombre' })
   ];
 
   changeTheme() {
@@ -67,9 +68,7 @@ export class ThemesComponent implements OnInit, OnDestroy {
     const bodyElement = this.renderer.selectRootElement('body', true);
     bodyElement.className = '';
     bodyElement.classList.add(pref.name);
-    // const catalogDetailHoverElement = this.renderer.selectRootElement('.appTopicDetail', true);
-    // catalogDetailHoverElement.classList.remove('defaultTheme');
-    // catalogDetailHoverElement.classList.add('selectTheme');
+
   }
 
 
