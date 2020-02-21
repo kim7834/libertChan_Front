@@ -8,24 +8,24 @@
 <div (click)="themeHotPink('themeHotPink')">
   BBBBBBBB
 </div>
-
+<!--
 <div (click)="the()">
   THE()
-</div>
+</div> -->
 
 <!--<div  (click)='goti()'>
   GETTER SERVICE
 </div> -->
 
 <select
-  [(ngModel)]="themeSelected"
+  [(ngModel)]="userPreferences.theme"
   name="theme"
-  (change)="changeTheme(themeSelected)"
+  (change)="changeTheme(userPreferences.theme)"
 >
   <option
     *ngFor="let option of options"
     [ngValue]="option.name"
-    selected="themeSelected === option.name"
+    selected="userPreferences.theme === option.name"
   >
     {{ option.name }}
   </option>

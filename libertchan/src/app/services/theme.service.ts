@@ -35,9 +35,9 @@ setTheme(theme: string) {
 }
 // !
 
-  fanto() {
-    console.log('fanto ', this.localstorageService.getPreference());
-  }
+  // fanto() {
+  //   console.log('fanto ', this.localstorageService.getPreference());
+  // }
 
 
   // setTheme(theme) {

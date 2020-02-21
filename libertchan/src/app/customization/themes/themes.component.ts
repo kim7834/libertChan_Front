@@ -1,21 +1,14 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { StorageMap } from '@ngx-pwa/local-storage';
-
-import { Subscription } from 'rxjs';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Renderer2 } from '@angular/core';
-
-import { ThemeService } from '../../services/theme.service';
 import { LocalstorageService } from '../../services/localstorage.service';
+import { ThemeService } from '../../services/theme.service';
+
+
 
 interface UserPreferences {
   theme: string;
 }
-
-/**
- * La sauvegarde de fait via le service LocalstorageService
- * Le chargement se fait ici getPreference()
- */
 
 @Component({
   selector: 'app-themes',
@@ -31,63 +24,34 @@ export class ThemesComponent implements OnInit {
     private localstorageService: LocalstorageService
   ) {}
 
-  themeSelected: any;
-
   userPreferences = {
-    theme: this.themeSelected
+    theme: ''
   };
 
-  options = [{ name: 'Défault' }, { name: 'HotPink' }];
+  options = [
+    { name: 'Défault' },
+    { name: 'HotPink' }
+  ];
 
   changeTheme(themeSelected) {
     console.log('themeSelected ', themeSelected);
+    console.log('this.userPreferences.theme ', this.userPreferences.theme);
 
     this.userPreferences.theme = themeSelected;
 
     this.localstorageService.savePreference(this.userPreferences);
 
-    // this.themeService.setTheme(this.themeSelected);
-    // this.savePreference();
   }
 
-  // TODO: remove if service ok
-  // savePreference() {
-  //   this.storage
-  //     .set('userPreferences', this.userPreferences)
-  //     .subscribe(() => {});
-  //   console.log('saved ', this.userPreferences.theme);
-  // }
-
-  getPreference() {
-    this.storage
-      .get('userPreferences')
-      .subscribe((preference: UserPreferences) => {
-        // Save default preference on first visit
-        console.log('preference AVANT', preference);
-        if (preference === undefined) {
-          this.themeSelected = 'Défault';
-          this.changeTheme(this.themeSelected);
-        }
-        // * Defini le theme @Service en fonction du LocalStorage
-        this.themeService.setTheme(preference.theme);
-        console.log('theme -> service : ', preference.theme);
-
-        this.themeSelected = preference.theme;
-      });
-  }
 
   ngOnInit() {
-    // this.getPreference();
-    // console.log('--- ',  this.themeSelected);
-
-    this.localstorageService.preference.subscribe(preference => {
-      console.log('pref ', preference);
-      // TODO if undefined
+    this.localstorageService.preference.subscribe((preference: UserPreferences) => {
+      console.log('Loading pref ', preference);
       if (preference === undefined) {
-        this.themeSelected = 'Défault';
+        preference = { theme: 'Défault' };
+        this.localstorageService.savePreference(preference);
       }
-      // TODO: save la variable en localstorage
-      this.localstorageService.savePreference(this.themeSelected);
+      this.userPreferences = preference;
     });
   }
 
@@ -119,10 +83,13 @@ export class ThemesComponent implements OnInit {
   the() {
     // this.localstorageService.getPreference();
     // console.log(this.localstorageService.getPreference());
-    this.themeService.fanto();
+    // this.themeService.fanto();
   }
 
   // goti() {
   //   this.themeService.getTheme();
   // }
+
+
+
 }

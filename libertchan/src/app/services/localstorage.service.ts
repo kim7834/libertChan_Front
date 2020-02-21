@@ -21,16 +21,12 @@ export class LocalstorageService {
     this.storage
       .set('userPreferences', data)
       .subscribe(() => {});
-    console.log('Service -> Saved ', data.theme);
+    console.log('Service -> Saved ', data?.theme);
   }
 
-  /**
-   * TODO: pourquoi return undefined ?
-   */
   get preference() {
     return this.storage
     .get('userPreferences');
-
   }
 
 
