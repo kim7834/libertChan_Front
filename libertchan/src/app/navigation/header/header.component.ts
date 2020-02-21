@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   currentChannel: Channel;
-  imgSource: string;
+  // imgSource: string;
   // imgSource = '../../../assets/images/logo/bird.png';
 
 
@@ -48,12 +48,12 @@ export class HeaderComponent implements OnInit {
 
     // console.log('INI HEADER STATE : ', this.themeService.getTheme());
 
-
-    if (this.themeService.getTheme() === 'Défault') {
-      this.imgSource = '../../../assets/images/logo/bird.png';
-    } else if (this.themeService.getTheme() === 'HotPink') {
-      this.imgSource = '../../../assets/images/logo/bird_hotpink.png';
-    }
+    // ** test changement image
+    // if (this.themeService.getTheme() === 'Défault') {
+    //   this.imgSource = '../../../assets/images/logo/bird.png';
+    // } else if (this.themeService.getTheme() === 'HotPink') {
+    //   this.imgSource = '../../../assets/images/logo/bird_hotpink.png';
+    // }
 
   }
 

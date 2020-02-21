@@ -1,9 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-
 /* -- VERIF -- */
 //[class*="container"] {
- // border: 1px solid coral;
+// border: 1px solid coral;
 //}
 // ​
 // [class*='row'] {
@@ -14,9 +13,6 @@
 //   border: 1px solid yellow;
 // }
 
-
-
-
 body {
   background-color: lightblue;
 }
@@ -25,14 +21,13 @@ body {
 **  THEMES
 ************* */
 // Navbar, Modal header, Modal Btn
-$color-hotpink: hotpink!important;
-$color-hotpinkLight: rgb(240, 216, 228)!important;
+$color-hotpink: hotpink !important;
+$color-hotpinkLight: rgb(240, 216, 228) !important;
 // $color-green: #00FF00;
 // $color-blue: #0000FF;
 body.HotPink {
   color: $color-hotpink;
 }
-
 
 .createBtnSpan.HotPink,
 .themeHotPink a {
@@ -44,7 +39,62 @@ body.HotPink {
 }
 
 .headerImg.HotPink {
+}
+
+// -----------------------------
+.headerImg {
+  background-image: var(--img-default-logo);
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 90px;
+  background-size: cover;
+  // border: 1px red solid;
+
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  // width: 180px; /* Width of new image */
+  // height: 236px; /* Height of new image */
+}
+
+// -----------------------------
+
+:root {
+  --color-default-text: #000000;
+  --color-default-url: #007bff;
+  --img-default-logo:url("/assets/images/logo/bird.png");
+
+  --color-hotpinkLight: rgb(240, 216, 228);
 
 }
 
+body.default {
 
+  a {
+    color: var(--color-hotpink);
+  }
+
+  div.headerImg {
+    // background-image: var(--color-default-logo)
+  }
+}
+body.hotpink {
+  --color-hotpink: hotpink;
+  --color-hotpinkLight: rgb(240, 216, 228);
+  --color-hotpink-logo: url('/assets/images/logo/bird_Hotpink.png');
+
+  a {
+    color: var(--color-hotpink);
+  }
+
+  .headerImg {
+    background: var(--color-hotpink-logo) no-repeat;
+    // height: 500px;
+
+    // display: block;
+    // -moz-box-sizing: border-box;
+    // box-sizing: border-box;
+    // width: 180px; /* Width of new image */
+    // height: 236px; /* Height of new image */
+  }
+}

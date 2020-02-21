@@ -12,7 +12,6 @@ interface UserPreferences {
  * -> pas trouvé pour définir la valeur par défaut par localstorage
  */
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,21 +23,21 @@ export class ThemeService {
   // HotPink
   // Défault
 
+  constructor(
+    private storage: StorageMap,
+    private localstorageService: LocalstorageService
+  ) {}
 
-// !
-// TODO: change valeur par défaut -> from LocalStorage
-private theme = new BehaviorSubject('Défault');
-currentTheme = this.theme.asObservable();
+  // !
+  // TODO: change valeur par défaut -> from LocalStorage
+  // private theme = new BehaviorSubject('Défault');
+  private theme = new BehaviorSubject('Défault');
+  currentTheme = this.theme.asObservable();
 
-setTheme(theme: string) {
-  this.theme.next(theme);
-}
-// !
-
-  // fanto() {
-  //   console.log('fanto ', this.localstorageService.getPreference());
-  // }
-
+  setTheme(theme: string) {
+    this.theme.next(theme);
+  }
+  // !
 
   // setTheme(theme) {
   //   this.theme = theme;
@@ -49,13 +48,4 @@ setTheme(theme: string) {
     // console.log('DANS SERVICE GETTER : ', this.theme);
     return this.theme.value;
   }
-
-  constructor(
-    private storage: StorageMap,
-    private localstorageService: LocalstorageService
-  ) { }
-
-
-
-
 }
