@@ -5,14 +5,20 @@ import { NavigationRoutingModule } from './navigation-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { RouterModule } from '@angular/router';
-import { environment } from 'src/environments/environment';
 import { FooterComponent } from './footer/footer.component';
+
+import { CustomizationModule } from '../customization/customization.module';
+
 
 @NgModule({
   declarations: [NavbarComponent, HeaderComponent, FooterComponent],
-  exports: [NavbarComponent, HeaderComponent],
-  imports: [CommonModule, NavigationRoutingModule, HttpClientModule]
+  exports: [NavbarComponent, HeaderComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    NavigationRoutingModule,
+    HttpClientModule,
+    CustomizationModule
+  ]
 })
 export class NavigationModule {}
 

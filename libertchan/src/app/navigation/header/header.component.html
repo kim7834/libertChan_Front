@@ -9,10 +9,13 @@
         <!-- </div> -->
         <div class="col-6">
           <a [routerLink]="['/']">
-            <img
-              src="../../../assets/images/logo/bird.png"
+            <!-- TODO: Async ? -->
+            <!-- <img class="headerImg"
+              [src]="imgSource"
               alt="LibertChan Logo"
-            />
+            /> -->
+            <!-- <img src='/assets/images/logo/bird.png' class="headerImg"> -->
+            <div class="headerImg"></div>
             </a>
           <span>/{{ currentChannel?.shortName }}/</span><span> : </span
           ><span class="lead">{{ currentChannel?.name }}</span>

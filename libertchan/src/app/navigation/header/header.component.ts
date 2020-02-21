@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ChannelService } from '../../services/channel.service';
-import { Channel } from 'src/app/models/channel';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Channel } from 'src/app/models/channel';
+import { ChannelService } from '../../services/channel.service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 export class HeaderComponent implements OnInit {
   constructor(
     private channelService: ChannelService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   currentChannel: Channel;
+  // imgSource: string;
+  // imgSource = '../../../assets/images/logo/bird.png';
 
   ngOnInit() {
     this.route.params.subscribe(params => {

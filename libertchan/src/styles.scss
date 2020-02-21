@@ -1,9 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-
 /* -- VERIF -- */
 //[class*="container"] {
- // border: 1px solid coral;
+// border: 1px solid coral;
 //}
 // ​
 // [class*='row'] {
@@ -14,10 +13,109 @@
 //   border: 1px solid yellow;
 // }
 
+/** *************
+**  THEMES
+************* */
+// Navbar, Modal header, Modal Btn
+// $color-hotpink: hotpink !important;
+// $color-hotpinkLight: rgb(240, 216, 228) !important;
+// $color-green: #00FF00;
+// $color-blue: #0000FF;
+// body.HotPink {
+//   color: $color-hotpink;
+// }
 
+// .createBtnSpan.HotPink,
+// .selectTheme a {
+//   color: $color-hotpink;
+// }
+
+// .ui-modal-header.HotPink {
+//   background-color: $color-hotpink;
+// }
+
+/* ------------ THEMES ----------------- */
+
+:root {
+  .default {
+    --color-text: #000000;
+    --color-list: #000000;
+    --color-span: #000000;
+    --color-url: #007bff;
+    --img-bird:url('/assets/images/logo/bird.png');
+    --img-logo:url('/assets/images/logo/logo.png');
+    --background-color: lightblue;
+    // --color-default-light: rgb(240, 216, 228);
+  }
+
+  .hotpink {
+    --color-text: hotpink;
+    --color-list: #e08ab5;
+    --color-span: hotpink;
+    --color-lead: #f8459e;
+    --color-url: hotpink;
+    --img-bird: url('/assets/images/logo/bird_hotpink.png');
+    --img-logo:url('/assets/images/logo/logo_Hotpink.png');
+    --background-color: lightblue;
+    // --color-default-light: rgb(240, 216, 228);
+  }
+
+  .sombre {
+    --color-text: #ffffff;
+    --color-list: #b8afaf;
+    --color-url: #c5b8b8;
+    --img-bird: url('/assets/images/logo/bird_creme.png');
+    --img-logo:url('/assets/images/logo/logo_creme.png');
+    --background-color: rgb(63, 59, 59);
+    // --color-default-light: rgb(240, 216, 228);
+
+  }
+
+
+}
+
+
+/* Custom element */
+a {
+  color: var(--color-url);
+  cursor: pointer;
+}
 
 
 body {
-  background-color: lightblue;
+  background-color: var(--background-color);
+  color: var(--color-text);
+}
+.lead {
+  color: var(--color-lead);
+}
+span {
+  color: var(--color-span);
 }
 
+#LibertChanLogo {
+  background-image: var(--img-logo);
+  background-repeat: no-repeat;
+  height: 252px;
+  width: 435px;
+  background-size: cover;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Bird logo
+.headerImg {
+  background-image: var(--img-bird);
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 90px;
+  background-size: cover;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+li {
+  color: var(--color-list);
+}

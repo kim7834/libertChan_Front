@@ -8,8 +8,13 @@ img {
   overflow-y: auto;
 }
 
-.topicContainer:hover {
-  background-color: rgb(136, 188, 204);
+.hotpink:hover {
+  background-color: red!important;
+}
+
+.topicContainer.defaultTheme:hover {
+  // background-color: rgb(136, 188, 204);
+  background-color: rgba(144, 164, 170, 0.274);
 }
 
 .topicLink {
