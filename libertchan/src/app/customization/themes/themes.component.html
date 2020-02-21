@@ -1,9 +1,4 @@
-<!-- <label for="theme-select">Thème</label>
 
-<select name="themes" id="theme-select">
-    <option value="">Défault</option>
-    <option value="dog">HotPink</option>
-</select> -->
 
 <div (click)="themeHotPink('themeHotPink')">
   BBBBBBBB
@@ -23,11 +18,11 @@
   (change)="changeTheme(userPreferences.theme)"
 >
   <option
-    *ngFor="let option of options"
-    [ngValue]="option.name"
-    selected="userPreferences.theme === option.name"
+    *ngFor="let theme of themes"
+    [ngValue]="theme.name"
+    selected="userPreferences.theme === theme.name"
   >
-    {{ option.name }}
+    {{ theme.name }}
   </option>
 </select>
 

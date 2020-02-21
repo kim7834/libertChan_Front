@@ -1,14 +1,12 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StorageMap } from '@ngx-pwa/local-storage';
-import { LocalstorageService } from '../../services/localstorage.service';
-import { ThemeService } from '../../services/theme.service';
 
+import { LocalstorageService } from 'src/app/services/localstorage.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
+import { UserPreferences } from 'src/app/models/user-preferences';
 
-interface UserPreferences {
-  theme: string;
-}
 
 @Component({
   selector: 'app-themes',
@@ -24,11 +22,9 @@ export class ThemesComponent implements OnInit {
     private localstorageService: LocalstorageService
   ) {}
 
-  userPreferences = {
-    theme: ''
-  };
+  userPreferences = new UserPreferences();
 
-  options = [
+  themes = [
     { name: 'Défault' },
     { name: 'HotPink' }
   ];
@@ -60,20 +56,11 @@ export class ThemesComponent implements OnInit {
     bodyElement.classList.add(theme);
     const navElement = this.renderer.selectRootElement('.navBarApp', true);
     navElement.classList.add(theme);
-    const modalHeaderElement = this.renderer.selectRootElement(
-      '.ui-modal-header',
-      true
-    );
+    const modalHeaderElement = this.renderer.selectRootElement('.ui-modal-header', true);
     modalHeaderElement.classList.add(theme);
-    const modalCreateBtnElement = this.renderer.selectRootElement(
-      '.createBtnSpan',
-      true
-    );
+    const modalCreateBtnElement = this.renderer.selectRootElement('.createBtnSpan', true);
     modalCreateBtnElement.classList.add(theme);
-    const headerImgElement = this.renderer.selectRootElement(
-      '.headerImg',
-      true
-    );
+    const headerImgElement = this.renderer.selectRootElement('.headerImg', true);
     headerImgElement.classList.add(theme);
     // const catalogDetailHoverElement = this.renderer.selectRootElement('.appTopicDetail', true);
     // catalogDetailHoverElement.classList.remove('defaultTheme');
