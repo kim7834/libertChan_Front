@@ -37,6 +37,8 @@ export class ThemesComponent implements OnInit {
 
     this.localstorageService.savePreference(this.userPreferences);
 
+    this.themeHotPink(themeSelected);
+
   }
 
 

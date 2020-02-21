@@ -29,21 +29,21 @@ $color-hotpink: hotpink!important;
 $color-hotpinkLight: rgb(240, 216, 228)!important;
 // $color-green: #00FF00;
 // $color-blue: #0000FF;
-body.themeHotPink {
+body.HotPink {
   color: $color-hotpink;
 }
 
 
-.createBtnSpan.themeHotPink,
+.createBtnSpan.HotPink,
 .themeHotPink a {
   color: $color-hotpink;
 }
 
-.ui-modal-header.themeHotPink {
+.ui-modal-header.HotPink {
   background-color: $color-hotpink;
 }
 
-.headerImg.themeHotPink {
+.headerImg.HotPink {
 
 }
 
