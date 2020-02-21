@@ -1,51 +1,41 @@
-import { Injectable } from '@angular/core';
-import { StorageMap } from '@ngx-pwa/local-storage';
-import { BehaviorSubject } from 'rxjs';
-import { LocalstorageService } from './localstorage.service';
+// import { Injectable } from '@angular/core';
+// import { StorageMap } from '@ngx-pwa/local-storage';
+// import { BehaviorSubject } from 'rxjs';
+// import { LocalstorageService } from './localstorage.service';
 
-interface UserPreferences {
-  theme: string;
-}
+// interface UserPreferences {
+//   theme: string;
+// }
 
-/**
- * Tentative d'utilisation d'un behaviorSubject afin de transmettre le theme a tout les composant
- * -> pas trouvé pour définir la valeur par défaut par localstorage
- */
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ThemeService {
-  // theme: any;
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class ThemeService {
 
-  // theme: 'HotPink';
+//   constructor(
+//     private storage: StorageMap,
+//     private localstorageService: LocalstorageService
+//   ) {}
 
-  // HotPink
-  // Défault
+//   // !
+//   // TODO: change valeur par défaut -> from LocalStorage
+//   // private theme = new BehaviorSubject('Défault');
+//   private theme = new BehaviorSubject('Défault');
+//   currentTheme = this.theme.asObservable();
 
-  constructor(
-    private storage: StorageMap,
-    private localstorageService: LocalstorageService
-  ) {}
+//   setTheme(theme: string) {
+//     this.theme.next(theme);
+//   }
+//   // !
 
-  // !
-  // TODO: change valeur par défaut -> from LocalStorage
-  // private theme = new BehaviorSubject('Défault');
-  private theme = new BehaviorSubject('Défault');
-  currentTheme = this.theme.asObservable();
+//   // setTheme(theme) {
+//   //   this.theme = theme;
+//   //   // console.log('DANS SERVICE SET : ', theme);
+//   // }
 
-  setTheme(theme: string) {
-    this.theme.next(theme);
-  }
-  // !
-
-  // setTheme(theme) {
-  //   this.theme = theme;
-  //   // console.log('DANS SERVICE SET : ', theme);
-  // }
-
-  getTheme() {
-    // console.log('DANS SERVICE GETTER : ', this.theme);
-    return this.theme.value;
-  }
-}
+//   getTheme() {
+//     // console.log('DANS SERVICE GETTER : ', this.theme);
+//     return this.theme.value;
+//   }
+// }

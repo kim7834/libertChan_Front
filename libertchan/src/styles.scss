@@ -21,25 +21,23 @@ body {
 **  THEMES
 ************* */
 // Navbar, Modal header, Modal Btn
-$color-hotpink: hotpink !important;
-$color-hotpinkLight: rgb(240, 216, 228) !important;
+// $color-hotpink: hotpink !important;
+// $color-hotpinkLight: rgb(240, 216, 228) !important;
 // $color-green: #00FF00;
 // $color-blue: #0000FF;
-body.HotPink {
-  color: $color-hotpink;
-}
+// body.HotPink {
+//   color: $color-hotpink;
+// }
 
-.createBtnSpan.HotPink,
-.themeHotPink a {
-  color: $color-hotpink;
-}
+// .createBtnSpan.HotPink,
+// .selectTheme a {
+//   color: $color-hotpink;
+// }
 
-.ui-modal-header.HotPink {
-  background-color: $color-hotpink;
-}
+// .ui-modal-header.HotPink {
+//   background-color: $color-hotpink;
+// }
 
-.headerImg.HotPink {
-}
 
 // -----------------------------
 .headerImg {
@@ -48,8 +46,6 @@ body.HotPink {
   height: 80px;
   width: 90px;
   background-size: cover;
-  // border: 1px red solid;
-
   display: inline-block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -63,14 +59,14 @@ body.HotPink {
   .default {
     --color-default-text: #000000;
     --color-default-url: #007bff;
-    --img-default-logo:url("/assets/images/logo/bird.png");
+    --img-default-logo:url('/assets/images/logo/bird.png');
     --color-default-light: rgb(240, 216, 228);
   }
 
   .hotpink {
     --color-default-text: hotpink;
     --color-default-url: rgb(240, 216, 228);
-    --img-default-logo: url('/assets/images/logo/bird_Hotpink.png');
+    --img-default-logo: url('/assets/images/logo/bird_hotpink.png');
     --color-default-light: rgb(240, 216, 228);
   }
 

@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { StorageMap } from '@ngx-pwa/local-storage';
 
 import { LocalstorageService } from 'src/app/services/localstorage.service';
-import { ThemeService } from 'src/app/services/theme.service';
 
 import { UserPreferences } from 'src/app/models/user-preferences';
 import { Observable, of } from 'rxjs';
@@ -21,7 +20,6 @@ export class ThemesComponent implements OnInit, OnDestroy {
     private storage: StorageMap,
     private fb: FormBuilder,
     private renderer: Renderer2,
-    private themeService: ThemeService,
     private localstorageService: LocalstorageService
   ) {}
 
@@ -39,7 +37,7 @@ export class ThemesComponent implements OnInit, OnDestroy {
     .pipe(untilDestroyed(this))
     .subscribe();
 
-    this.themeHotPink(this.userPreferences);
+    this.selectTheme(this.userPreferences);
 
   }
 
@@ -59,31 +57,21 @@ export class ThemesComponent implements OnInit, OnDestroy {
       tap(pref => {
         this.userPreferences = this.themes.find(t => t.name === pref.name);
       }),
-      tap(() => this.themeHotPink(this.userPreferences)),
+      tap(() => this.selectTheme(this.userPreferences)),
     );
   }
 
-  ngOnDestroy(): void{
-  }
+  ngOnDestroy(): void {}
 
-  themeHotPink(pref: UserPreferences): void {
+  selectTheme(pref: UserPreferences): void {
     const bodyElement = this.renderer.selectRootElement('body', true);
     bodyElement.className = '';
     bodyElement.classList.add(pref.name);
     // const catalogDetailHoverElement = this.renderer.selectRootElement('.appTopicDetail', true);
     // catalogDetailHoverElement.classList.remove('defaultTheme');
-    // catalogDetailHoverElement.classList.add('themeHotPink');
+    // catalogDetailHoverElement.classList.add('selectTheme');
   }
 
-  the() {
-    // this.localstorageService.getPreference();
-    // console.log(this.localstorageService.getPreference());
-    // this.themeService.fanto();
-  }
-
-  // goti() {
-  //   this.themeService.getTheme();
-  // }
 
 
 
