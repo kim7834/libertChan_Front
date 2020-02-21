@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
 import { Message } from 'src/app/models/message';
+import { CitationService } from 'src/app/services/citation.service';
 
 @Component({
   selector: 'app-message',
@@ -19,11 +20,12 @@ export class MessageComponent implements OnInit {
 
   showImg = false;
 
-  constructor() {}
+  constructor(private citationService: CitationService) {}
 
   // TODO: citation brouillon
   quote() {
     console.log('Message cité : ', this.message.id);
+    this.citationService.citation.next(this.message.id);
   }
 
   ngOnInit() {}
