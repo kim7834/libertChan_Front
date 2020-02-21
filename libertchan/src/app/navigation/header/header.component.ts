@@ -46,8 +46,7 @@ export class HeaderComponent implements OnInit {
     //   this.imgSource = '../../../assets/images/logo/bird_hotpink.png';
     // }
 
-    console.log('INI HEADER STATE : ', this.themeService.getTheme());
-    // console.log('INI HEADER STATE : ', this.themeService.theme);
+    // console.log('INI HEADER STATE : ', this.themeService.getTheme());
 
 
     if (this.themeService.getTheme() === 'Défault') {
