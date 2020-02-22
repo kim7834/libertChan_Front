@@ -45,6 +45,7 @@
     --img-bird:url('/assets/images/logo/bird.png');
     --img-logo:url('/assets/images/logo/logo.png');
     --background-color: lightblue;
+    --background-box-color: #ffffff;
     // --color-default-light: rgb(240, 216, 228);
   }
 
@@ -57,18 +58,19 @@
     --img-bird: url('/assets/images/logo/bird_hotpink.png');
     --img-logo:url('/assets/images/logo/logo_Hotpink.png');
     --background-color: lightblue;
+    --background-box-color: #ffffff;
     // --color-default-light: rgb(240, 216, 228);
   }
 
   .sombre {
-    --color-text: #ffffff;
-    --color-list: #b8afaf;
-    --color-url: #c5b8b8;
-    --img-bird: url('/assets/images/logo/bird_creme.png');
-    --img-logo:url('/assets/images/logo/logo_creme.png');
-    --background-color: rgb(63, 59, 59);
-    // --color-default-light: rgb(240, 216, 228);
-
+    --color-text: #C85F64;
+    --color-list: #9E8155;
+    --color-url: #9E8155;
+    // --color-url: #83B75F;
+    --img-bird: url('/assets/images/logo/bird_sombre.png');
+    --img-logo:url('/assets/images/logo/logo_sombre.png');
+    --background-color: #282C35;
+    --background-box-color: #2C333E;
   }
 
 
@@ -91,6 +93,10 @@ body {
 }
 span {
   color: var(--color-span);
+}
+
+.channelContainer {
+  background-color: var(--background-box-color);
 }
 
 #LibertChanLogo {
@@ -119,3 +125,4 @@ span {
 li {
   color: var(--color-list);
 }
+
