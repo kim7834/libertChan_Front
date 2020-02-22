@@ -16,23 +16,11 @@
 /** *************
 **  THEMES
 ************* */
-// Navbar, Modal header, Modal Btn
-// $color-hotpink: hotpink !important;
-// $color-hotpinkLight: rgb(240, 216, 228) !important;
-// $color-green: #00FF00;
-// $color-blue: #0000FF;
-// body.HotPink {
-//   color: $color-hotpink;
-// }
 
-// .createBtnSpan.HotPink,
-// .selectTheme a {
-//   color: $color-hotpink;
-// }
 
-// .ui-modal-header.HotPink {
-//   background-color: $color-hotpink;
-// }
+app-panel-modal-message.ui-modal-header {
+  background-color: red;
+}
 
 /* ------------ THEMES ----------------- */
 
@@ -46,6 +34,8 @@
     --img-logo:url('/assets/images/logo/logo.png');
     --background-color: lightblue;
     --background-box-color: #ffffff;
+    // Color for modal
+    --dt-color-primary: #5b9bd5;
     // --color-default-light: rgb(240, 216, 228);
   }
 
@@ -59,6 +49,7 @@
     --img-logo:url('/assets/images/logo/logo_Hotpink.png');
     --background-color: lightblue;
     --background-box-color: #ffffff;
+    --dt-color-primary: hotpink;
     // --color-default-light: rgb(240, 216, 228);
   }
 
@@ -71,6 +62,7 @@
     --img-logo:url('/assets/images/logo/logo_sombre.png');
     --background-color: #282C35;
     --background-box-color: #2C333E;
+    --dt-color-primary: #C85F64;
   }
 
 
@@ -122,6 +114,9 @@ span {
   box-sizing: border-box;
 }
 
+.createBtnSpan {
+  color: var(--dt-color-primary);
+}
 li {
   color: var(--color-list);
 }
