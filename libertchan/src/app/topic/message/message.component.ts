@@ -10,13 +10,10 @@ import { CitationService } from 'src/app/services/citation.service';
 })
 export class MessageComponent implements OnInit {
   @Input() message: Message;
-  // @Input() date: Date;
   formatedDate = moment(this.message?.date)
     .locale('fr')
     .format('LLLL');
-  // @Input() author: string;
-  //@Input() imageLocation: string;
-  // @Input() textContent: string;
+
 
   showImg = false;
 

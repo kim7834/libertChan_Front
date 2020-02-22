@@ -50,18 +50,6 @@
       </div>
     </div>
 
-
-    <!-- TODO: citation message brouillon -->
-    <!-- [messageList]="this.messages" -->
-    <!-- [topicId]="this.topic?.id" -->
-    <!-- <app-panel-modal-message
-    [quotedMessageId]="this.message.id"
-  >
-  </app-panel-modal-message> -->
-
-
-    <!-- <div *ngIf="!this.message.image.imageLocation" class="offset-2 pr-3"></div> -->
-
     <span *ngIf="!showImg"></span>
     <div class="col">
       <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>

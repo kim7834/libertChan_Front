@@ -24,9 +24,6 @@ export class PanelModalMessageComponent implements OnInit {
   // TODO: citation brouillon
   // @Input() quotedMessageId?: number;
 
-  // TODO: do i need a bool for somewhere ?
-  // submitted = false;
-
   constructor(
     private formBuilder: FormBuilder,
     private messageService: MessageService,
@@ -61,11 +58,6 @@ export class PanelModalMessageComponent implements OnInit {
     return this.messageForm.controls;
   }
 
-  // * TODO: Brouillon citation Remove if not used addQuote()
-  // addQuote() {
-  //   this.f.textContent.setValue(this.quotedMessageId);
-  // }
-
   onSubmit(messageForm) {
     this.messageService
       .createMessage(
@@ -89,13 +81,11 @@ export class PanelModalMessageComponent implements OnInit {
   }
 
   fileUpload() {
-    //console.log('test');
     let formData: FormData = new FormData();
     formData.append('file', this.myImage, this.myImage.name);
     let headers = new HttpHeaders();
     this.http.post(`${this.apiEndPoint}`, formData, { headers }).subscribe(
       (data: any) => {
-        //console.log(data);
         this.imageLink = data.fileDownloadUri;
       },
       error => console.log(error)
