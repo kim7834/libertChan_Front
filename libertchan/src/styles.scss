@@ -37,7 +37,7 @@ app-panel-modal-message.ui-modal-header {
     --background-box-color: #ffffff;
     // Color for modal
     --dt-color-primary: #5b9bd5;
-    // --color-default-light: rgb(240, 216, 228);
+    --color-light: rgba(109, 158, 209, 0.575);
   }
 
   .hotpink {
@@ -51,7 +51,7 @@ app-panel-modal-message.ui-modal-header {
     --background-color: lightblue;
     --background-box-color: #ffffff;
     --dt-color-primary: hotpink;
-    // --color-default-light: rgb(240, 216, 228);
+    --color-light: rgba(231, 223, 227, 0.575);
   }
 
   .sombre {
@@ -64,6 +64,7 @@ app-panel-modal-message.ui-modal-header {
     --background-color: #282C35;
     --background-box-color: #2C333E;
     --dt-color-primary: #C85F64;
+    --color-light: rgba(66, 68, 73, 0.575);
   }
 
 
