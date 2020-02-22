@@ -15,10 +15,6 @@
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->
 
-
-
-
-
   <!-- #A -->
   <div
     class="channelContainer mb-4 col-12 col-md-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8"
@@ -141,19 +137,41 @@
   <div
     class="channelContainer mb-4 col-12 col-md-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8"
   >
-    <span class="d-flex justify-content-start lead">
+    <span class="d-flex justify-content-start lead mb-2">
       Derniers messages
     </span>
 
     <div class="row">
       <div *ngFor="let message of lastMessages" class="col-3" m-1>
-        <a
-          [routerLink]="[
-            '/chan',
-            message.discussionThread.channel.shortName,
-            message.discussionThread.id
-          ]"
-        >
+        <a class="vignetteLink"
+        [routerLink]="[
+          '/chan',
+          message.discussionThread.channel.shortName,
+          message.discussionThread.id
+        ]"
+      >
+        <ng-container *ngIf="!message.image.imageLocation">
+          <div
+            class="noMessageContainer p-2 border rounded"
+          >
+            <div class="row justify-content-center">
+              <img
+                height="50"
+                src="../../../assets/images/noPicture.png"
+                alt=""
+              />
+            </div>
+
+            <div class="row justify-content-center">
+              <span class="text-muted">
+                ce message <br />
+                ne comporte <br />
+                pas d'image
+              </span>
+            </div>
+          </div>
+        </ng-container>
+
           <img
             class="imgMessage"
             src="{{ message.image?.imageLocation }}"
