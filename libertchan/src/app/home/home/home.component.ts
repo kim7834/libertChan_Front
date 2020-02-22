@@ -22,12 +22,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.channelService.getChannels().subscribe(response => {
       this.channelList = response as Array<Channel>;
-      // console.log('channelList +> ' , this.channelList);
     });
 
-    this.messageService.getLastMessages(5).subscribe(response => {
+    this.messageService.getLastMessages(8).subscribe(response => {
       this.lastMessages = response as Message[];
-      //console.log(response);
     });
   }
 }
