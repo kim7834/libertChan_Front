@@ -12,17 +12,12 @@ import { CitationService } from 'src/app/services/citation.service';
   styleUrls: ['./ng-modal.scss']
 })
 export class PanelModalMessageComponent implements OnInit {
-  // FIXME: what is id ?
-  // @Input() id: number;
   messageForm: FormGroup;
   @Input() topicId: number;
   @Input() messageList: Message[];
   apiEndPoint = 'http://192.168.1.89:8080/api/uploadFile';
   myImage: File;
   imageLink: string;
-
-  // TODO: citation brouillon
-  // @Input() quotedMessageId?: number;
 
   constructor(
     private formBuilder: FormBuilder,
