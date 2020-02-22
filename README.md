@@ -22,6 +22,7 @@ Front | Back
         - [ng-modal](https://www.npmjs.com/package/ng-modal) [source](https://github.com/mazdik/ng-modal)
         - [Moment.js](https://momentjs.com/) : date format management
         - [Ngx Until Destroy](https://www.npmjs.com/package/ngx-take-until-destroy) (gestion unsuscribe @Observable)
+        - [Ngx ui switch](https://www.npmjs.com/package/ngx-ui-switch)
 
         
 Etude #1 : Localstorage with : https://www.npmjs.com/package/@ngx-pwa/local-storage (used for Auth)
