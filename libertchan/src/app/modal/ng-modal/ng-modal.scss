@@ -8,13 +8,17 @@
   font-weight:500;
 }
 
+.btnModalInfosMarkdown,
 .launchModal span {
   cursor: pointer;
 }
 
+.btnModalInfosMarkdown:hover,
 .launchModal span:hover {
   text-decoration: underline;
 }
+
+
 
 
 

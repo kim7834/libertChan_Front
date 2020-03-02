@@ -10,11 +10,24 @@ import { MessageModalComponent } from './message-modal/message-modal.component';
 import { ModalModule as ngModalT } from 'ng-modal-lib';
 import { PanelModalCreateThreadComponent } from './ng-modal/panelModalCreateThread.component';
 import { PanelModalMessageComponent } from './ng-modal/panelModalMessage.component';
+import { PanelModalInfoMarkdownComponent } from './ng-modal/panelModalInfosMarkdown.component';
 
 
 @NgModule({
-  declarations: [TopicModalComponent, MessageModalComponent, PanelModalCreateThreadComponent, PanelModalMessageComponent],
-  exports: [CommonModule, TopicModalComponent, PanelModalCreateThreadComponent, PanelModalMessageComponent],
+  declarations: [
+    TopicModalComponent,
+    MessageModalComponent,
+    PanelModalCreateThreadComponent,
+    PanelModalMessageComponent,
+    PanelModalInfoMarkdownComponent
+  ],
+  exports: [
+    CommonModule,
+    TopicModalComponent,
+    PanelModalCreateThreadComponent,
+    PanelModalMessageComponent,
+    PanelModalInfoMarkdownComponent
+  ],
   imports: [CommonModule, ModalRoutingModule, FormsModule, ReactiveFormsModule, ngModalT]
 })
 export class ModalModule {}
