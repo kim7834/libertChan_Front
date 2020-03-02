@@ -162,10 +162,10 @@
               </div>
 
             <div class="row justify-content-center">
-                <span class="lastMessageDescrition messageText">
+                <div class="lastMessageDescrition messageText pt-3">
                   {{ (message.textContent?.length>16)? (message.textContent | slice:0:16)+'...':(message.textContent) }}
                   <!-- {{ message.textContent }} -->
-                </span>
+                </div>
               </div>
             </div>
           </ng-container>
