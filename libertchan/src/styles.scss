@@ -80,6 +80,13 @@ app-panel-modal-message.ui-modal-header {
   }
 }
 
+body.tropical {
+  background-image: linear-gradient(
+    rgba(0, 0, 255, 0.5),
+    rgba(255, 255, 0, 0.5)
+  );
+}
+
 /* Custom element */
 a {
   color: var(--color-url);
