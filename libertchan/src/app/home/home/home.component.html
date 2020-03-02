@@ -163,7 +163,7 @@
 
             <div class="row justify-content-center">
                 <span class="lastMessageDescrition messageText">
-                  {{ (message.textContent?.length>18)? (message.textContent | slice:0:18)+'...':(message.textContent) }}
+                  {{ (message.textContent?.length>16)? (message.textContent | slice:0:16)+'...':(message.textContent) }}
                   <!-- {{ message.textContent }} -->
                 </span>
               </div>
