@@ -21,7 +21,7 @@ export class MessageComponent implements OnInit {
 
   // TODO: citation brouillon
   quote() {
-    console.log('Message cité : ', this.message.id);
+    // console.log('Message cité : ', this.message.id);
     this.citationService.citation.next(this.message.id);
   }
 
