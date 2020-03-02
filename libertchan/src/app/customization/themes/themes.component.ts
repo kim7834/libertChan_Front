@@ -9,7 +9,6 @@ import { Observable, of } from 'rxjs';
 import { map, tap, switchMap } from 'rxjs/operators';
 import { untilDestroyed } from 'ngx-take-until-destroy';
 
-
 @Component({
   selector: 'app-themes',
   templateUrl: './themes.component.html',
@@ -29,36 +28,34 @@ export class ThemesComponent implements OnInit, OnDestroy {
   themes = [
     new UserPreferences({ name: 'default', label: 'Défault' }),
     new UserPreferences({ name: 'hotpink', label: 'HotPink' }),
-    new UserPreferences({ name: 'sombre', label: 'Sombre' })
+    new UserPreferences({ name: 'sombre', label: 'Sombre' }),
+    new UserPreferences({ name: 'tropical', label: 'Tropical' })
   ];
 
   changeTheme() {
-
-    this.localstorageService.savePreference(this.userPreferences)
-    .pipe(untilDestroyed(this))
-    .subscribe();
+    this.localstorageService
+      .savePreference(this.userPreferences)
+      .pipe(untilDestroyed(this))
+      .subscribe();
 
     this.selectTheme(this.userPreferences);
-
   }
 
-
   ngOnInit() {
-
     this.userPreferences$ = this.localstorageService.preference.pipe(
-      switchMap((preference) => {
+      switchMap(preference => {
         if (!preference) {
           preference = this.themes[0];
-          return this.localstorageService.savePreference(preference).pipe(
-            map(() => preference)
-          );
+          return this.localstorageService
+            .savePreference(preference)
+            .pipe(map(() => preference));
         }
         return of(preference);
       }),
       tap(pref => {
         this.userPreferences = this.themes.find(t => t.name === pref.name);
       }),
-      tap(() => this.selectTheme(this.userPreferences)),
+      tap(() => this.selectTheme(this.userPreferences))
     );
   }
 
@@ -68,10 +65,5 @@ export class ThemesComponent implements OnInit, OnDestroy {
     const bodyElement = this.renderer.selectRootElement('body', true);
     bodyElement.className = '';
     bodyElement.classList.add(pref.name);
-
   }
-
-
-
-
 }

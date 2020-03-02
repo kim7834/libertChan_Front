@@ -18,7 +18,6 @@
 **  THEMES
 ************* */
 
-
 app-panel-modal-message.ui-modal-header {
   background-color: red;
 }
@@ -31,8 +30,8 @@ app-panel-modal-message.ui-modal-header {
     --color-list: #000000;
     --color-span: #000000;
     --color-url: #007bff;
-    --img-bird:url('/assets/images/logo/bird.png');
-    --img-logo:url('/assets/images/logo/logo.png');
+    --img-bird: url('/assets/images/logo/bird.png');
+    --img-logo: url('/assets/images/logo/logo.png');
     --background-color: lightblue;
     --background-box-color: #ffffff;
     // Color for modal
@@ -47,7 +46,7 @@ app-panel-modal-message.ui-modal-header {
     --color-lead: #f8459e;
     --color-url: hotpink;
     --img-bird: url('/assets/images/logo/bird_hotpink.png');
-    --img-logo:url('/assets/images/logo/logo_Hotpink.png');
+    --img-logo: url('/assets/images/logo/logo_Hotpink.png');
     --background-color: lightblue;
     --background-box-color: #ffffff;
     --dt-color-primary: hotpink;
@@ -55,27 +54,37 @@ app-panel-modal-message.ui-modal-header {
   }
 
   .sombre {
-    --color-text: #C85F64;
-    --color-list: #9E8155;
-    --color-url: #9E8155;
+    --color-text: #c85f64;
+    --color-list: #9e8155;
+    --color-url: #9e8155;
     // --color-url: #83B75F;
     --img-bird: url('/assets/images/logo/bird_sombre.png');
-    --img-logo:url('/assets/images/logo/logo_sombre.png');
-    --background-color: #282C35;
-    --background-box-color: #2C333E;
-    --dt-color-primary: #C85F64;
+    --img-logo: url('/assets/images/logo/logo_sombre.png');
+    --background-color: #282c35;
+    --background-box-color: #2c333e;
+    --dt-color-primary: #c85f64;
     --color-light: rgba(66, 68, 73, 0.575);
   }
 
+  .tropical {
+    --color-text: #5cd376;
+    --color-list: #cc7f0b;
+    --color-url: #fffb00;
+    // --color-url: #83B75F;
+    --img-bird: url('/assets/images/logo/perroquet.png');
+    --img-logo: url('/assets/images/logo/logo_tropical.png');
+    --background-color: #014201;
+    --background-box-color: #795e2c;
+    --dt-color-primary: #b8b503;
+    --color-light: rgba(30, 236, 40, 0.575);
+  }
 }
-
 
 /* Custom element */
 a {
   color: var(--color-url);
   cursor: pointer;
 }
-
 
 body {
   background-color: var(--background-color);
