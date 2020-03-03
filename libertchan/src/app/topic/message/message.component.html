@@ -53,7 +53,7 @@
     </div>
 
     <span *ngIf="!showImg"></span>
-    <div class="col">
+    <div class="col mt-3">
       <ng-container *ngFor="let p of this?.getTextContent()">
         <markdown [data]="p"></markdown>
       </ng-container>
