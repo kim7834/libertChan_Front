@@ -1,5 +1,4 @@
 <div class="messageContainer container-fluid my-2" id="pc{{ this.message.id }}">
-
   <div class="row mx-1">
     <span>{{ this.formatedDate }}</span
     ><span>&nbsp; - &nbsp;</span
@@ -25,6 +24,7 @@
         </svg>
       </sup>
     </span>
+    <button class="ml-2 btn-danger" (click)="signal()">!</button>
   </div>
   <div class="row">
     <div
@@ -61,5 +61,4 @@
       <!-- <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p> -->
     </div>
   </div>
-
 </div>

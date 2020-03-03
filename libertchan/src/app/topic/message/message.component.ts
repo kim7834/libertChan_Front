@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
 import { Message } from 'src/app/models/message';
 import { CitationService } from 'src/app/services/citation.service';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-message',
@@ -14,10 +15,12 @@ export class MessageComponent implements OnInit {
     .locale('fr')
     .format('LLLL');
 
-
   showImg = false;
 
-  constructor(private citationService: CitationService) {}
+  constructor(
+    private citationService: CitationService,
+    private messageService: MessageService
+  ) {}
 
   // TODO: citation brouillon
   quote() {
@@ -39,5 +42,9 @@ export class MessageComponent implements OnInit {
 
     //console.log(this.textContent.split('\n'));
     return this.message?.textContent?.split('\n');
+  }
+
+  signal() {
+    this.messageService.signalMessage(this.message.id).subscribe();
   }
 }

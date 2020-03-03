@@ -54,4 +54,15 @@ export class MessageService {
       this.httpOptions
     );
   }
+
+  getSignaled() {
+    return this.httpClient.get(this.baseUrl + '/signaled', this.httpOptions);
+  }
+
+  signalMessage(id: number) {
+    return this.httpClient.post(
+      this.baseUrl + '/signal/' + id,
+      this.httpOptions
+    );
+  }
 }
