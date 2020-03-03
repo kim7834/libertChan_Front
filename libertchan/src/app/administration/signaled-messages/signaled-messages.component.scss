@@ -1,0 +1,8 @@
+img {
+  max-width: 50px;
+  max-height: 40px;
+}
+
+tr:not(.description) {
+  cursor: pointer;
+}
