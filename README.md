@@ -19,7 +19,7 @@ Front | Back
         - [bootstrap](https://www.npmjs.com/package/bootstrap)
         - [@ng-bootstrap/ng-bootstrap](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) (modal)
         - `ng add @angular/localize` (asked by Angular 9)
-        - [ng-modal](https://www.npmjs.com/package/ng-modal) [source](https://github.com/mazdik/ng-modal)
+        - [ng-modal](https://www.npmjs.com/package/ng-modal) | [source](https://github.com/mazdik/ng-modal)
         - [Moment.js](https://momentjs.com/) : date format management
         - [Ngx Until Destroy](https://www.npmjs.com/package/ngx-take-until-destroy) (gestion unsuscribe @Observable)
         - [Ngx ui switch](https://www.npmjs.com/package/ngx-ui-switch)
