@@ -6,7 +6,6 @@ import { MessageService } from 'src/app/services/message.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { CitationService } from 'src/app/services/citation.service';
 
-
 @Component({
   selector: 'app-panel-modal-message',
   templateUrl: './panelModalMessage.component.html',
@@ -30,10 +29,16 @@ export class PanelModalMessageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.citationService.citation.subscribe(id => {
-      this.messageForm
-        .get('textContent')
-        .setValue(this.messageForm.get('textContent').value + '>>' + id);
+    this.citationService.citation.subscribe((quotedMessage: Message) => {
+      if (quotedMessage) {
+        this.messageForm
+          .get('textContent')
+          .setValue(
+            this.messageForm.get('textContent').value +
+              '>' +
+              quotedMessage.textContent
+          );
+      }
     });
   }
 
