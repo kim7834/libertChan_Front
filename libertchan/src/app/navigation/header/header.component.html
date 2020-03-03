@@ -5,7 +5,7 @@
       <div class="row justify-content-center">
         <!-- TODO: supprime si ok; test w/ img dans la meme col que channel.name -->
         <!-- <div class="col-2 col-md-1"> -->
-          <!-- <img src="../../../assets/images/logo/logo.png" alt="LibertChan Logo" /> -->
+        <!-- <img src="../../../assets/images/logo/logo.png" alt="LibertChan Logo" /> -->
         <!-- </div> -->
         <div class="col-6">
           <a [routerLink]="['/']">
@@ -16,9 +16,13 @@
             /> -->
             <!-- <img src='/assets/images/logo/bird.png' class="headerImg"> -->
             <div class="headerImg"></div>
-            </a>
+          </a>
           <span>/{{ currentChannel?.shortName }}/</span><span> : </span
-          ><span class="lead">{{ currentChannel?.name }}</span>
+          ><a
+            *ngIf="currentChannel"
+            [routerLink]="['/chan/', currentChannel?.shortName]"
+            ><span class="lead">{{ currentChannel?.name }}</span></a
+          >
           <p class="blockquote ">
             <span>{{ currentChannel?.shortDescription }}</span>
           </p>
