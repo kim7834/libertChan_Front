@@ -6,11 +6,16 @@ import { NavigationModule } from '../navigation/navigation.module';
 import { MessageModalComponent } from '../modal/message-modal/message-modal.component';
 import { ModalModule } from '../modal/modal.module';
 
-// import { PanelModalMessageComponent } from '../modal/ng-modal/panelModalMessage.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [TopicComponent, MessageComponent],
-  imports: [CommonModule, NavigationModule, ModalModule],
+  imports: [
+    CommonModule,
+    NavigationModule,
+    ModalModule,
+    MarkdownModule.forRoot(),
+  ],
   entryComponents: [MessageModalComponent]
 })
 export class TopicModule {}

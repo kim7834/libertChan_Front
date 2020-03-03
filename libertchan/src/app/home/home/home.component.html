@@ -161,14 +161,10 @@
                 />
               </div>
 
-              <div class="row justify-content-center">
-                <!-- <span class="text-muted">
-                ce message <br />
-                ne comporte <br />
-                pas d'image
-              </span> -->
-                <span class="text-muted messageText">
-                  {{ message.textContent }}
+            <div class="row justify-content-center">
+                <span class="lastMessageDescrition messageText">
+                  {{ (message.textContent?.length>18)? (message.textContent | slice:0:18)+'...':(message.textContent) }}
+                  <!-- {{ message.textContent }} -->
                 </span>
               </div>
             </div>
@@ -184,8 +180,5 @@
       </div>
     </div>
 
-    <!-- TODO: <app-vignette -->
-
-    <!-- TODO <app-footer> -->
   </div>
 </div>

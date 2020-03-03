@@ -1,7 +1,9 @@
-<div class="messageContainer container-fluid my-2" id=pc{{this.message.id}}>
+<div class="messageContainer container-fluid my-2" id="pc{{ this.message.id }}">
+
   <div class="row mx-1">
     <span>{{ this.formatedDate }}</span
-    ><span>&nbsp; - &nbsp;</span><span class="author">{{ this.message.author }}</span
+    ><span>&nbsp; - &nbsp;</span
+    ><span class="author">{{ this.message.author }}</span
     ><span> </span><span class="id">&nbsp; #{{ this.message.id }}</span>
     <span class="quote ml-2" (click)="quote()"
       ><sup>
@@ -52,7 +54,12 @@
 
     <span *ngIf="!showImg"></span>
     <div class="col">
-      <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p>
+      <ng-container *ngFor="let p of this?.getTextContent()">
+        <markdown [data]="p"></markdown>
+      </ng-container>
+
+      <!-- <p *ngFor="let p of this?.getTextContent()" [innerHTML]="p"></p> -->
     </div>
   </div>
+
 </div>

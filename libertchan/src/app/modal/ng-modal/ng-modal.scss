@@ -6,10 +6,13 @@
 .launchModal {
   font-size: larger;
   font-weight:500;
+}
+
+.launchModal span {
   cursor: pointer;
 }
 
-.launchModal:hover {
+.launchModal span:hover {
   text-decoration: underline;
 }
 

@@ -18,9 +18,9 @@
 **  THEMES
 ************* */
 
-app-panel-modal-message.ui-modal-header {
-  background-color: red;
-}
+// app-panel-modal-message.ui-modal-header {
+//   background-color: red;
+// }
 
 /* ------------ THEMES ----------------- */
 
@@ -40,10 +40,10 @@ app-panel-modal-message.ui-modal-header {
   }
 
   .hotpink {
-    --color-text: hotpink;
+    --color-text: #000000;
     --color-list: #e08ab5;
-    --color-span: hotpink;
-    --color-lead: #f8459e;
+    --color-span: #000000;
+    --color-lead: #000000;
     --color-url: hotpink;
     --img-bird: url('/assets/images/logo/bird_hotpink.png');
     --img-logo: url('/assets/images/logo/logo_Hotpink.png');
@@ -85,6 +85,7 @@ body.tropical {
     rgba(0, 0, 255, 0.5),
     rgba(255, 255, 0, 0.5)
   );
+  height: 100vh;
 }
 
 /* Custom element */
@@ -95,14 +96,20 @@ a {
 
 body {
   background-color: var(--background-color);
-  color: var(--color-text);
 }
+
+.lastMessageDescrition,
+body {
+  color: var(--color-text)
+}
+
 .lead {
   color: var(--color-lead);
 }
 span {
   color: var(--color-span);
 }
+
 
 .channelContainer {
   background-color: var(--background-box-color);
@@ -147,3 +154,4 @@ li {
   // height: 20px;
   // width: 20px;
 }
+
