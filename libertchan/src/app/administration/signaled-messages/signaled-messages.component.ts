@@ -15,7 +15,7 @@ export class SignaledMessagesComponent implements OnInit {
   ngOnInit(): void {
     this.messageService.getSignaled().subscribe((result: Message[]) => {
       this.signaledMessages = result;
-      console.log(this.signaledMessages);
+      //console.log(this.signaledMessages);
     });
   }
 }
