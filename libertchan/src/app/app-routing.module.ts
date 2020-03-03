@@ -6,13 +6,15 @@ import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.
 import { environment } from 'src/environments/environment';
 import { CatalogMosaicComponent } from './catalog/catalog-mosaic/catalog-mosaic.component';
 import { TopicComponent } from './topic/topic/topic.component';
+import { SignaledMessagesComponent } from './administration/signaled-messages/signaled-messages.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'chan/:shortName', component: CatalogDetailComponent },
   { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent },
-  { path: 'chan/:shortName/:id', component: TopicComponent }
+  { path: 'chan/:shortName/:id', component: TopicComponent },
+  { path: 'administration/signaled', component: SignaledMessagesComponent }
 ];
 
 @NgModule({

@@ -9,11 +9,12 @@ import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [TopicComponent, MessageComponent],
+  exports: [MessageComponent],
   imports: [
     CommonModule,
     NavigationModule,
     ModalModule,
-    MarkdownModule.forRoot(),
+    MarkdownModule.forRoot()
   ],
 })
 export class TopicModule {}
