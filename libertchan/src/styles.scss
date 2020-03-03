@@ -166,3 +166,16 @@ blockquote {
   padding-left: 8px;
   background-color: rgb(221, 221, 221);
 }
+
+
+// Toaster Override
+.ngb-toasts {
+  position: fixed;
+  // top: 0;
+  // right: 0;
+  top: 25%!important;
+  // left: 150px!important;
+  left: 50%!important;
+  margin: .5em;
+  z-index: 1200;
+}

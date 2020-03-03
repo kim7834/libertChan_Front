@@ -10,22 +10,26 @@ import { PanelModalCreateThreadComponent } from './ng-modal/panelModalCreateThre
 import { PanelModalInfoMarkdownComponent } from './ng-modal/panelModalInfosMarkdown.component';
 import { PanelModalMessageComponent } from './ng-modal/panelModalMessage.component';
 
-
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbToastComponent } from './toasts/ngb-toast/ngb-toast.component';
+import { ToastsContainerComponent } from './toasts/toasts-container.component';
 
 @NgModule({
   declarations: [
     PanelModalCreateThreadComponent,
     PanelModalMessageComponent,
-    PanelModalInfoMarkdownComponent
+    PanelModalInfoMarkdownComponent,
+    ToastsContainerComponent,
+    NgbToastComponent
   ],
   exports: [
     CommonModule,
     PanelModalCreateThreadComponent,
     PanelModalMessageComponent,
-    PanelModalInfoMarkdownComponent
+    PanelModalInfoMarkdownComponent,
+    NgbToastComponent
   ],
-  imports: [CommonModule, ModalRoutingModule, FormsModule, ReactiveFormsModule, ngModalT, MarkdownModule.forChild()]
+  bootstrap: [NgbToastComponent],
+  imports: [CommonModule, ModalRoutingModule, FormsModule, ReactiveFormsModule, ngModalT, NgbModule, MarkdownModule.forChild()]
 })
 export class ModalModule {}

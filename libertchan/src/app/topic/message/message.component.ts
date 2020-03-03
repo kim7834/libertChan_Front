@@ -4,6 +4,8 @@ import { Message } from 'src/app/models/message';
 import { CitationService } from 'src/app/services/citation.service';
 import { MessageService } from 'src/app/services/message.service';
 
+import { NgbtoastService } from 'src/app/services/ngbtoast.service';
+
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
@@ -19,7 +21,8 @@ export class MessageComponent implements OnInit {
 
   constructor(
     private citationService: CitationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    public toastService: NgbtoastService
   ) {}
 
   // TODO: citation brouillon
@@ -46,5 +49,10 @@ export class MessageComponent implements OnInit {
 
   signal() {
     this.messageService.signalMessage(this.message.id).subscribe();
+  }
+
+
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, { classname: 'bg-danger text-light', delay: 1000 });
   }
 }
