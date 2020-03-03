@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { CatalogRoutingModule } from './catalog-routing.module';
 import { CatalogDetailComponent } from './catalog-detail/catalog-detail.component';
 import { NavigationModule } from '../navigation/navigation.module';
@@ -11,7 +9,6 @@ import { ChannelMosaicComponent } from './catalog-mosaic/channel-mosaic/channel-
 import { VignetteComponent } from './catalog-mosaic/channelMosaic/vignette/vignette.component';
 import { ModalModule } from '../modal/modal.module';
 
-import { TopicModalComponent } from '../modal/topic-modal/topic-modal.component';
 import { ChannelDetailComponent } from './catalogDetail/channel-detail/channel-detail.component';
 import { TopicDetailComponent } from './catalogDetail/channelDetail/topic-detail/topic-detail.component';
 
@@ -24,13 +21,11 @@ import { TopicDetailComponent } from './catalogDetail/channelDetail/topic-detail
     ChannelDetailComponent,
     TopicDetailComponent,
   ],
-  entryComponents: [TopicModalComponent],
   imports: [
     CommonModule,
     CatalogRoutingModule,
     NavigationModule,
     ModalModule,
-    NgbModule,
   ]
 })
 export class CatalogModule {}

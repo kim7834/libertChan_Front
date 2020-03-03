@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { TopicModalComponent } from 'src/app/modal/topic-modal/topic-modal.component';
-
-import { Image } from 'src/app/models/image';
-import { Message } from 'src/app/models/message';
 import { Topic } from 'src/app/models/topic';
 import { TopicService } from 'src/app/services/topic.service';
+
+
 
 @Component({
   selector: 'app-channel-mosaic',
@@ -21,7 +17,6 @@ export class ChannelMosaicComponent implements OnInit {
   dateNow: Date = new Date();
 
   constructor(
-    private modalService: NgbModal,
     private topicService: TopicService,
     private route: ActivatedRoute
   ) {}
@@ -34,32 +29,6 @@ export class ChannelMosaicComponent implements OnInit {
       .getTopicsByChannel(this.currentChannel)
       .subscribe(topics => {
         this.topics = topics;
-        //console.log(topics);
       });
   }
-  /*
-  openTopicModal() {
-    const modalRef = this.modalService.open(TopicModalComponent);
-    modalRef.componentInstance.id = 10;
-
-    modalRef.result
-      .then(result => {
-        //console.log(result);
-        this.topicService
-          .createTopic(
-            new Topic(result.title, [
-              new Message(result.author, result.content, new Image(result.imageLink))
-            ]),
-            this.currentChannel
-          )
-          .subscribe(topic => {
-            this.topics.push(topic);
-            //console.log(topic);
-          });
-      })
-      .catch(error => {
-        //console.log(error);
-      });
-  }
-  */
 }

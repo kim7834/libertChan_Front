@@ -80,6 +80,12 @@ body.tropical {
     rgba(0, 0, 255, 0.5),
     rgba(255, 255, 0, 0.5)
   );
+  min-height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat:no-repeat;
 }
 
 /* Custom element */
