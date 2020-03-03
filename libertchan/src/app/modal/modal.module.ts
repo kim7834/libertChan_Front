@@ -12,6 +12,8 @@ import { PanelModalCreateThreadComponent } from './ng-modal/panelModalCreateThre
 import { PanelModalMessageComponent } from './ng-modal/panelModalMessage.component';
 import { PanelModalInfoMarkdownComponent } from './ng-modal/panelModalInfosMarkdown.component';
 
+import { MarkdownModule } from 'ngx-markdown';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,6 @@ import { PanelModalInfoMarkdownComponent } from './ng-modal/panelModalInfosMarkd
     PanelModalMessageComponent,
     PanelModalInfoMarkdownComponent
   ],
-  imports: [CommonModule, ModalRoutingModule, FormsModule, ReactiveFormsModule, ngModalT]
+  imports: [CommonModule, ModalRoutingModule, FormsModule, ReactiveFormsModule, ngModalT, MarkdownModule.forChild()]
 })
 export class ModalModule {}
