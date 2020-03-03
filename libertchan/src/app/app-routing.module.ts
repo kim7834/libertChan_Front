@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
 import { CatalogMosaicComponent } from './catalog/catalog-mosaic/catalog-mosaic.component';
 import { TopicComponent } from './topic/topic/topic.component';
 import { SignaledMessagesComponent } from './administration/signaled-messages/signaled-messages.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AddConnectedUserComponent } from './add-connected-user/add-connected-user.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
@@ -14,7 +17,13 @@ const routes: Routes = [
   { path: 'chan/:shortName', component: CatalogDetailComponent },
   { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent },
   { path: 'chan/:shortName/:id', component: TopicComponent },
-  { path: 'administration/signaled', component: SignaledMessagesComponent }
+  { path: 'administration/signaled', component: SignaledMessagesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'addconnecteduser', component: AddConnectedUserComponent},
+
+
+
 ];
 
 @NgModule({

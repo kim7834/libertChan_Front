@@ -1,0 +1,18 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add user</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="name" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="connectedId">User Id</label>
+      <input [(ngModel)]="user.connectedId" placeholder="User Id" name="User Id" class="form-control" id="connectedId">
+    </div>
+
+    <button class="btn btn-success" (click)="createConnectedUser()">Create</button>
+  </form>
+</div>
