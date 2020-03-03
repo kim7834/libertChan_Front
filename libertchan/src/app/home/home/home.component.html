@@ -1,4 +1,16 @@
 <div id="homies" class="container text-center ">
+
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.youtube.com/watch?v=VBKGmmd7aDM" class="navbar-brand">OUIIIIIII</a></div>
+
+    <ul class="navbar-nav">
+
+
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+
+    </ul>
+      </nav>
   <!-- TODO: valide le no-gutters -->
   <div class="row mt-2 mb-4 no-gutters justify-content-center">
     <div class="col-12 mb-1">
@@ -11,6 +23,8 @@
       <div class="col-12" id="LibertChanLogo"></div>
     </div>
   </div>
+
+
 
   <!-- TODO: small screan container-fluid ? -->
   <!-- https://stackoverflow.com/questions/35991441/bootstrap-container-fluid-for-xs-sm -->

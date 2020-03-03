@@ -6,13 +6,22 @@ import { CatalogDetailComponent } from './catalog/catalog-detail/catalog-detail.
 import { environment } from 'src/environments/environment';
 import { CatalogMosaicComponent } from './catalog/catalog-mosaic/catalog-mosaic.component';
 import { TopicComponent } from './topic/topic/topic.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AddConnectedUserComponent } from './add-connected-user/add-connected-user.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'chan/:shortName', component: CatalogDetailComponent },
   { path: 'chan/:shortName/mosaic', component: CatalogMosaicComponent },
-  { path: 'chan/:shortName/:id', component: TopicComponent }
+  { path: 'chan/:shortName/:id', component: TopicComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'addconnecteduser', component: AddConnectedUserComponent},
+
+
+
 ];
 
 @NgModule({

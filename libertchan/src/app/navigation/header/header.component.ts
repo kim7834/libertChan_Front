@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Channel } from 'src/app/models/channel';
 import { ChannelService } from '../../services/channel.service';
+import { AuthentificationService } from 'src/app/Auth/authentification.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,8 @@ import { ChannelService } from '../../services/channel.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(
+    private loginService: AuthentificationService,
+    private logoutService: AuthentificationService,
     private channelService: ChannelService,
     private route: ActivatedRoute,
   ) {}
