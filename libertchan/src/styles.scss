@@ -2,9 +2,9 @@
 @import '~ngx-ui-switch/ui-switch.component.scss';
 
 /* -- VERIF -- */
-//[class*="container"] {
+// [class*="container"] {
 // border: 1px solid coral;
-//}
+// }
 // ​
 // [class*='row'] {
 //   border: 1px solid red;
@@ -18,11 +18,6 @@
 **  THEMES
 ************* */
 
-// app-panel-modal-message.ui-modal-header {
-//   background-color: red;
-// }
-
-/* ------------ THEMES ----------------- */
 
 :root {
   .default {
@@ -85,7 +80,6 @@ body.tropical {
     rgba(0, 0, 255, 0.5),
     rgba(255, 255, 0, 0.5)
   );
-  height: 100vh;
 }
 
 /* Custom element */
@@ -155,3 +149,14 @@ li {
   // width: 20px;
 }
 
+
+// Markdown
+blockquote {
+  font-style: normal;
+  font-size: 16px;
+  margin-left: 32px;
+  font-family: Consolas, "Times New Roman", Verdana;
+  border-left: 4px solid #CCC;
+  padding-left: 8px;
+  background-color: rgb(221, 221, 221);
+}

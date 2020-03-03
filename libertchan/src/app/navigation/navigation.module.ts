@@ -11,14 +11,25 @@ import { CustomizationModule } from '../customization/customization.module';
 import { CatalogSwitchComponent } from './catalog-switch/catalog-switch.component';
 
 import { UiSwitchModule } from 'ngx-ui-switch';
-
+import { ModalModule } from '../modal/modal.module';
 
 @NgModule({
-  declarations: [NavbarComponent, HeaderComponent, FooterComponent, CatalogSwitchComponent],
-  exports: [NavbarComponent, HeaderComponent, FooterComponent, CatalogSwitchComponent],
+  declarations: [
+    NavbarComponent,
+    HeaderComponent,
+    FooterComponent,
+    CatalogSwitchComponent
+  ],
+  exports: [
+    NavbarComponent,
+    HeaderComponent,
+    FooterComponent,
+    CatalogSwitchComponent
+  ],
   imports: [
     CommonModule,
     NavigationRoutingModule,
+    ModalModule,
     HttpClientModule,
     CustomizationModule,
     UiSwitchModule
@@ -34,4 +45,3 @@ import { UiSwitchModule } from 'ngx-ui-switch';
   ]
 })
 export class NavigationModule {}
-
