@@ -17,7 +17,7 @@ Front | Back
 - [Angular 9](https://www.npmjs.com/package/@angular/cli)
     - Packages installed (node_modules) : 
         - [bootstrap](https://www.npmjs.com/package/bootstrap)
-        - [@ng-bootstrap/ng-bootstrap](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) ()
+        - [@ng-bootstrap/ng-bootstrap](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) (Toast)
         - `ng add @angular/localize` (asked by Angular 9)
         - [ng-modal](https://www.npmjs.com/package/ng-modal) | [source](https://github.com/mazdik/ng-modal)
         - [Moment.js](https://momentjs.com/) : date format management
@@ -43,6 +43,7 @@ Etude #2 -> **aborted** : (CDK can for exemple make draggable stuff):
 
 
 ##### branchs :
+- **toast** Version avant _security_ avec toast sur signalement
 - **AuthTp** (TP Lionnel) Protected Route with Auth -> **this branch need `npm install`**
 - **NavbarWithInput** : (test)The Navbar component call the Header component with an input to pass the wanted channel name
 - **observableRouting** : (test) Navbar change channel with observable
